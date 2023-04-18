@@ -4,12 +4,12 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import OnPointerDownScript from "../script-nodes-basic/OnPointerDownScript";
-import PushActionScript from "../script-nodes/PushActionScript";
+import OnPointerDownScript from "../../script-nodes-basic/OnPointerDownScript";
+import PushActionScript from "../../script-nodes/PushActionScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class Level extends Phaser.Scene {
+export default class Niveau1 extends Phaser.Scene {
 
 	constructor() {
 		super("Level");
