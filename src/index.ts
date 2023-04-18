@@ -1,8 +1,8 @@
 import Phaser from "phaser";
 import preloadAssetPackUrl from "../static/assets/preload-asset-pack.json";
 import Preload from "./scenes/Initialisation/Prechargement/Preload";
-import Niveau1 from "./scenes/Niveau1/Niveau1";
 import Menu from "./scenes/Initialisation/Menu/Menu";
+import Niveau1 from "./scenes/Niveaux/Niveau1/Niveau1";
 
 class Boot extends Phaser.Scene {
 

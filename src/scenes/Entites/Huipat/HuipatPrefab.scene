@@ -35,7 +35,16 @@
                     "ArcadeComponent.active": true,
                     "body.width": 148,
                     "body.height": 162,
-                    "list": []
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "72c6639b-a20a-4b14-9c55-f3d962bc2b6c",
+                            "label": "onPointerDownScript",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ]
                 }
             ]
         }

@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import BaseEntitesPrefab from "../BaseEntitesPrefab";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -18,12 +19,16 @@ export default class HuipatPrefab extends BaseEntitesPrefab {
 		huipat_png.body.setSize(148, 162, false);
 		this.add(huipat_png);
 
+		// onPointerDownScript
+		new OnPointerDownScript(huipat_png);
+
 		/* START-USER-CTR-CODE */
 		this.droite()
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
+
 	/* END-USER-CODE */
 }
 

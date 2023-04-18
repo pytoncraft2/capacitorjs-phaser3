@@ -63,7 +63,7 @@
             "type": "Collider",
             "label": "collider",
             "scope": "METHOD",
-            "object1": "liste_colision_platforme",
+            "object1": "allies.list",
             "object2": "platformes.list"
         }
     ],

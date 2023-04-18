@@ -4,7 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import HuipatPrefab from "../Entites/Huipat/HuipatPrefab";
+import HuipatPrefab from "../../Entites/Huipat/HuipatPrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -40,7 +40,7 @@ export default class Niveau1 extends Phaser.Scene {
 		const liste_colision_platforme: Array<any> = [];
 
 		// collider
-		this.physics.add.collider(liste_colision_platforme, platformes.list);
+		this.physics.add.collider(allies.list, platformes.list);
 
 		this.platformes = platformes;
 		this.liste_colision_platforme = liste_colision_platforme;
