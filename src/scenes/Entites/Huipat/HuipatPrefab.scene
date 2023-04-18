@@ -21,6 +21,9 @@
                 "key": "huipat",
                 "frame": "huipat.png"
             },
+            "ArcadeComponent.active": true,
+            "body.width": 148,
+            "body.height": 162,
             "list": []
         }
     ],

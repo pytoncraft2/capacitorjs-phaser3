@@ -32,9 +32,10 @@ window.addEventListener('load', function () {
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH
 		},
 		physics: {
+			default: 'arcade',
 			arcade: {
 				gravity: {
-					y: 300
+					y: 900
 				}
 			}
 		},
