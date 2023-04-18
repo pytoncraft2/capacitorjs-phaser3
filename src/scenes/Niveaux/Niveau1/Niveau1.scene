@@ -48,7 +48,22 @@
             "label": "platformes",
             "scope": "PUBLIC",
             "components": [],
-            "list": []
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "2412c623-6309-4108-9f13-235dc1cb5e74",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 368,
+                    "y": 688,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
         },
         {
             "type": "Layer",
@@ -63,8 +78,8 @@
             "type": "Collider",
             "label": "collider",
             "scope": "METHOD",
-            "object1": "allies.list",
-            "object2": "platformes.list"
+            "object1": "huipatPrefab",
+            "object2": "platformePrefab"
         }
     ],
     "meta": {

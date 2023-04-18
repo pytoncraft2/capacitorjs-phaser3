@@ -1,17 +1,30 @@
 {
-    "id": "ef3419de-6b9f-4cd5-8961-5a8af462b4ae",
+    "id": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
     "sceneType": "PREFAB",
     "settings": {
+        "exportClass": true,
+        "autoImport": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": ""
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
             "type": "Rectangle",
-            "id": "f6f26d81-6960-4783-aa0f-484eb1ff604e",
-            "label": "platforme",
+            "id": "9611ed52-bbea-47b1-8975-6a299089709f",
+            "label": "rectangle_1",
             "components": [],
+            "x": 541,
+            "y": 150,
+            "ArcadeComponent.active": true,
+            "allowGravity": false,
+            "pushable": false,
+            "immovable": true,
+            "body.width": 128,
+            "body.height": 128,
             "isFilled": true,
             "width": 128,
             "height": 128,

@@ -20,6 +20,11 @@
             "components": [],
             "x": -6,
             "y": -15,
+            "ArcadeComponent.active": true,
+            "body.width": 148,
+            "body.height": 162,
+            "body.offset.x": -67,
+            "body.offset.y": -39,
             "list": [
                 {
                     "type": "Sprite",
@@ -32,9 +37,6 @@
                     },
                     "x": 7,
                     "y": 42,
-                    "ArcadeComponent.active": true,
-                    "body.width": 148,
-                    "body.height": 162,
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",

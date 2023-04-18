@@ -36,7 +36,8 @@ window.addEventListener('load', function () {
 			arcade: {
 				gravity: {
 					y: 900
-				}
+				},
+				debug: true
 			}
 		},
 		scene: [Boot, Preload, Menu, Niveau1]

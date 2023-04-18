@@ -5,6 +5,7 @@
 
 import Phaser from "phaser";
 import HuipatPrefab from "../../Entites/Huipat/HuipatPrefab";
+import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -33,6 +34,10 @@ export default class Niveau1 extends Phaser.Scene {
 		// platformes
 		const platformes = this.add.layer();
 
+		// platformePrefab
+		const platformePrefab = new PlatformePrefab(this, 368, 688);
+		platformes.add(platformePrefab);
+
 		// projectiles
 		this.add.layer();
 
@@ -40,7 +45,7 @@ export default class Niveau1 extends Phaser.Scene {
 		const liste_colision_platforme: Array<any> = [];
 
 		// collider
-		this.physics.add.collider(allies.list, platformes.list);
+		this.physics.add.collider(huipatPrefab, platformePrefab);
 
 		this.platformes = platformes;
 		this.liste_colision_platforme = liste_colision_platforme;

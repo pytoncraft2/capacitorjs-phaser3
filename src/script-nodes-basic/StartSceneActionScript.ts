@@ -24,6 +24,7 @@ export default class StartSceneActionScript extends ScriptNode {
 
 	override execute(): void {
 
+		this.scene.scale.startFullscreen();
 		this.scene.scene.start(this.sceneKey);
 	}
 
