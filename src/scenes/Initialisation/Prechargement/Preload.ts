@@ -6,6 +6,7 @@
 import Phaser from "phaser";
 import PreloadBarUpdaterScript from "../../../script-nodes/PreloadBarUpdaterScript";
 /* START-USER-IMPORTS */
+import assetPackUrl from "../../../../static/assets/asset-pack.json";
 /* END-USER-IMPORTS */
 
 export default class Preload extends Phaser.Scene {
@@ -52,9 +53,16 @@ export default class Preload extends Phaser.Scene {
 
 	// Write your code here
 
-	create() {
+	preload() {
 
 		this.editorCreate();
+
+		this.load.pack("asset-pack", assetPackUrl);
+	}
+
+	create() {
+
+		this.scene.start("Level");
 	}
 
 	/* END-USER-CODE */
