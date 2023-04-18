@@ -3,32 +3,27 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import BaseEntitesPrefab from "../BaseEntitesPrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default interface HuipatPrefab {
+export default class HuipatPrefab extends BaseEntitesPrefab {
 
-	 body: Phaser.Physics.Arcade.Body;
-}
+	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+		super(scene, x ?? -6, y ?? -15);
 
-export default class HuipatPrefab extends Phaser.GameObjects.Sprite {
-
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "huipat", frame ?? "huipat.png");
-
-		scene.physics.add.existing(this, false);
-		this.body.setSize(148, 162, false);
+		// huipat_png
+		const huipat_png = scene.add.sprite(7, 42, "huipat", "huipat.png") as Phaser.GameObjects.Sprite & { body: Phaser.Physics.Arcade.Body };
+		scene.physics.add.existing(huipat_png, false);
+		huipat_png.body.setSize(148, 162, false);
+		this.add(huipat_png);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		this.droite()
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
-
-	// Write your code here.
-
 	/* END-USER-CODE */
 }
 

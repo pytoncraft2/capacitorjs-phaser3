@@ -39,22 +39,7 @@
             "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
             "label": "allies",
             "components": [],
-            "list": [
-                {
-                    "prefabId": "ccf7a1c8-6fb2-4c3b-a609-0ad05ce8a5f2",
-                    "id": "75f02313-3783-4e5f-b791-ca803a06fe58",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "huipat_png",
-                    "components": [],
-                    "x": 464,
-                    "y": 400,
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ]
+            "list": []
         },
         {
             "type": "Layer",
@@ -97,6 +82,20 @@
             "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
             "label": "projectiles",
             "components": [],
+            "list": []
+        },
+        {
+            "prefabId": "ccf7a1c8-6fb2-4c3b-a609-0ad05ce8a5f2",
+            "id": "82f55601-9322-4d31-85f2-67004d5b986e",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipatPrefab",
+            "components": [],
+            "x": 416,
+            "y": 384,
+            "nestedPrefabs": [],
             "list": []
         }
     ],

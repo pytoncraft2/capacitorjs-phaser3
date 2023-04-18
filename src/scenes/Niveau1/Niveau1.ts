@@ -4,7 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import HuipatPrefab from "./HuipatPrefab";
+import HuipatPrefab from "../Entites/Huipat/HuipatPrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -28,11 +28,7 @@ export default class Niveau1 extends Phaser.Scene {
 		ennemies.add(araigne_png);
 
 		// allies
-		const allies = this.add.layer();
-
-		// huipat_png
-		const huipat_png = new HuipatPrefab(this, 464, 400);
-		allies.add(huipat_png);
+		this.add.layer();
 
 		// platformes
 		const platformes = this.add.layer();
@@ -53,6 +49,10 @@ export default class Niveau1 extends Phaser.Scene {
 
 		// projectiles
 		this.add.layer();
+
+		// huipatPrefab
+		const huipatPrefab = new HuipatPrefab(this, 416, 384);
+		this.add.existing(huipatPrefab);
 
 		this.events.emit("scene-awake");
 	}

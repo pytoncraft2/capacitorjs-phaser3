@@ -4,6 +4,7 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "superClassName": "BaseEntitesPrefab",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -13,18 +14,30 @@
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "736ea861-79a2-4f0c-80a5-0d318b229afc",
-            "label": "huipat_png",
+            "type": "Container",
+            "id": "8bf33f4d-7a56-4c81-a7e3-e0cd5f973cb4",
+            "label": "container_1",
             "components": [],
-            "texture": {
-                "key": "huipat",
-                "frame": "huipat.png"
-            },
-            "ArcadeComponent.active": true,
-            "body.width": 148,
-            "body.height": 162,
-            "list": []
+            "x": -6,
+            "y": -15,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "736ea861-79a2-4f0c-80a5-0d318b229afc",
+                    "label": "huipat_png",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "huipat.png"
+                    },
+                    "x": 7,
+                    "y": 42,
+                    "ArcadeComponent.active": true,
+                    "body.width": 148,
+                    "body.height": 162,
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [],
