@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdk compileSdkVersion
     defaultConfig {
-        applicationId "com.phasereditor2d.marketplace.template"
+        applicationId "com.huipat.aventure"
         minSdkVersion rootProject.ext.minSdkVersion
         compileSdkVersion rootProject.ext.compileSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion

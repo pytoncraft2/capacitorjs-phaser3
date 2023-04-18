@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.phasereditor2d.marketplace.template',
-  appName: 'phasereditor2d-capacitorjs-template',
+  appId: 'com.huipat.aventure',
+  appName: 'huipat-aventure',
   webDir: 'dist',
   bundledWebRuntime: false
 };

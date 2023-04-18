@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.phasereditor2d.marketplace.template">
+    package="com.huipat.aventure">
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         <activity
             android:exported="true"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            android:name="com.phasereditor2d.marketplace.template.MainActivity"
+            android:screenOrientation="landscape"
+            android:name="com.huipat.aventure.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask">

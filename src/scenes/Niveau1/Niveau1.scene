@@ -9,8 +9,8 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Niveau1",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -18,64 +18,37 @@
             "id": "08b7d105-d2e3-4f4d-85fe-8bfbab169cea",
             "label": "ennemies",
             "components": [],
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "07e942e3-5250-4d6e-8931-2e3fa4b104c9",
-                    "label": "araigne_png",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "x": 742,
-                    "y": 225,
-                    "list": []
-                }
-            ]
+            "list": []
         },
         {
             "type": "Layer",
             "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
             "label": "allies",
             "components": [],
-            "list": []
+            "list": [
+                {
+                    "prefabId": "ccf7a1c8-6fb2-4c3b-a609-0ad05ce8a5f2",
+                    "id": "82f55601-9322-4d31-85f2-67004d5b986e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipatPrefab",
+                    "components": [],
+                    "x": 384,
+                    "y": 272,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
         },
         {
             "type": "Layer",
             "id": "a4173cff-cbb0-4136-8131-0e8f6125c8dd",
             "label": "platformes",
+            "scope": "PUBLIC",
             "components": [],
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "e5583a07-b564-4922-a683-433c7e36b071",
-                    "label": "platforme",
-                    "components": [],
-                    "x": 608,
-                    "y": 640,
-                    "scaleX": 8.79543753589233,
-                    "scaleY": 0.22485279106389244,
-                    "isFilled": true,
-                    "width": 128,
-                    "height": 128,
-                    "list": []
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "ece1af69-3008-40c9-a523-f493833bc23e",
-                    "label": "platforme_1",
-                    "components": [],
-                    "x": 800,
-                    "y": 304,
-                    "scaleX": 3.2294427278195785,
-                    "scaleY": 0.1602923764033262,
-                    "isFilled": true,
-                    "width": 128,
-                    "height": 128,
-                    "list": []
-                }
-            ]
+            "list": []
         },
         {
             "type": "Layer",
@@ -83,27 +56,27 @@
             "label": "projectiles",
             "components": [],
             "list": []
-        },
-        {
-            "prefabId": "ccf7a1c8-6fb2-4c3b-a609-0ad05ce8a5f2",
-            "id": "82f55601-9322-4d31-85f2-67004d5b986e",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipatPrefab",
-            "components": [],
-            "x": 416,
-            "y": 384,
-            "nestedPrefabs": [],
-            "list": []
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "type": "Collider",
+            "label": "collider",
+            "scope": "METHOD",
+            "object1": "liste_colision_platforme",
+            "object2": "platformes.list"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "a96b9cc4-0f4e-4c08-9e13-3c008465bc8f",
+            "label": "liste_colision_platforme"
+        }
+    ]
 }

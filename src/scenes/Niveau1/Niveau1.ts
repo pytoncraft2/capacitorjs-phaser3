@@ -21,41 +21,35 @@ export default class Niveau1 extends Phaser.Scene {
 	editorCreate(): void {
 
 		// ennemies
-		const ennemies = this.add.layer();
-
-		// araigne_png
-		const araigne_png = this.add.image(742, 225, "araigne", "araigne.png");
-		ennemies.add(araigne_png);
+		this.add.layer();
 
 		// allies
-		this.add.layer();
+		const allies = this.add.layer();
+
+		// huipatPrefab
+		const huipatPrefab = new HuipatPrefab(this, 384, 272);
+		allies.add(huipatPrefab);
 
 		// platformes
 		const platformes = this.add.layer();
 
-		// platforme
-		const platforme = this.add.rectangle(608, 640, 128, 128);
-		platforme.scaleX = 8.79543753589233;
-		platforme.scaleY = 0.22485279106389244;
-		platforme.isFilled = true;
-		platformes.add(platforme);
-
-		// platforme_1
-		const platforme_1 = this.add.rectangle(800, 304, 128, 128);
-		platforme_1.scaleX = 3.2294427278195785;
-		platforme_1.scaleY = 0.1602923764033262;
-		platforme_1.isFilled = true;
-		platformes.add(platforme_1);
-
 		// projectiles
 		this.add.layer();
 
-		// huipatPrefab
-		const huipatPrefab = new HuipatPrefab(this, 416, 384);
-		this.add.existing(huipatPrefab);
+		// lists
+		const liste_colision_platforme: Array<any> = [];
+
+		// collider
+		this.physics.add.collider(liste_colision_platforme, platformes.list);
+
+		this.platformes = platformes;
+		this.liste_colision_platforme = liste_colision_platforme;
 
 		this.events.emit("scene-awake");
 	}
+
+	public platformes!: Phaser.GameObjects.Layer;
+	private liste_colision_platforme!: Array<any>;
 
 	/* START-USER-CODE */
 

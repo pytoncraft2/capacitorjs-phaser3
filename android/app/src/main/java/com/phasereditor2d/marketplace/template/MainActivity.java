@@ -1,4 +1,4 @@
-package com.phasereditor2d.marketplace.template;
+package com.huipat.aventure;
 
 import android.os.Bundle;
 import android.view.View;
