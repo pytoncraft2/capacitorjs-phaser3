@@ -31,6 +31,13 @@ window.addEventListener('load', function () {
 			mode: Phaser.Scale.ScaleModes.FIT,
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH
 		},
+		physics: {
+			arcade: {
+				gravity: {
+					y: 300
+				}
+			}
+		},
 		scene: [Boot, Preload, Menu, Niveau1]
 	});
 
