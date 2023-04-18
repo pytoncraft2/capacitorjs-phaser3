@@ -13,48 +13,31 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "bb2d413c-02b3-404d-b1c0-cf46ce1e7f07",
-            "label": "fufuSuperDino",
+            "type": "Layer",
+            "id": "08b7d105-d2e3-4f4d-85fe-8bfbab169cea",
+            "label": "ennemies",
             "components": [],
-            "texture": {
-                "key": "FufuSuperDino"
-            },
-            "x": 640,
-            "y": 257,
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "0eb8a724-16b2-4c55-8b33-1d41fc1b3663",
-                    "label": "onPointerDownScript",
-                    "components": [],
-                    "nestedPrefabs": [],
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "5d148849-dd2d-4bb7-b17d-a74ea5a8bd14",
-                            "label": "pushAction",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
-                        }
-                    ]
-                }
-            ]
+            "list": []
         },
         {
-            "type": "Text",
-            "id": "5c228da6-971a-4347-84e8-9f62464ba76d",
-            "label": "text",
+            "type": "Layer",
+            "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
+            "label": "allies",
             "components": [],
-            "x": 640,
-            "y": 458,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Phaser 3 + Phaser Editor 2D\nWebpack + TypeScript\nCapacitorJS",
-            "align": "center",
-            "fontFamily": "Arial",
-            "fontSize": "3em",
+            "list": []
+        },
+        {
+            "type": "Layer",
+            "id": "a4173cff-cbb0-4136-8131-0e8f6125c8dd",
+            "label": "platformes",
+            "components": [],
+            "list": []
+        },
+        {
+            "type": "Layer",
+            "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
+            "label": "projectiles",
+            "components": [],
             "list": []
         }
     ],

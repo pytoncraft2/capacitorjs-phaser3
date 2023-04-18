@@ -4,8 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import OnPointerDownScript from "../../script-nodes-basic/OnPointerDownScript";
-import PushActionScript from "../../script-nodes/PushActionScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -21,20 +19,17 @@ export default class Niveau1 extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// fufuSuperDino
-		const fufuSuperDino = this.add.image(640, 257, "FufuSuperDino");
+		// ennemies
+		this.add.layer();
 
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(fufuSuperDino);
+		// allies
+		this.add.layer();
 
-		// pushAction
-		new PushActionScript(onPointerDownScript);
+		// platformes
+		this.add.layer();
 
-		// text
-		const text = this.add.text(640, 458, "", {});
-		text.setOrigin(0.5, 0.5);
-		text.text = "Phaser 3 + Phaser Editor 2D\nWebpack + TypeScript\nCapacitorJS";
-		text.setStyle({ "align": "center", "fontFamily": "Arial", "fontSize": "3em" });
+		// projectiles
+		this.add.layer();
 
 		this.events.emit("scene-awake");
 	}
