@@ -33,7 +33,7 @@ export default class OnPointerDownScript extends OnEventScript {
 
 		if (!this.gameObject.input) {
 
-			this.gameObject.setInteractive();
+			this.gameObject.setInteractive({cursor: 'pointer'});
 		}
 
 		super.awake();

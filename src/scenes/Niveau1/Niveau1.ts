@@ -12,7 +12,7 @@ import PushActionScript from "../../script-nodes/PushActionScript";
 export default class Niveau1 extends Phaser.Scene {
 
 	constructor() {
-		super("Level");
+		super("Niveau1");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
