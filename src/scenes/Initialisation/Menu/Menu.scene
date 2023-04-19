@@ -8,8 +8,8 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Menu",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -17,12 +17,12 @@
             "id": "a7e334de-7291-4eeb-b8bb-08c87839d0fe",
             "label": "text_1",
             "components": [],
-            "x": 640,
-            "y": 360,
+            "x": 960,
+            "y": 540,
             "originX": 0.5,
             "originY": 0.5,
             "text": "🏕️🏕️🏕️🏕️",
-            "fontSize": "46px",
+            "fontSize": "56px",
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",

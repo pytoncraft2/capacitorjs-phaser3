@@ -22,10 +22,10 @@ export default class Menu extends Phaser.Scene {
 	editorCreate(): void {
 
 		// text_1
-		const text_1 = this.add.text(640, 360, "", {});
+		const text_1 = this.add.text(960, 540, "", {});
 		text_1.setOrigin(0.5, 0.5);
 		text_1.text = "🏕️🏕️🏕️🏕️";
-		text_1.setStyle({ "fontSize": "46px" });
+		text_1.setStyle({ "fontSize": "56px" });
 
 		// onPointerDownScript
 		const onPointerDownScript = new OnPointerDownScript(text_1);
