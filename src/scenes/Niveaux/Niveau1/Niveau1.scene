@@ -42,13 +42,6 @@
         },
         {
             "type": "Layer",
-            "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
-            "label": "projectiles",
-            "components": [],
-            "list": []
-        },
-        {
-            "type": "Container",
             "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
             "label": "allies",
             "scope": "PUBLIC",
@@ -99,9 +92,9 @@
             ]
         },
         {
-            "type": "Container",
+            "type": "Layer",
             "id": "08b7d105-d2e3-4f4d-85fe-8bfbab169cea",
-            "label": "ennemies",
+            "label": "adversaires",
             "components": [],
             "list": [
                 {
@@ -135,15 +128,29 @@
                     "list": []
                 }
             ]
+        },
+        {
+            "type": "Layer",
+            "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
+            "label": "projectiles_adversaires",
+            "components": [],
+            "list": []
+        },
+        {
+            "type": "Layer",
+            "id": "7b76c9e8-4129-49a0-bd74-70849ccfd727",
+            "label": "projectiles_allies",
+            "components": [],
+            "list": []
         }
     ],
     "plainObjects": [
         {
             "type": "Collider",
-            "label": "collider",
+            "label": "collision_entites_vs_platformes",
             "scope": "METHOD",
-            "object1": "entites_vs_platformes",
-            "object2": "platformes.list"
+            "object1": "platformes.list",
+            "object2": "entites_vs_platformes"
         },
         {
             "type": "Keyboard.Key",

@@ -35,11 +35,8 @@ export default class Niveau1 extends Phaser.Scene {
 		platformePrefab.scaleY = 1;
 		platformes.add(platformePrefab);
 
-		// projectiles
-		this.add.layer();
-
 		// allies
-		const allies = this.add.container(0, 0);
+		const allies = this.add.layer();
 
 		// huipat
 		const huipat = new Entite(this, 608, 256);
@@ -52,19 +49,25 @@ export default class Niveau1 extends Phaser.Scene {
 		// changeTextureScript
 		new ChangeTextureScript(onPointerDownScript);
 
-		// ennemies
-		const ennemies = this.add.container(0, 0);
+		// adversaires
+		const adversaires = this.add.layer();
 
 		// entite
 		const entite = new Entite(this, 240, 304);
-		ennemies.add(entite);
+		adversaires.add(entite);
 		entite.huipat_png.setTexture("araigne", "araigne.png");
+
+		// projectiles_adversaires
+		this.add.layer();
+
+		// projectiles_allies
+		this.add.layer();
 
 		// lists
 		const entites_vs_platformes = [huipat, entite];
 
-		// collider
-		this.physics.add.collider(entites_vs_platformes, platformes.list);
+		// collision_entites_vs_platformes
+		this.physics.add.collider(platformes.list, entites_vs_platformes);
 
 		this.platformes = platformes;
 		this.allies = allies;
@@ -75,7 +78,7 @@ export default class Niveau1 extends Phaser.Scene {
 	}
 
 	public platformes!: Phaser.GameObjects.Layer;
-	public allies!: Phaser.GameObjects.Container;
+	public allies!: Phaser.GameObjects.Layer;
 	private spaceKey!: Phaser.Input.Keyboard.Key;
 	private entites_vs_platformes!: Entite[];
 
