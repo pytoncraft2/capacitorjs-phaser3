@@ -15,13 +15,40 @@
     "displayList": [
         {
             "type": "Layer",
-            "id": "08b7d105-d2e3-4f4d-85fe-8bfbab169cea",
-            "label": "ennemies",
+            "id": "a4173cff-cbb0-4136-8131-0e8f6125c8dd",
+            "label": "platformes",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "2412c623-6309-4108-9f13-235dc1cb5e74",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 1120,
+                    "y": 672,
+                    "scaleX": 23.18363917691242,
+                    "scaleY": 1,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
+            "label": "projectiles",
             "components": [],
             "list": []
         },
         {
-            "type": "Layer",
+            "type": "Container",
             "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
             "label": "allies",
             "scope": "PUBLIC",
@@ -72,38 +99,42 @@
             ]
         },
         {
-            "type": "Layer",
-            "id": "a4173cff-cbb0-4136-8131-0e8f6125c8dd",
-            "label": "platformes",
-            "scope": "PUBLIC",
+            "type": "Container",
+            "id": "08b7d105-d2e3-4f4d-85fe-8bfbab169cea",
+            "label": "ennemies",
             "components": [],
             "list": [
                 {
-                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "2412c623-6309-4108-9f13-235dc1cb5e74",
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "eff2c703-fd75-40b6-bc2a-9e4eaa7719c6",
                     "unlock": [
                         "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
+                        "y"
                     ],
-                    "label": "platformePrefab",
+                    "label": "entite",
                     "components": [],
-                    "x": 1120,
-                    "y": 672,
-                    "scaleX": 23.18363917691242,
-                    "scaleY": 1,
-                    "nestedPrefabs": [],
+                    "x": 240,
+                    "y": 304,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "e2e15001-b1d4-4780-8167-adc79689f341",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "huipat_png",
+                            "components": [],
+                            "texture": {
+                                "key": "araigne",
+                                "frame": "araigne.png"
+                            },
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
                     "list": []
                 }
             ]
-        },
-        {
-            "type": "Layer",
-            "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
-            "label": "projectiles",
-            "components": [],
-            "list": []
         }
     ],
     "plainObjects": [
@@ -111,7 +142,7 @@
             "type": "Collider",
             "label": "collider",
             "scope": "METHOD",
-            "object1": "allies.list",
+            "object1": "entites_vs_platformes",
             "object2": "platformes.list"
         },
         {
@@ -128,7 +159,11 @@
     "lists": [
         {
             "id": "a96b9cc4-0f4e-4c08-9e13-3c008465bc8f",
-            "label": "liste_colision_platforme"
+            "label": "entites_vs_platformes",
+            "objectIds": [
+                "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0",
+                "eff2c703-fd75-40b6-bc2a-9e4eaa7719c6"
+            ]
         }
     ]
 }

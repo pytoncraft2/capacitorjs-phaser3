@@ -4,10 +4,10 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 import Entite from "../../Entites/Entite";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import ChangeTextureScript from "../../../script-nodes/ChangeTextureScript";
-import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -26,23 +26,6 @@ export default class Niveau1 extends Phaser.Scene {
 		// spaceKey
 		const spaceKey = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-		// ennemies
-		this.add.layer();
-
-		// allies
-		const allies = this.add.layer();
-
-		// huipat
-		const huipat = new Entite(this, 608, 256);
-		huipat.name = "huipat";
-		allies.add(huipat);
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(huipat.huipat_png);
-
-		// changeTextureScript
-		new ChangeTextureScript(onPointerDownScript);
-
 		// platformes
 		const platformes = this.add.layer();
 
@@ -55,24 +38,46 @@ export default class Niveau1 extends Phaser.Scene {
 		// projectiles
 		this.add.layer();
 
+		// allies
+		const allies = this.add.container(0, 0);
+
+		// huipat
+		const huipat = new Entite(this, 608, 256);
+		huipat.name = "huipat";
+		allies.add(huipat);
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(huipat.huipat_png);
+
+		// changeTextureScript
+		new ChangeTextureScript(onPointerDownScript);
+
+		// ennemies
+		const ennemies = this.add.container(0, 0);
+
+		// entite
+		const entite = new Entite(this, 240, 304);
+		ennemies.add(entite);
+		entite.huipat_png.setTexture("araigne", "araigne.png");
+
 		// lists
-		const liste_colision_platforme: Array<any> = [];
+		const entites_vs_platformes = [huipat, entite];
 
 		// collider
-		this.physics.add.collider(allies.list, platformes.list);
+		this.physics.add.collider(entites_vs_platformes, platformes.list);
 
-		this.allies = allies;
 		this.platformes = platformes;
+		this.allies = allies;
 		this.spaceKey = spaceKey;
-		this.liste_colision_platforme = liste_colision_platforme;
+		this.entites_vs_platformes = entites_vs_platformes;
 
 		this.events.emit("scene-awake");
 	}
 
-	public allies!: Phaser.GameObjects.Layer;
 	public platformes!: Phaser.GameObjects.Layer;
+	public allies!: Phaser.GameObjects.Container;
 	private spaceKey!: Phaser.Input.Keyboard.Key;
-	private liste_colision_platforme!: Array<any>;
+	private entites_vs_platformes!: Entite[];
 
 	/* START-USER-CODE */
 
