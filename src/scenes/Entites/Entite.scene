@@ -17,7 +17,27 @@
             "id": "0a1744bb-12b8-427c-96ca-34e8dd0218fb",
             "label": "container_1",
             "components": [],
-            "list": []
+            "ArcadeComponent.active": true,
+            "body.width": 148,
+            "body.height": 162,
+            "body.offset.x": 36,
+            "body.offset.y": 22,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                    "label": "huipat_png",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "huipat.png"
+                    },
+                    "x": 110,
+                    "y": 103,
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [],
