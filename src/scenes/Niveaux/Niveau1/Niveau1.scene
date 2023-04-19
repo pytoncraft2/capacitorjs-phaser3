@@ -24,6 +24,7 @@
             "type": "Layer",
             "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
             "label": "allies",
+            "scope": "PUBLIC",
             "components": [],
             "list": [
                 {
@@ -33,7 +34,8 @@
                         "x",
                         "y"
                     ],
-                    "label": "huipatPrefab",
+                    "label": "huipat",
+                    "useGameObjectName": true,
                     "components": [],
                     "x": 384,
                     "y": 272,
@@ -42,15 +44,16 @@
                 },
                 {
                     "prefabId": "ccf7a1c8-6fb2-4c3b-a609-0ad05ce8a5f2",
-                    "id": "58e1d513-1c94-4596-830b-c8eefbc4efcf",
+                    "id": "a9acd44a-c7cf-42ef-b00d-90927b7b09ad",
                     "unlock": [
                         "x",
                         "y"
                     ],
-                    "label": "huipatPrefab_1",
+                    "label": "huipat_1",
+                    "useGameObjectName": true,
                     "components": [],
-                    "x": 877,
-                    "y": 518,
+                    "x": 832,
+                    "y": 528,
                     "nestedPrefabs": [],
                     "list": []
                 }

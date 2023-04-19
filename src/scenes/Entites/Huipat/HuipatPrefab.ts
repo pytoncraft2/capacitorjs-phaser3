@@ -46,21 +46,12 @@ export default class HuipatPrefab extends BaseEntitesPrefab {
 	}
 
 	public onPointerDownScript: OnPointerDownScript;
+	private cursors: any
 
 	/* START-USER-CODE */
 	init() {
 		console.log("INIT HUIPAT");
-
-		console.log(this);
-
-		//@ts-ignore
-		this.cursors = this.scene.input.keyboard.createCursorKeys();
 	}
-	preUpdate() {
-		// console.log(this.cursors?.left.isDown);
-
-	}
-
 	/* END-USER-CODE */
 }
 

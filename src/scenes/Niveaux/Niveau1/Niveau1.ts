@@ -27,13 +27,15 @@ export default class Niveau1 extends Phaser.Scene {
 		// allies
 		const allies = this.add.layer();
 
-		// huipatPrefab
-		const huipatPrefab = new HuipatPrefab(this, 384, 272);
-		allies.add(huipatPrefab);
+		// huipat
+		const huipat = new HuipatPrefab(this, 384, 272);
+		huipat.name = "huipat";
+		allies.add(huipat);
 
-		// huipatPrefab_1
-		const huipatPrefab_1 = new HuipatPrefab(this, 877, 518);
-		allies.add(huipatPrefab_1);
+		// huipat_1
+		const huipat_1 = new HuipatPrefab(this, 832, 528);
+		huipat_1.name = "huipat_1";
+		allies.add(huipat_1);
 
 		// platformes
 		const platformes = this.add.layer();
@@ -55,22 +57,34 @@ export default class Niveau1 extends Phaser.Scene {
 		// collider
 		this.physics.add.collider(allies.list, platformes.list);
 
+		this.allies = allies;
 		this.platformes = platformes;
 		this.liste_colision_platforme = liste_colision_platforme;
 
 		this.events.emit("scene-awake");
 	}
 
+	public allies!: Phaser.GameObjects.Layer;
 	public platformes!: Phaser.GameObjects.Layer;
 	private liste_colision_platforme!: Array<any>;
 
 	/* START-USER-CODE */
 
 	// Write your code here
+	joueurcontrollable!: any
 
 	create() {
 
 		this.editorCreate();
+
+		this.joueurcontrollable = this.allies.getByName('huipat');
+	}
+
+	update(time: number, delta: number): void {
+		console.log("UPDATE");
+		// if (this.left.isDown) {
+			// this.joueurcontrollable.body.setVelocityX(300)
+		// }
 	}
 
 	/* END-USER-CODE */
