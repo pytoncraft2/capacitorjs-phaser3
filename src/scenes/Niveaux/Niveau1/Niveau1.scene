@@ -71,26 +71,16 @@
                     "id": "2412c623-6309-4108-9f13-235dc1cb5e74",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "scaleX",
+                        "scaleY"
                     ],
                     "label": "platformePrefab",
                     "components": [],
-                    "x": 368,
-                    "y": 688,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "cdbd6d70-7816-4652-bdc5-63f99f8bb9b8",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "platformePrefab_1",
-                    "components": [],
-                    "x": 864,
-                    "y": 752,
+                    "x": 1120,
+                    "y": 880,
+                    "scaleX": 23.18363917691242,
+                    "scaleY": 1,
                     "nestedPrefabs": [],
                     "list": []
                 }

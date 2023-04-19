@@ -29,6 +29,7 @@ export default class OnKeyboardEventScript extends ScriptNode {
 			return;
 		}
 
+		
 		this.scene.input.keyboard?.on(this.eventName, () => {
 
 			this.executeChildren();

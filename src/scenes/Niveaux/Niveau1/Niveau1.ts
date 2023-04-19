@@ -41,12 +41,10 @@ export default class Niveau1 extends Phaser.Scene {
 		const platformes = this.add.layer();
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 368, 688);
+		const platformePrefab = new PlatformePrefab(this, 1120, 880);
+		platformePrefab.scaleX = 23.18363917691242;
+		platformePrefab.scaleY = 1;
 		platformes.add(platformePrefab);
-
-		// platformePrefab_1
-		const platformePrefab_1 = new PlatformePrefab(this, 864, 752);
-		platformes.add(platformePrefab_1);
 
 		// projectiles
 		this.add.layer();
