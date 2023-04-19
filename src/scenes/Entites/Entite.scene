@@ -1,5 +1,5 @@
 {
-    "id": "f6bf69b8-cc31-4dc1-9142-7700a1a2c5aa",
+    "id": "9d863a98-4951-44fb-a653-e7abb37ab252",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -8,17 +8,15 @@
         "preloadPackFiles": [],
         "createMethodName": "",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
             "type": "Container",
-            "id": "525b25f4-1e31-4442-8912-0b6f3d562d8d",
+            "id": "0a1744bb-12b8-427c-96ca-34e8dd0218fb",
             "label": "container_1",
             "components": [],
-            "x": 533,
-            "y": 315,
             "list": []
         }
     ],

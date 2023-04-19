@@ -3,24 +3,23 @@
 
 /* START OF COMPILED CODE */
 
-import * as Phaser from "phaser";
+import Phaser from "phaser";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class BaseEntitesPrefab extends Phaser.GameObjects.Container {
+export default class Entite extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 533, y ?? 315);
+		super(scene, x ?? 0, y ?? 0);
 
 		/* START-USER-CTR-CODE */
-		console.log("BASE EN");
+		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
-	droite() {
-		console.log("DROITE BASE ENTITES");
-	}
+
+	// Write your code here.
 
 	/* END-USER-CODE */
 }

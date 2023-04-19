@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import HuipatPrefab from "../../Entites/Huipat/HuipatPrefab";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -27,21 +26,11 @@ export default class Niveau1 extends Phaser.Scene {
 		// allies
 		const allies = this.add.layer();
 
-		// huipat
-		const huipat = new HuipatPrefab(this, 384, 272);
-		huipat.name = "huipat";
-		allies.add(huipat);
-
-		// huipat_1
-		const huipat_1 = new HuipatPrefab(this, 832, 528);
-		huipat_1.name = "huipat_1";
-		allies.add(huipat_1);
-
 		// platformes
 		const platformes = this.add.layer();
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 1120, 880);
+		const platformePrefab = new PlatformePrefab(this, 1120, 864);
 		platformePrefab.scaleX = 23.18363917691242;
 		platformePrefab.scaleY = 1;
 		platformes.add(platformePrefab);
