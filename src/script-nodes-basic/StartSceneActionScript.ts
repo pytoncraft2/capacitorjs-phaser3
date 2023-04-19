@@ -19,12 +19,15 @@ export default class StartSceneActionScript extends ScriptNode {
 	}
 
 	public sceneKey: string = "";
+	public pleineEcran: boolean = false;
 
 	/* START-USER-CODE */
 
 	override execute(): void {
 
-		this.scene.scale.startFullscreen();
+		if (this.pleineEcran) {
+			this.scene.scale.startFullscreen();
+		}
 		this.scene.scene.start(this.sceneKey);
 	}
 

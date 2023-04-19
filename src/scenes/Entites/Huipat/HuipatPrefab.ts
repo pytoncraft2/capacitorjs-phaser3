@@ -4,7 +4,9 @@
 /* START OF COMPILED CODE */
 
 import BaseEntitesPrefab from "../BaseEntitesPrefab";
+import SpriteScriptNode from "../../../script-nodes-basic/SpriteScriptNode";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import ChangeTextureScript from "../../../script-nodes/ChangeTextureScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -23,18 +25,41 @@ export default class HuipatPrefab extends BaseEntitesPrefab {
 		this.body.setSize(148, 162, false);
 
 		// huipat_png
-		const huipat_png = scene.add.sprite(7, 42, "huipat", "huipat.png");
+		const huipat_png = scene.add.sprite(7, 41, "huipat", "huipat.png");
 		this.add(huipat_png);
 
+		// spriteScriptNode
+		const spriteScriptNode = new SpriteScriptNode(huipat_png);
+
 		// onPointerDownScript
-		new OnPointerDownScript(huipat_png);
+		const onPointerDownScript = new OnPointerDownScript(spriteScriptNode);
+
+		// changeTextureScript
+		new ChangeTextureScript(onPointerDownScript);
+
+		this.onPointerDownScript = onPointerDownScript;
 
 		/* START-USER-CTR-CODE */
-		this.droite()
+		scene.add.existing(this);
+		this.init()
 		/* END-USER-CTR-CODE */
 	}
 
+	public onPointerDownScript: OnPointerDownScript;
+
 	/* START-USER-CODE */
+	init() {
+		console.log("INIT HUIPAT");
+
+		console.log(this);
+
+		//@ts-ignore
+		this.cursors = this.scene.input.keyboard.createCursorKeys();
+	}
+	preUpdate() {
+		// console.log(this.cursors?.left.isDown);
+
+	}
 
 	/* END-USER-CODE */
 }

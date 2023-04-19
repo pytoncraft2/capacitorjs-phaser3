@@ -37,6 +37,16 @@
             "type": {
                 "id": "scene-key"
             }
+        },
+        {
+            "name": "pleineEcran",
+            "label": "pleineEcran",
+            "tooltip": "active ou non le mode pleine ecran",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

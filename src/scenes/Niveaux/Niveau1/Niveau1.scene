@@ -39,6 +39,20 @@
                     "y": 272,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "ccf7a1c8-6fb2-4c3b-a609-0ad05ce8a5f2",
+                    "id": "58e1d513-1c94-4596-830b-c8eefbc4efcf",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipatPrefab_1",
+                    "components": [],
+                    "x": 877,
+                    "y": 518,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         },
@@ -62,6 +76,20 @@
                     "y": 688,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "cdbd6d70-7816-4652-bdc5-63f99f8bb9b8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformePrefab_1",
+                    "components": [],
+                    "x": 864,
+                    "y": 752,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         },
@@ -78,8 +106,8 @@
             "type": "Collider",
             "label": "collider",
             "scope": "METHOD",
-            "object1": "huipatPrefab",
-            "object2": "platformePrefab"
+            "object1": "allies.list",
+            "object2": "platformes.list"
         }
     ],
     "meta": {

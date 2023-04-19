@@ -36,15 +36,34 @@
                         "frame": "huipat.png"
                     },
                     "x": 7,
-                    "y": 42,
+                    "y": 41,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "72c6639b-a20a-4b14-9c55-f3d962bc2b6c",
-                            "label": "onPointerDownScript",
+                            "prefabId": "5e746613-c01a-42aa-8681-4950bb2f23ce",
+                            "id": "366d55af-7bf3-49f4-97ea-a4db350ed95a",
+                            "label": "spriteScriptNode",
                             "components": [],
                             "nestedPrefabs": [],
-                            "list": []
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "8e1091f0-e843-410b-86a8-f03c87812fc5",
+                                    "label": "onPointerDownScript",
+                                    "scope": "NESTED_PREFAB",
+                                    "components": [],
+                                    "nestedPrefabs": [],
+                                    "list": [
+                                        {
+                                            "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
+                                            "id": "31f3ff11-a0fc-4576-84f0-e5fc48192a5e",
+                                            "label": "changeTextureScript",
+                                            "components": [],
+                                            "nestedPrefabs": [],
+                                            "list": []
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
