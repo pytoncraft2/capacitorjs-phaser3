@@ -11,65 +11,7 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [
-        {
-            "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-            "id": "9271f214-2a84-44c4-93c0-ef2bb1f8ce4d",
-            "unlock": [
-                "x",
-                "y",
-                "scaleX",
-                "scaleY"
-            ],
-            "label": "platformePrefab",
-            "components": [],
-            "x": 842,
-            "y": 612,
-            "scaleX": 14.18251855104597,
-            "scaleY": 0.3002484220351861,
-            "nestedPrefabs": [],
-            "list": []
-        },
-        {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "d5adf3c0-7e07-4175-b464-419e7f66d6d8",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "entite",
-            "scope": "PUBLIC",
-            "components": [],
-            "x": 1134,
-            "y": 304,
-            "nestedPrefabs": [
-                {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "2ecc86e3-1f7e-439e-b241-37ec31137953",
-                    "unlock": [
-                        "texture"
-                    ],
-                    "label": "huipat_png",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
-            "id": "5519d8b1-ef5b-4cb9-ab96-73b41a9a144e",
-            "label": "onSceneAwakeScript",
-            "components": [],
-            "nestedPrefabs": [],
-            "list": []
-        }
-    ],
+    "displayList": [],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
