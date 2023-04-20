@@ -11,7 +11,41 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [],
+    "displayList": [
+        {
+            "type": "Text",
+            "id": "19b0b094-50f1-48b5-b1bc-3610bea643f8",
+            "label": "text_1",
+            "components": [],
+            "x": 996,
+            "y": 513,
+            "text": "New text",
+            "fontSize": "56px",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "bd6adf8b-06ec-462c-8364-412005e6af3b",
+                    "label": "onPointerDownScript",
+                    "components": [],
+                    "nestedPrefabs": [],
+                    "list": [
+                        {
+                            "prefabId": "2d3f9249-6fcd-4c7d-bd2f-77fa616af7e8",
+                            "id": "be7df249-8f15-4dd0-b843-2c87e93ea665",
+                            "unlock": [
+                                "sceneKey"
+                            ],
+                            "label": "startSceneActionScript",
+                            "sceneKey": "Niveau2",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",

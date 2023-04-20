@@ -4,12 +4,28 @@
 /* START OF COMPILED CODE */
 
 import BaseNiveaux from "../BaseNiveaux";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
 export default class Niveau1 extends BaseNiveaux {
 
 	editorCreate(): void {
+
+		// text_1
+		const text_1 = this.add.text(996, 513, "", {});
+		text_1.text = "New text";
+		text_1.setStyle({ "fontSize": "56px" });
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(text_1);
+
+		// startSceneActionScript
+		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
+
+		// startSceneActionScript (prefab fields)
+		startSceneActionScript.sceneKey = "Niveau2";
 
 		this.events.emit("scene-awake");
 	}
