@@ -57,7 +57,7 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "components": [],
-                    "x": 736,
+                    "x": 1296,
                     "y": 256,
                     "nestedPrefabs": [
                         {

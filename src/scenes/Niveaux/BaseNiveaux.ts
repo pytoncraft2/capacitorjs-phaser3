@@ -39,7 +39,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const allies = this.add.layer();
 
 		// huipat
-		const huipat = new Entite(this, 736, 256);
+		const huipat = new Entite(this, 1296, 256);
 		huipat.name = "huipat";
 		allies.add(huipat);
 
