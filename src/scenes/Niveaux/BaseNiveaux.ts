@@ -61,8 +61,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	init() {
 		console.log(this);
-		
-		console.log("INIT WHAT");
+
+		console.log("INIT BASE_NIVEAUX");
 	}
 
 	update(time: number, delta: number): void {

@@ -4,9 +4,9 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "superClassName": "BaseNiveaux",
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Niveau2",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080
