@@ -75,7 +75,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	public platformes!: Phaser.GameObjects.Layer;
 	public allies!: Phaser.GameObjects.Layer;
 	private spaceKey!: Phaser.Input.Keyboard.Key;
-	private entites_vs_platformes!: Entite[];
+	public entites_vs_platformes!: Entite[];
 
 	/* START-USER-CODE */
 

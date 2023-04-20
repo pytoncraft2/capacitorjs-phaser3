@@ -5,6 +5,7 @@
 
 import BaseNiveaux from "../BaseNiveaux";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
+import Entite from "../../Entites/Entite";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -15,6 +16,11 @@ export default class Niveau1 extends BaseNiveaux {
 		// platformePrefab
 		const platformePrefab = new PlatformePrefab(this, 842, 528);
 		this.add.existing(platformePrefab);
+
+		// entite
+		const entite = new Entite(this, 1380, 338);
+		this.add.existing(entite);
+		entite.huipat_png.setTexture("araigne", "araigne.png");
 
 		this.events.emit("scene-awake");
 	}
@@ -27,6 +33,8 @@ export default class Niveau1 extends BaseNiveaux {
 
 		this.editorCreate();
 		this.editorCreateBase()
+		console.log(this.entites_vs_platformes);
+
 	}
 
 	/* END-USER-CODE */

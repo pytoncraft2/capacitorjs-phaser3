@@ -25,6 +25,36 @@
             "y": 528,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "d5adf3c0-7e07-4175-b464-419e7f66d6d8",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "entite",
+            "components": [],
+            "x": 1380,
+            "y": 338,
+            "nestedPrefabs": [
+                {
+                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                    "id": "2ecc86e3-1f7e-439e-b241-37ec31137953",
+                    "unlock": [
+                        "texture"
+                    ],
+                    "label": "huipat_png",
+                    "components": [],
+                    "texture": {
+                        "key": "araigne",
+                        "frame": "araigne.png"
+                    },
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ],
+            "list": []
         }
     ],
     "plainObjects": [],

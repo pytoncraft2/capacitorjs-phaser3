@@ -138,7 +138,8 @@
             "label": "entites_vs_platformes",
             "objectIds": [
                 "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0"
-            ]
+            ],
+            "scope": "PUBLIC"
         }
     ]
 }
