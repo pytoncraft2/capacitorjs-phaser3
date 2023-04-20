@@ -60,6 +60,14 @@
                 }
             ],
             "list": []
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "5519d8b1-ef5b-4cb9-ab96-73b41a9a144e",
+            "label": "onSceneAwakeScript",
+            "components": [],
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [],

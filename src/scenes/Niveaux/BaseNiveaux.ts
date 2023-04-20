@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import OnSceneAwakeScript from "../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -37,9 +36,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// projectiles_allies
 		this.add.layer();
-
-		// onSceneAwakeScript
-		new OnSceneAwakeScript(this);
 
 		// lists
 		const entites_vs_platformes: Array<any> = [];

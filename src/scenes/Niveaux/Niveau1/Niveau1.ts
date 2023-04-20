@@ -6,6 +6,7 @@
 import BaseNiveaux from "../BaseNiveaux";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 import Entite from "../../Entites/Entite";
+import OnSceneAwakeScript from "../../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -24,6 +25,9 @@ export default class Niveau1 extends BaseNiveaux {
 		this.add.existing(entite);
 		entite.huipat_png.setTexture("araigne", "araigne.png");
 
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
+
 		this.entite = entite;
 
 		this.events.emit("scene-awake");
@@ -37,8 +41,8 @@ export default class Niveau1 extends BaseNiveaux {
 
 	create() {
 
+		// this.editorCreateBase()
 		this.editorCreate();
-		this.editorCreateBase()
 		// this.allies.add(this.entite)
 		// console.log(this.entites_vs_platformes);
 
