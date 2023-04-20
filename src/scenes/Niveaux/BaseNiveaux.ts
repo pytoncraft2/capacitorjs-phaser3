@@ -59,19 +59,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 	// Write your code here
 	joueurcontrollable!: any
 
-	create() {
-
-		// this.editorCreate();
-
-		// this.joueurcontrollable = this.allies.getByName('huipat');
-		// console.log(this.joueurcontrollable);
-		// console.log(this.spaceKey);
-		// console.log("CREATE ?");
-
-
+	init() {
+		console.log(this);
+		
+		console.log("INIT WHAT");
 	}
 
-		// this.joueurcontrollable = this.;
 	update(time: number, delta: number): void {
 		// console.log("UPDATE BASE");
 		// if (this.spaceKey.isDown) {

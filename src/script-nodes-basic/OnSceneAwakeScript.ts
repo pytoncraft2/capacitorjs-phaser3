@@ -3,12 +3,11 @@
 
 /* START OF COMPILED CODE */
 
-import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
 import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
+/* START-USER-IMPORTS */
 import Niveau1 from "~/scenes/Niveaux/Niveau1/Niveau1";
 import Niveau2 from "~/scenes/Niveaux/Niveau2/Niveau2";
-/* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
 export default class OnSceneAwakeScript extends ScriptNode {
@@ -25,11 +24,11 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	protected override awake(): void {
 		console.log("SCENE AWAKE NIVEAU 1");
+		this.scene.editorCreateBase();
 		console.log(this.scene);
-		// this.scene.editorCreateBase();
 	}
     get scene() {
-        return super.scene as BaseNiveaux;
+        return super.scene as Niveau1;
     }
 	/* END-USER-CODE */
 }
