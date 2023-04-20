@@ -1,0 +1,144 @@
+{
+    "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreateBase",
+        "sceneKey": "Niveau1",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Layer",
+            "id": "a4173cff-cbb0-4136-8131-0e8f6125c8dd",
+            "label": "platformes",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "2412c623-6309-4108-9f13-235dc1cb5e74",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 1120,
+                    "y": 672,
+                    "scaleX": 23.18363917691242,
+                    "scaleY": 1,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "071e724f-a9c4-49bb-83ff-dbeb38d0ddb0",
+            "label": "allies",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipat",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 736,
+                    "y": 256,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "8c9e7431-efec-44ea-8c07-d15553d765d8",
+                            "label": "huipat_png",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "a57d1b80-1bee-430f-bb53-338bfe02525c",
+                                    "label": "onPointerDownScript",
+                                    "components": [],
+                                    "nestedPrefabs": [],
+                                    "list": [
+                                        {
+                                            "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
+                                            "id": "3f93b412-e09b-4a07-8dfb-ef3a4bfc8e3e",
+                                            "label": "changeTextureScript",
+                                            "components": [],
+                                            "nestedPrefabs": [],
+                                            "list": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "08b7d105-d2e3-4f4d-85fe-8bfbab169cea",
+            "label": "adversaires",
+            "components": [],
+            "list": []
+        },
+        {
+            "type": "Layer",
+            "id": "e25e824b-648a-4604-b0e9-2c504261a7be",
+            "label": "projectiles_adversaires",
+            "components": [],
+            "list": []
+        },
+        {
+            "type": "Layer",
+            "id": "7b76c9e8-4129-49a0-bd74-70849ccfd727",
+            "label": "projectiles_allies",
+            "components": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [
+        {
+            "type": "Collider",
+            "label": "collision_entites_vs_platformes",
+            "scope": "METHOD",
+            "object1": "platformes.list",
+            "object2": "entites_vs_platformes"
+        },
+        {
+            "type": "Keyboard.Key",
+            "label": "spaceKey"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "lists": [
+        {
+            "id": "a96b9cc4-0f4e-4c08-9e13-3c008465bc8f",
+            "label": "entites_vs_platformes",
+            "objectIds": [
+                "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0"
+            ]
+        }
+    ]
+}
