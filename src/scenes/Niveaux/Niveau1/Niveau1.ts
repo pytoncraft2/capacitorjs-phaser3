@@ -21,7 +21,7 @@ export default class Niveau1 extends BaseNiveaux {
 	create() {
 
 		// this.editorCreateBase()
-		this.editorCreate();
+		// this.editorCreate();
 		console.log("NIVEAU 1!!!!!!!!!!!!!!!!!!!!");
 
 		// this.allies.add(this.entite)
