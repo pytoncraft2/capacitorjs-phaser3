@@ -8,6 +8,7 @@ import PlatformePrefab from "./ObjetsNiveaux/PlatformePrefab";
 import Entite from "../Entites/Entite";
 import OnPointerDownScript from "../../script-nodes-basic/OnPointerDownScript";
 import ChangeTextureScript from "../../script-nodes/ChangeTextureScript";
+import OnSceneAwakeScript from "../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -58,6 +59,9 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// projectiles_allies
 		this.add.layer();
 
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
+
 		// lists
 		const entites_vs_platformes = [huipat];
 
@@ -67,7 +71,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.platformes = platformes;
 		this.allies = allies;
 		this.spaceKey = spaceKey;
-		this.entites_vs_platformes = entites_vs_platformes;
 
 		this.events.emit("scene-awake");
 	}
@@ -75,7 +78,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 	public platformes!: Phaser.GameObjects.Layer;
 	public allies!: Phaser.GameObjects.Layer;
 	private spaceKey!: Phaser.Input.Keyboard.Key;
-	public entites_vs_platformes!: Entite[];
 
 	/* START-USER-CODE */
 
@@ -96,7 +98,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// this.joueurcontrollable = this.;
 	update(time: number, delta: number): void {
-		console.log("UPDATE BASE");
+		// console.log("UPDATE BASE");
 		// if (this.spaceKey.isDown) {
 		// 	this.joueurcontrollable.body.setVelocityX(300)
 		// }
@@ -104,6 +106,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// 	this.joueurcontrollable.body.setVelocityX(0)
 		// }
 	}
+
 	/* END-USER-CODE */
 }
 

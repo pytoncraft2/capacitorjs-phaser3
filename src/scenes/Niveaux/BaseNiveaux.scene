@@ -111,6 +111,14 @@
             "label": "projectiles_allies",
             "components": [],
             "list": []
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "a2501d92-c5b4-437e-826b-5f563965a0a1",
+            "label": "onSceneAwakeScript",
+            "components": [],
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [
@@ -139,7 +147,7 @@
             "objectIds": [
                 "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0"
             ],
-            "scope": "PUBLIC"
+            "scope": "METHOD"
         }
     ]
 }

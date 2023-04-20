@@ -3,6 +3,7 @@
 
 /* START OF COMPILED CODE */
 
+import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
 import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
@@ -21,10 +22,11 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	/* START-USER-CODE */
 
 	protected override awake(): void {
-
-		this.executeChildren();
+		console.log(this.scene.allies.list);
 	}
-
+    get scene() {
+        return super.scene as BaseNiveaux;
+    }
 	/* END-USER-CODE */
 }
 

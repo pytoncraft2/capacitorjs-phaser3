@@ -18,22 +18,31 @@ export default class Niveau1 extends BaseNiveaux {
 		this.add.existing(platformePrefab);
 
 		// entite
-		const entite = new Entite(this, 1380, 338);
+		const entite = new Entite(this, 1134, 304);
 		this.add.existing(entite);
 		entite.huipat_png.setTexture("araigne", "araigne.png");
 
+		this.entite = entite;
+
 		this.events.emit("scene-awake");
 	}
+
+	public entite!: Entite;
 
 	/* START-USER-CODE */
 
 	// Write your code here
 
+	awake() {
+		console.log("");
+	}
+
 	create() {
 
 		this.editorCreate();
 		this.editorCreateBase()
-		console.log(this.entites_vs_platformes);
+		this.allies.add(this.entite)
+		// console.log(this.entites_vs_platformes);
 
 	}
 

@@ -34,9 +34,10 @@
                 "y"
             ],
             "label": "entite",
+            "scope": "PUBLIC",
             "components": [],
-            "x": 1380,
-            "y": 338,
+            "x": 1134,
+            "y": 304,
             "nestedPrefabs": [
                 {
                     "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
