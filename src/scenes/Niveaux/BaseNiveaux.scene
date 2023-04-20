@@ -19,26 +19,7 @@
             "label": "platformes",
             "scope": "PUBLIC",
             "components": [],
-            "list": [
-                {
-                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "2412c623-6309-4108-9f13-235dc1cb5e74",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
-                    ],
-                    "label": "platformePrefab",
-                    "components": [],
-                    "x": 1120,
-                    "y": 672,
-                    "scaleX": 23.18363917691242,
-                    "scaleY": 1,
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ]
+            "list": []
         },
         {
             "type": "Layer",
@@ -46,50 +27,7 @@
             "label": "allies",
             "scope": "PUBLIC",
             "components": [],
-            "list": [
-                {
-                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-                    "id": "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "huipat",
-                    "useGameObjectName": true,
-                    "components": [],
-                    "x": 1296,
-                    "y": 256,
-                    "nestedPrefabs": [
-                        {
-                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                            "id": "8c9e7431-efec-44ea-8c07-d15553d765d8",
-                            "label": "huipat_png",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "a57d1b80-1bee-430f-bb53-338bfe02525c",
-                                    "label": "onPointerDownScript",
-                                    "components": [],
-                                    "nestedPrefabs": [],
-                                    "list": [
-                                        {
-                                            "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
-                                            "id": "3f93b412-e09b-4a07-8dfb-ef3a4bfc8e3e",
-                                            "label": "changeTextureScript",
-                                            "components": [],
-                                            "nestedPrefabs": [],
-                                            "list": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "list": []
-                }
-            ]
+            "list": []
         },
         {
             "type": "Layer",
@@ -144,9 +82,6 @@
         {
             "id": "a96b9cc4-0f4e-4c08-9e13-3c008465bc8f",
             "label": "entites_vs_platformes",
-            "objectIds": [
-                "c6dec3a2-5d27-4c18-b8ed-fa9bfc45ced0"
-            ],
             "scope": "METHOD"
         }
     ]

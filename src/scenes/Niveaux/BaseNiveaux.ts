@@ -4,10 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import PlatformePrefab from "./ObjetsNiveaux/PlatformePrefab";
-import Entite from "../Entites/Entite";
-import OnPointerDownScript from "../../script-nodes-basic/OnPointerDownScript";
-import ChangeTextureScript from "../../script-nodes/ChangeTextureScript";
 import OnSceneAwakeScript from "../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -30,25 +26,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// platformes
 		const platformes = this.add.layer();
 
-		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 1120, 672);
-		platformePrefab.scaleX = 23.18363917691242;
-		platformePrefab.scaleY = 1;
-		platformes.add(platformePrefab);
-
 		// allies
 		const allies = this.add.layer();
-
-		// huipat
-		const huipat = new Entite(this, 1296, 256);
-		huipat.name = "huipat";
-		allies.add(huipat);
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(huipat.huipat_png);
-
-		// changeTextureScript
-		new ChangeTextureScript(onPointerDownScript);
 
 		// adversaires
 		this.add.layer();
@@ -63,7 +42,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const entites_vs_platformes = [huipat];
+		const entites_vs_platformes: Array<any> = [];
 
 		// collision_entites_vs_platformes
 		this.physics.add.collider(platformes.list, entites_vs_platformes);

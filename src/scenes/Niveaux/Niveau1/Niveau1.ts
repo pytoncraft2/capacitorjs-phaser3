@@ -14,8 +14,10 @@ export default class Niveau1 extends BaseNiveaux {
 	editorCreate(): void {
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 842, 528);
+		const platformePrefab = new PlatformePrefab(this, 842, 612);
 		this.add.existing(platformePrefab);
+		platformePrefab.scaleX = 14.18251855104597;
+		platformePrefab.scaleY = 0.3002484220351861;
 
 		// entite
 		const entite = new Entite(this, 1134, 304);
@@ -33,15 +35,11 @@ export default class Niveau1 extends BaseNiveaux {
 
 	// Write your code here
 
-	awake() {
-		console.log("");
-	}
-
 	create() {
 
 		this.editorCreate();
 		this.editorCreateBase()
-		this.allies.add(this.entite)
+		// this.allies.add(this.entite)
 		// console.log(this.entites_vs_platformes);
 
 	}
