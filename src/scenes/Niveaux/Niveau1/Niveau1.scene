@@ -18,8 +18,8 @@
             "id": "19b0b094-50f1-48b5-b1bc-3610bea643f8",
             "label": "text_1",
             "components": [],
-            "x": 865,
-            "y": 469,
+            "x": 1574,
+            "y": 63,
             "text": "New text",
             "fontSize": "56px",
             "list": [
@@ -45,9 +45,97 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Layer",
+            "id": "41a71459-0f67-43ec-a5b3-719369d2fb90",
+            "label": "players",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "22e80f34-305e-4434-9a32-85385bcc49a0",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "entite",
+                    "components": [],
+                    "x": 449,
+                    "y": 153,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "5f1b7357-5569-4496-96c2-37dddccee1e8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "entite_1",
+                    "components": [],
+                    "x": 1208,
+                    "y": 346,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "03884716-68fa-468f-ae5e-8053d27533dc",
+            "label": "platformes",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "f0b20208-7d94-4522-8011-c23389df9fb5",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 1780,
+                    "y": 663,
+                    "scaleX": 12.955064222093448,
+                    "scaleY": 1,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "b4ef977b-69a1-4b46-9a08-3828196caeb1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_1",
+                    "components": [],
+                    "x": -2,
+                    "y": 476,
+                    "scaleX": 12.955064222093448,
+                    "scaleY": 1,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "type": "Collider",
+            "label": "collider",
+            "scope": "METHOD",
+            "object1": "players.list",
+            "object2": "platformes.list"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
