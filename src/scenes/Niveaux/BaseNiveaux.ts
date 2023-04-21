@@ -35,12 +35,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	update(time: number, delta: number): void {
 		console.log("UPDATE BASE");
-		// if (this.spaceKey.isDown) {
-		// 	this.joueurcontrollable.body.setVelocityX(300)
-		// }
-		// if (this.spaceKey.isUp) {
-		// 	this.joueurcontrollable.body.setVelocityX(0)
-		// }
+		if (this.spaceKey.isDown) {
+			this.joueurcontrollable.body.setVelocityX(300)
+		}
+		if (this.spaceKey.isUp) {
+			this.joueurcontrollable.body.setVelocityX(0)
+		}
 	}
 
 	/* END-USER-CODE */
