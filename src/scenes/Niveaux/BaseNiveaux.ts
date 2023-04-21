@@ -66,9 +66,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	observeToucheDeplacement() {
-		if (this.toucheDroite.isDown) {
-			this.entiteControllable?.body.setVelocityX(300)
-		}
 		this.leftDown = this.leftDown || this.isKeyDown(this.toucheGauche);
 		this.rightDown = this.rightDown || this.isKeyDown(this.toucheDroite);
 		this.upDown = this.upDown || this.isKeyDown(this.toucheHaut) ;
@@ -101,7 +98,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (this.upDown && this.entiteControllable.body.touching.down) {
-			this.entiteControllable.actionATerre();
+			this.entiteControllable.actionSurTerre();
 		}
 
 		if (!this.isMobile) {

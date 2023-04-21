@@ -5,6 +5,7 @@
 
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import { Aptitudes } from "./Aptitudes/_autoImport";
 /* END-USER-IMPORTS */
 
 export default interface Entite {
@@ -36,20 +37,22 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public huipat_png: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
-	actionATerre() {
-		throw new Error("Method not implemented.");
+	actionSurTerre() {
+		// throw new Error("Method not implemented.");
 	}
 	actionToucheGauche() {
-		throw new Error("Method not implemented.");
+		console.log(Aptitudes);
+		console.log(this);
+		// throw new Error("Method not implemented.");
 	}
 	actionToucheDroite() {
-		throw new Error("Method not implemented.");
+		// throw new Error("Method not implemented.");
 	}
 	actionToucheBas() {
-		throw new Error("Method not implemented.");
+		// throw new Error("Method not implemented.");
 	}
 	aucuneAction() {
-		throw new Error("Method not implemented.");
+		// throw new Error("Method not implemented.");
 	}
 
 	/* END-USER-CODE */
