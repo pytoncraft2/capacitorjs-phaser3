@@ -52,9 +52,9 @@ export default class Niveau1 extends BaseNiveaux {
 		// allies
 		const allies = this.add.container(0, 0);
 
-		// entite_1
-		const entite_1 = new Entite(this, 1284, 290);
-		allies.add(entite_1);
+		// huipat
+		const huipat = new Entite(this, 1284, 290);
+		allies.add(huipat);
 
 		// adversaires
 		const adversaires = this.add.container(0, 0);
@@ -65,7 +65,7 @@ export default class Niveau1 extends BaseNiveaux {
 		entite.huipat_png.setTexture("araigne", "araigne.png");
 
 		// lists
-		const liste_colision_vs_platforme = [entite, entite_1];
+		const liste_colision_vs_platforme = [entite, huipat];
 
 		// colision_entites_vs_platformes
 		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
@@ -89,11 +89,10 @@ export default class Niveau1 extends BaseNiveaux {
 		// this.editorCreateBase()
 		this.editorCreate();
 		console.log("NIVEAU 1!!!!!!!!!!!!!!!!!!!!", this);
-
 		// this.allies.add(this.entite)
 		// console.log(this.entites_vs_platformes);
-
 	}
+
 
 	/* END-USER-CODE */
 }

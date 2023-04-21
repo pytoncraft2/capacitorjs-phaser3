@@ -14,36 +14,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// spaceKey
 		const spaceKey = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-		// platformes
-		const platformes = this.add.layer();
-
-		// allies
-		const allies = this.add.layer();
-
-		// adversaires
-		this.add.layer();
-
-		// projectiles_adversaires
-		this.add.layer();
-
-		// projectiles_allies
-		this.add.layer();
-
-		// lists
-		const entites_vs_platformes: Array<any> = [];
-
-		// collision_entites_vs_platformes
-		this.physics.add.collider(platformes.list, entites_vs_platformes);
-
-		this.platformes = platformes;
-		this.allies = allies;
 		this.spaceKey = spaceKey;
 
 		this.events.emit("scene-awake");
 	}
 
-	public platformes!: Phaser.GameObjects.Layer;
-	public allies!: Phaser.GameObjects.Layer;
 	private spaceKey!: Phaser.Input.Keyboard.Key;
 
 	/* START-USER-CODE */
@@ -52,13 +27,14 @@ export default class BaseNiveaux extends Phaser.Scene {
 	joueurcontrollable!: any
 
 	init() {
-		console.log(this);
+		this.editorCreateBase();
+		// this.joueurcontrollable = this.allies.getByName('huipat');
 
 		console.log("INIT BASE_NIVEAUX");
 	}
 
 	update(time: number, delta: number): void {
-		// console.log("UPDATE BASE");
+		console.log("UPDATE BASE");
 		// if (this.spaceKey.isDown) {
 		// 	this.joueurcontrollable.body.setVelocityX(300)
 		// }
