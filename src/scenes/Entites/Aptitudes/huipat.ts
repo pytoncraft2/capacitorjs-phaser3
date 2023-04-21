@@ -1,6 +1,11 @@
 import Entite from "../Entite";
 
-export function __InitialisationSpecifique() {
+export function __InitialisationSpecifique(entite: Entite) {
+  // entite.actionToucheHaut = function (): void {    
+  //   this.body.setVelocityY(-900)  
+  // }
+  // console.log("ENTITE:::::", entite.actionToucheBas());
+  
   console.log("INIT HUIPAT");
 }
 

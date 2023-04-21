@@ -17,7 +17,7 @@ export const Aptitudes: Touches = {};
 // export const Commandes: any = {};
 
  /**
-  * Import tout les fichier du dossier `./src/server/game/scenes/Aptitudes`, excepté le fichier lui-même
+  * Import tout les fichier du dossier `Aptitudes`, excepté le fichier lui-même
   *
   * @remarks
   * le nom du fichier devient la clé pour l'objet `Aptitudes`<br>
@@ -42,7 +42,6 @@ export const Aptitudes: Touches = {};
 export const autoImport = [
   "araigne.ts",
   "huipat.ts",
-  "fille.ts",
   "chauve_souris.ts",
 ].map(file => {
       import('./' + file).then((m) => {
