@@ -86,16 +86,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 
-		if (this.leftDown) {
-			this.entiteControllable.actionToucheGauche();
-		} else if (this.rightDown) {
-
-			this.entiteControllable.actionToucheDroite();
-		} else if (this.downDown) {
-			this.entiteControllable.actionToucheBas()
-		} else {
-			this.entiteControllable.aucuneAction();
-		}
+		if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
+		else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
+		else if (this.downDown) { this.entiteControllable.actionToucheBas() }
+		else { this.entiteControllable.aucuneAction() }
 
 		if (this.upDown && this.entiteControllable.body.touching.down) {
 			this.entiteControllable.actionSurTerre();

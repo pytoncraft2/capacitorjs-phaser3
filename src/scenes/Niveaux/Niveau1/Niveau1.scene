@@ -99,7 +99,7 @@
             "list": [
                 {
                     "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-                    "id": "639192f9-cbdf-40bf-953c-ab9f63291dc3",
+                    "id": "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
                     "unlock": [
                         "x",
                         "y"
@@ -107,8 +107,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "components": [],
-                    "x": 1284,
-                    "y": 290,
+                    "x": 1059,
+                    "y": 274,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -122,23 +122,23 @@
             "list": [
                 {
                     "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-                    "id": "22e80f34-305e-4434-9a32-85385bcc49a0",
+                    "id": "a11c51e8-9345-4b74-a3ea-bbd6bf62f1ac",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "entite",
                     "components": [],
-                    "x": 449,
-                    "y": 153,
+                    "x": 471,
+                    "y": 162,
                     "nestedPrefabs": [
                         {
                             "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                            "id": "a9afb25e-cb8c-40df-9013-46232e7817b3",
+                            "id": "b1f94db2-80d7-4d42-ba14-24a1a9ffd77d",
                             "unlock": [
                                 "texture"
                             ],
-                            "label": "huipat_png",
+                            "label": "image_entite",
                             "components": [],
                             "texture": {
                                 "key": "araigne",
@@ -182,8 +182,8 @@
             "id": "c2052b34-d16b-4185-a589-fdcb4a3d9312",
             "label": "liste_colision_vs_platforme",
             "objectIds": [
-                "22e80f34-305e-4434-9a32-85385bcc49a0",
-                "639192f9-cbdf-40bf-953c-ab9f63291dc3"
+                "a11c51e8-9345-4b74-a3ea-bbd6bf62f1ac",
+                "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef"
             ]
         }
     ]

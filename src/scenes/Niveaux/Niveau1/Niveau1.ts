@@ -54,7 +54,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const allies = this.add.layer();
 
 		// huipat
-		const huipat = new Entite(this, 1284, 290);
+		const huipat = new Entite(this, 1059, 274);
 		huipat.name = "huipat";
 		allies.add(huipat);
 
@@ -62,9 +62,9 @@ export default class Niveau1 extends BaseNiveaux {
 		const adversaires = this.add.container(0, 0);
 
 		// entite
-		const entite = new Entite(this, 449, 153);
+		const entite = new Entite(this, 471, 162);
 		adversaires.add(entite);
-		entite.huipat_png.setTexture("araigne", "araigne.png");
+		entite.image_entite.setTexture("araigne", "araigne.png");
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);

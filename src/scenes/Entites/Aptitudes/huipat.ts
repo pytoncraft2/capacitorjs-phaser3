@@ -8,6 +8,6 @@ export function toile__SPACE(huipat: any, input?: any) {
     // huipat.son = 'couteau'
     // huipat.play('huipat_couteau')
   // }
-  console.log("TOILE");
+  console.log("ENVOI TOILE!");
   
 }

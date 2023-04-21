@@ -15,7 +15,6 @@ export default interface Entite {
 
 export default class Entite extends Phaser.GameObjects.Container {
 
-
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
@@ -23,26 +22,26 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.body.setOffset(36, 22);
 		this.body.setSize(148, 162, false);
 
-		// huipat_png
-		const huipat_png = scene.add.image(110, 103, "huipat", "huipat.png");
-		this.add(huipat_png);
+		// image_entite
+		const image_entite = scene.add.image(110, 103, "huipat", "huipat.png");
+		image_entite.name = "image_entite";
+		this.add(image_entite);
 
-		this.huipat_png = huipat_png;
+		this.image_entite = image_entite;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
 
-	public huipat_png: Phaser.GameObjects.Image;
+	public image_entite: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 	actionSurTerre() {
 		// throw new Error("Method not implemented.");
 	}
 	actionToucheGauche() {
-		console.log(Aptitudes);
-		console.log(this);
+		console.log(Aptitudes[this.image_entite.texture.key]);
 		// throw new Error("Method not implemented.");
 	}
 	actionToucheDroite() {
