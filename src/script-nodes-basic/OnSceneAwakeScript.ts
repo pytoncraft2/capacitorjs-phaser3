@@ -7,8 +7,6 @@ import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
-import Niveau1 from "~/scenes/Niveaux/Niveau1/Niveau1";
-import Niveau2 from "~/scenes/Niveaux/Niveau2/Niveau2";
 /* END-USER-IMPORTS */
 
 export default class OnSceneAwakeScript extends ScriptNode {
@@ -24,7 +22,6 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	/* START-USER-CODE */
 
 	protected override awake(): void {
-		console.log("ONSCENAWAKE SCRIPT SERT A RIEN");
 		this.scene.joueurcontrollable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
 	}
     get scene() {

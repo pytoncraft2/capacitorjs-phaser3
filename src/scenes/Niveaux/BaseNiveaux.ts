@@ -11,15 +11,35 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	editorCreateBase(): void {
 
-		// spaceKey
-		const spaceKey = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+		// toucheEspace
+		const toucheEspace = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.BACKSPACE);
 
-		this.spaceKey = spaceKey;
+		// toucheGauche
+		const toucheGauche = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+
+		// toucheDroite
+		const toucheDroite = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
+		// toucheHaut
+		const toucheHaut = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+
+		// toucheBas
+		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+		this.toucheEspace = toucheEspace;
+		this.toucheGauche = toucheGauche;
+		this.toucheDroite = toucheDroite;
+		this.toucheHaut = toucheHaut;
+		this.toucheBas = toucheBas;
 
 		this.events.emit("scene-awake");
 	}
 
-	private spaceKey!: Phaser.Input.Keyboard.Key;
+	private toucheEspace!: Phaser.Input.Keyboard.Key;
+	private toucheGauche!: Phaser.Input.Keyboard.Key;
+	private toucheDroite!: Phaser.Input.Keyboard.Key;
+	private toucheHaut!: Phaser.Input.Keyboard.Key;
+	private toucheBas!: Phaser.Input.Keyboard.Key;
 
 	/* START-USER-CODE */
 
@@ -34,11 +54,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	update(time: number, delta: number): void {
-		if (this.spaceKey.isDown) {
+		if (this.toucheDroite.isDown) {
 			this.joueurcontrollable?.body.setVelocityX(300)
-		}
-		if (this.spaceKey.isUp) {
-			this.joueurcontrollable?.body.setVelocityX(0)
 		}
 	}
 
