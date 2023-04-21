@@ -7,7 +7,6 @@
         "superClassName": "BaseNiveaux",
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Niveau2",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080
@@ -22,8 +21,8 @@
             ],
             "label": "entite",
             "components": [],
-            "x": 385,
-            "y": 275,
+            "x": 379,
+            "y": 242,
             "nestedPrefabs": [],
             "list": []
         }

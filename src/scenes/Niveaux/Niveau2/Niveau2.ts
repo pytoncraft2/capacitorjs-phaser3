@@ -10,18 +10,10 @@ import Entite from "../../Entites/Entite";
 
 export default class Niveau2 extends BaseNiveaux {
 
-	constructor() {
-		super("Niveau2");
-
-		/* START-USER-CTR-CODE */
-		// Write your code here.
-		/* END-USER-CTR-CODE */
-	}
-
 	editorCreate(): void {
 
 		// entite
-		const entite = new Entite(this, 385, 275);
+		const entite = new Entite(this, 379, 242);
 		this.add.existing(entite);
 
 		this.events.emit("scene-awake");

@@ -7,7 +7,6 @@
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreateBase",
-        "sceneKey": "Niveau1",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080

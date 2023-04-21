@@ -14,7 +14,7 @@ export default class Niveau1 extends BaseNiveaux {
 	editorCreate(): void {
 
 		// text_1
-		const text_1 = this.add.text(996, 513, "", {});
+		const text_1 = this.add.text(865, 469, "", {});
 		text_1.text = "New text";
 		text_1.setStyle({ "fontSize": "56px" });
 

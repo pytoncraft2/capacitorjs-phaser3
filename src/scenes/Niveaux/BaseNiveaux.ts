@@ -9,14 +9,6 @@ import Phaser from "phaser";
 
 export default class BaseNiveaux extends Phaser.Scene {
 
-	constructor() {
-		super("Niveau1");
-
-		/* START-USER-CTR-CODE */
-		// Write your code here.
-		/* END-USER-CTR-CODE */
-	}
-
 	editorCreateBase(): void {
 
 		// spaceKey
