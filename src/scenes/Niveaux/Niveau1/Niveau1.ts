@@ -6,8 +6,8 @@
 import BaseNiveaux from "../BaseNiveaux";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
-import Entite from "../../Entites/Entite";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
+import Entite from "../../Entites/Entite";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -34,17 +34,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript
 		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
 
-		// players
-		const players = this.add.layer();
-
-		// entite
-		const entite = new Entite(this, 449, 153);
-		players.add(entite);
-
-		// entite_1
-		const entite_1 = new Entite(this, 1208, 346);
-		players.add(entite_1);
-
 		// platformes
 		const platformes = this.add.layer();
 
@@ -60,8 +49,17 @@ export default class Niveau1 extends BaseNiveaux {
 		platformePrefab_1.scaleY = 1;
 		platformes.add(platformePrefab_1);
 
+		// entite
+		const entite = new Entite(this, 449, 153);
+		this.add.existing(entite);
+		entite.huipat_png.setTexture("araigne", "araigne.png");
+
+		// entite_1
+		const entite_1 = new Entite(this, 1294.4198777948754, 324.0072284415822);
+		this.add.existing(entite_1);
+
 		// collider
-		this.physics.add.collider(players.list, platformes.list);
+		this.physics.add.collider(entite, platformes.list);
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";

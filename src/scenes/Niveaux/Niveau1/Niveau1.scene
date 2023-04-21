@@ -48,42 +48,6 @@
         },
         {
             "type": "Layer",
-            "id": "41a71459-0f67-43ec-a5b3-719369d2fb90",
-            "label": "players",
-            "components": [],
-            "list": [
-                {
-                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-                    "id": "22e80f34-305e-4434-9a32-85385bcc49a0",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "entite",
-                    "components": [],
-                    "x": 449,
-                    "y": 153,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-                    "id": "5f1b7357-5569-4496-96c2-37dddccee1e8",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "entite_1",
-                    "components": [],
-                    "x": 1208,
-                    "y": 346,
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ]
-        },
-        {
-            "type": "Layer",
             "id": "03884716-68fa-468f-ae5e-8053d27533dc",
             "label": "platformes",
             "components": [],
@@ -125,6 +89,50 @@
                     "list": []
                 }
             ]
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "22e80f34-305e-4434-9a32-85385bcc49a0",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "entite",
+            "components": [],
+            "x": 449,
+            "y": 153,
+            "nestedPrefabs": [
+                {
+                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                    "id": "a9afb25e-cb8c-40df-9013-46232e7817b3",
+                    "unlock": [
+                        "texture"
+                    ],
+                    "label": "huipat_png",
+                    "components": [],
+                    "texture": {
+                        "key": "araigne",
+                        "frame": "araigne.png"
+                    },
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ],
+            "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "639192f9-cbdf-40bf-953c-ab9f63291dc3",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "entite_1",
+            "components": [],
+            "x": 1294.4198777948754,
+            "y": 324.0072284415822,
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [
@@ -132,7 +140,7 @@
             "type": "Collider",
             "label": "collider",
             "scope": "METHOD",
-            "object1": "players.list",
+            "object1": "entite",
             "object2": "platformes.list"
         }
     ],
