@@ -25,14 +25,10 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	protected override awake(): void {
 		console.log("ONSCENAWAKE SCRIPT SERT A RIEN");
-		
-		// console.log("SCENE AWAKE NIVEAU 1");
-		// console.log("AVANT", this.scene);
-		// this.scene.editorCreateBase();
-		// console.log("APRES", this.scene);
+		this.scene.joueurcontrollable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
 	}
     get scene() {
-        return super.scene as Niveau1 | Niveau2 | BaseNiveaux;
+        return super.scene as BaseNiveaux;
     }
 	/* END-USER-CODE */
 }

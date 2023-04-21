@@ -8,6 +8,7 @@ import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 import Entite from "../../Entites/Entite";
+import OnSceneAwakeScript from "../../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -50,10 +51,11 @@ export default class Niveau1 extends BaseNiveaux {
 		platformes.add(platformePrefab_1);
 
 		// allies
-		const allies = this.add.container(0, 0);
+		const allies = this.add.layer();
 
 		// huipat
 		const huipat = new Entite(this, 1284, 290);
+		huipat.name = "huipat";
 		allies.add(huipat);
 
 		// adversaires
@@ -64,6 +66,9 @@ export default class Niveau1 extends BaseNiveaux {
 		adversaires.add(entite);
 		entite.huipat_png.setTexture("araigne", "araigne.png");
 
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
+
 		// lists
 		const liste_colision_vs_platforme = [entite, huipat];
 
@@ -73,11 +78,13 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
+		this.allies = allies;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 
 		this.events.emit("scene-awake");
 	}
 
+	public allies!: Phaser.GameObjects.Layer;
 	private liste_colision_vs_platforme!: Entite[];
 
 	/* START-USER-CODE */
@@ -88,7 +95,10 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// this.editorCreateBase()
 		this.editorCreate();
-		console.log("NIVEAU 1!!!!!!!!!!!!!!!!!!!!", this);
+		console.log("NIVEAU 1!!!!!!!!!!!!!!!!!!!!");
+		// this.allies.
+
+		// this.joueurcontrollable = this.allies.getByName('huipat')
 		// this.allies.add(this.entite)
 		// console.log(this.entites_vs_platformes);
 	}
