@@ -49,23 +49,36 @@ export default class Niveau1 extends BaseNiveaux {
 		platformePrefab_1.scaleY = 1;
 		platformes.add(platformePrefab_1);
 
-		// entite
-		const entite = new Entite(this, 449, 153);
-		this.add.existing(entite);
-		entite.huipat_png.setTexture("araigne", "araigne.png");
+		// allies
+		const allies = this.add.container(0, 0);
 
 		// entite_1
-		const entite_1 = new Entite(this, 1294.4198777948754, 324.0072284415822);
-		this.add.existing(entite_1);
+		const entite_1 = new Entite(this, 1284, 290);
+		allies.add(entite_1);
 
-		// collider
-		this.physics.add.collider(entite, platformes.list);
+		// adversaires
+		const adversaires = this.add.container(0, 0);
+
+		// entite
+		const entite = new Entite(this, 449, 153);
+		adversaires.add(entite);
+		entite.huipat_png.setTexture("araigne", "araigne.png");
+
+		// lists
+		const liste_colision_vs_platforme = [entite, entite_1];
+
+		// colision_entites_vs_platformes
+		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
+		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
+
 		this.events.emit("scene-awake");
 	}
+
+	private liste_colision_vs_platforme!: Entite[];
 
 	/* START-USER-CODE */
 
