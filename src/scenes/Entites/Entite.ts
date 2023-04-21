@@ -14,6 +14,7 @@ export default interface Entite {
 
 export default class Entite extends Phaser.GameObjects.Container {
 
+
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
@@ -35,8 +36,21 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public huipat_png: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
-
-	// Write your code here.
+	actionATerre() {
+		throw new Error("Method not implemented.");
+	}
+	actionToucheGauche() {
+		throw new Error("Method not implemented.");
+	}
+	actionToucheDroite() {
+		throw new Error("Method not implemented.");
+	}
+	actionToucheBas() {
+		throw new Error("Method not implemented.");
+	}
+	aucuneAction() {
+		throw new Error("Method not implemented.");
+	}
 
 	/* END-USER-CODE */
 }

@@ -5,6 +5,7 @@
 
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import Entite from "../Entites/Entite";
 /* END-USER-IMPORTS */
 
 export default class BaseNiveaux extends Phaser.Scene {
@@ -44,19 +45,78 @@ export default class BaseNiveaux extends Phaser.Scene {
 	/* START-USER-CODE */
 
 	// Write your code here
-	joueurcontrollable!: any
+	public entiteControllable!: Entite
+	private leftDown = false;
+	private rightDown = false;
+	private upDown = false;
+	private downDown = false;
+	private spaceDown = false;
+	private spaceDownTouch = false;
+	private isMobile = false;
 
 	init() {
 		this.editorCreateBase();
-		// this.joueurcontrollable = this.allies.getByName('huipat');
+		// this.entiteControllable = this.allies.getByName('huipat');
 
 		console.log("INIT BASE_NIVEAUX");
 	}
 
 	update(time: number, delta: number): void {
+		this.observeToucheDeplacement()
+	}
+
+	observeToucheDeplacement() {
 		if (this.toucheDroite.isDown) {
-			this.joueurcontrollable?.body.setVelocityX(300)
+			this.entiteControllable?.body.setVelocityX(300)
 		}
+		this.leftDown = this.leftDown || this.isKeyDown(this.toucheGauche);
+		this.rightDown = this.rightDown || this.isKeyDown(this.toucheDroite);
+		this.upDown = this.upDown || this.isKeyDown(this.toucheHaut) ;
+		this.downDown = this.downDown || this.isKeyDown(this.toucheBas);
+		if (this.isMobile) {
+			this.spaceDown = this.spaceDown || this.isKeyDown(this.toucheEspace) || this.spaceDownTouch;
+		}
+
+		if (Phaser.Input.Keyboard.JustDown(this.toucheEspace)) {
+			// this.entiteControllable.envoieProjectileToile()
+		}
+
+		if (this.isMobile) {
+			if (this.spaceDown) {
+				// this.entiteControllable.envoieProjectileToile()
+				this.spaceDown = false;
+			}
+		}
+
+
+		if (this.leftDown) {
+			this.entiteControllable.actionToucheGauche();
+		} else if (this.rightDown) {
+
+			this.entiteControllable.actionToucheDroite();
+		} else if (this.downDown) {
+			this.entiteControllable.actionToucheBas()
+		} else {
+			this.entiteControllable.aucuneAction();
+		}
+
+		if (this.upDown && this.entiteControllable.body.touching.down) {
+			this.entiteControllable.actionATerre();
+		}
+
+		if (!this.isMobile) {
+			this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = this.spaceDownTouch = false;
+		}
+	}
+
+	private isKeyDown(key?: Phaser.Input.Keyboard.Key) {
+
+		if (key) {
+
+			return key.isDown;
+		}
+
+		return false;
 	}
 
 	/* END-USER-CODE */

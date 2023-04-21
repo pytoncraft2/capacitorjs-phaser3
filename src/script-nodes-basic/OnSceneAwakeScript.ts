@@ -22,7 +22,7 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	/* START-USER-CODE */
 
 	protected override awake(): void {
-		this.scene.joueurcontrollable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
+		this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
 	}
     get scene() {
         return super.scene as BaseNiveaux;
