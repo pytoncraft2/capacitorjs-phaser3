@@ -48,18 +48,10 @@ export const autoImport = [
       import('./' + file).then((m) => {
           //le nom du fichier devient la clé pour l'objet (Aptitudes)
           const personnage = file.substring(0, file.lastIndexOf('.'))
-          const Commandes = {};
-
           Object.values(m).forEach((fn:any, _i) => {
             
             //regarde si la fonction contient un undescore
             let index = fn.toString().split(' ')[1].indexOf("__")
-            let NOMFONCTION = fn.toString().split(' ')[1].split('__')[0];
-
-            if (NOMFONCTION != '')
-            {
-              let CLE: any = fn.toString().split(' ')[1].substring(index+2).split('(')[0]
-            }
 
             if (index != -1)
             {
@@ -70,7 +62,5 @@ export const autoImport = [
               //fn correspond à la fonction qui active l'aptitudes
             }
           })
-          //Stoquages des commandes disponibles
-        //   Aptitudes[personnage]["commandes"] = Commandes
       });
     });

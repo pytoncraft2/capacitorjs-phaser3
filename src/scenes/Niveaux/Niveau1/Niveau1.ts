@@ -8,6 +8,7 @@ import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 import Entite from "../../Entites/Entite";
+import ChangeTextureScript from "../../../script-nodes/ChangeTextureScript";
 import OnSceneAwakeScript from "../../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -57,6 +58,12 @@ export default class Niveau1 extends BaseNiveaux {
 		const huipat = new Entite(this, 1059, 274);
 		huipat.name = "huipat";
 		allies.add(huipat);
+
+		// onPointerDownScript_1
+		const onPointerDownScript_1 = new OnPointerDownScript(huipat.image_entite);
+
+		// changeTextureScript
+		new ChangeTextureScript(onPointerDownScript_1);
 
 		// adversaires
 		const adversaires = this.add.container(0, 0);

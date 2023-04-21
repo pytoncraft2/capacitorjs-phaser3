@@ -6,6 +6,7 @@
 import ScriptNode from "../script-nodes-basic/ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import { Aptitudes } from "../scenes/Entites/Aptitudes/_autoImport";
 /* END-USER-IMPORTS */
 
 export default class ChangeTextureScript extends ScriptNode {
@@ -19,6 +20,8 @@ export default class ChangeTextureScript extends ScriptNode {
 	}
 
 	/* START-USER-CODE */
+	liste_texture = Object.keys(Aptitudes)
+	compteur = 0;
 
 	override get gameObject() {
 		return super.gameObject as Phaser.Physics.Arcade.Sprite;
@@ -37,8 +40,9 @@ export default class ChangeTextureScript extends ScriptNode {
 	}
 
 	changeTexture() {
-		const texture = this.gameObject.texture.key === 'araigne' ? 'huipat' : 'araigne';
-		return texture;
+		let index = this.compteur % this.liste_texture.length;
+		this.compteur++;
+		return this.liste_texture[index];
 	}
 	/* END-USER-CODE */
 }

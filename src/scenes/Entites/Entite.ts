@@ -30,30 +30,22 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.image_entite = image_entite;
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		Aptitudes[this.image_entite.texture.key].InitialisationSpecifique.call(this, this, Aptitudes)
 		/* END-USER-CTR-CODE */
 	}
 
 	public image_entite: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
-	actionSurTerre() {
-		// throw new Error("Method not implemented.");
-	}
-	actionToucheGauche() {
-		console.log(Aptitudes[this.image_entite.texture.key]);
-		// throw new Error("Method not implemented.");
-	}
-	actionToucheDroite() {
-		// throw new Error("Method not implemented.");
-	}
-	actionToucheBas() {
-		// throw new Error("Method not implemented.");
-	}
-	aucuneAction() {
-		// throw new Error("Method not implemented.");
-	}
+	actionToucheGauche() { this.verifEtExecutionTouche("GAUCHE") }
+	actionToucheDroite() { this.verifEtExecutionTouche("DROITE") }
+	actionToucheHaut() { this.verifEtExecutionTouche("HAUT") }
+	actionToucheBas() { this.verifEtExecutionTouche("BAS") }
+	aucuneAction() {}
 
+	verifEtExecutionTouche(touche: string) {
+		return this.image_entite.texture.key in Aptitudes && typeof Aptitudes[this.image_entite.texture.key][touche] === "function" && Aptitudes[this.image_entite.texture.key][touche](this, {})
+	}
 	/* END-USER-CODE */
 }
 

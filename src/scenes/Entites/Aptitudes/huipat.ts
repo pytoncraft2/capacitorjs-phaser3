@@ -1,13 +1,13 @@
-export function __StatsSupplementaire() {}
+import Entite from "../Entite";
 
-export function toile__SPACE(huipat: any, input?: any) {
-  // if (input.a) {
-    // input.a = false
-    // console.log("LANCER TOILE");
-    
-    // huipat.son = 'couteau'
-    // huipat.play('huipat_couteau')
-  // }
-  console.log("ENVOI TOILE!");
-  
+export function __InitialisationSpecifique() {
+  console.log("INIT HUIPAT");
+}
+
+export function deplacementGauche__GAUCHE(entite: Entite, input?: any) {
+  entite.body.setVelocityX(-300)
+}
+
+export function deplacementDroite__DROITE(entite: Entite, input?: any) {
+  entite.body.setVelocityX(300)
 }

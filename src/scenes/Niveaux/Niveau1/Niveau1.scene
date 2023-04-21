@@ -109,7 +109,34 @@
                     "components": [],
                     "x": 1059,
                     "y": 274,
-                    "nestedPrefabs": [],
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "be7a9e90-5b3d-4b6e-bd00-d36b502393ed",
+                            "label": "image_entite",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "f8a92ed6-e298-43f5-8f39-1023042c3e67",
+                                    "label": "onPointerDownScript_1",
+                                    "components": [],
+                                    "nestedPrefabs": [],
+                                    "list": [
+                                        {
+                                            "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
+                                            "id": "a3305909-ac46-441d-b7b8-b0393a8bea44",
+                                            "label": "changeTextureScript",
+                                            "components": [],
+                                            "nestedPrefabs": [],
+                                            "list": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
                     "list": []
                 }
             ]
