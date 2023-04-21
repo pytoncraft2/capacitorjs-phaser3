@@ -11,6 +11,14 @@ import StartSceneActionScript from "../../../script-nodes-basic/StartSceneAction
 
 export default class Niveau1 extends BaseNiveaux {
 
+	constructor() {
+		super("Niveau1");
+
+		/* START-USER-CTR-CODE */
+		// Write your code here.
+		/* END-USER-CTR-CODE */
+	}
+
 	editorCreate(): void {
 
 		// text_1

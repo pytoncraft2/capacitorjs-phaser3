@@ -10,6 +10,14 @@ import Entite from "../../Entites/Entite";
 
 export default class Niveau2 extends BaseNiveaux {
 
+	constructor() {
+		super("Niveau2");
+
+		/* START-USER-CTR-CODE */
+		// Write your code here.
+		/* END-USER-CTR-CODE */
+	}
+
 	editorCreate(): void {
 
 		// entite

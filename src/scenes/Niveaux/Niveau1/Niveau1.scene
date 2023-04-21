@@ -7,6 +7,7 @@
         "superClassName": "BaseNiveaux",
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
+        "sceneKey": "Niveau1",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080
