@@ -35,11 +35,12 @@ export default class Entite extends Phaser.GameObjects.Container {
 		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
 		Aptitudes[this.image_entite.texture.key]?.auto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
 		console.log(Aptitudes[this.image_entite.texture.key]);
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
 	public image_entite: Phaser.GameObjects.Image;
+	public vitesseDeplacement: number = 300;
 
 	/* START-USER-CODE */
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
@@ -49,8 +50,6 @@ export default class Entite extends Phaser.GameObjects.Container {
 	aucuneAction() {}
 
 	verifEtExecutionTouche(touche: string) {
-		console.log(Aptitudes);
-		
 		return Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
 	}
 	/* END-USER-CODE */
