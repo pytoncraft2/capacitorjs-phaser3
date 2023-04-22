@@ -24,7 +24,7 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	protected override awake(): void {
 		console.log("ALLIES ON SCENE AVANT", this.scene.allies);
 		
-		this.scene.editorCreateBase();
+		// this.scene.editorCreateBase();
 		console.log("ALLIES ON SCENE APRES", this.scene.allies);
 		
 		this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');

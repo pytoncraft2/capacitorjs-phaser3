@@ -60,7 +60,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private isMobile = false;
 
 	init() {
-		// this.editorCreateBase();
+		this.editorCreateBase();
 		// this.entiteControllable = this.allies.getByName('huipat');
 
 		console.log("INIT BASE_NIVEAUX");
