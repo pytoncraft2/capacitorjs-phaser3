@@ -5,6 +5,7 @@
 
 import BaseNiveaux from "../BaseNiveaux";
 import Entite from "../../Entites/Entite";
+import OnSceneAwakeScript from "../../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -20,9 +21,13 @@ export default class Niveau2 extends BaseNiveaux {
 
 	editorCreate(): void {
 
-		// entite
-		const entite = new Entite(this, 379, 242);
-		this.add.existing(entite);
+		// huipat
+		const huipat = new Entite(this, 379, 242);
+		this.add.existing(huipat);
+		huipat.name = "huipat";
+
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
 
 		this.events.emit("scene-awake");
 	}
