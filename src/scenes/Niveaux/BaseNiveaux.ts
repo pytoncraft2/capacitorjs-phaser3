@@ -27,6 +27,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// toucheBas
 		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
+		// allies
+		const allies = this.add.layer();
+
+		this.allies = allies;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -36,6 +40,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	public allies!: Phaser.GameObjects.Layer;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
@@ -55,7 +60,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private isMobile = false;
 
 	init() {
-		this.editorCreateBase();
+		// this.editorCreateBase();
 		// this.entiteControllable = this.allies.getByName('huipat');
 
 		console.log("INIT BASE_NIVEAUX");
@@ -89,7 +94,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
 		else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
 		else if (this.downDown) { this.entiteControllable.actionToucheBas() }
-		else { this.entiteControllable.aucuneAction() }
+		else { /*this.entiteControllable.aucuneAction()*/ }
 
 		if (this.upDown && this.entiteControllable.body.touching.down) {
 			this.entiteControllable.actionToucheHaut();

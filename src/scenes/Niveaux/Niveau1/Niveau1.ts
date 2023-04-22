@@ -85,13 +85,11 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
-		this.allies = allies;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 
 		this.events.emit("scene-awake");
 	}
 
-	public allies!: Phaser.GameObjects.Layer;
 	private liste_colision_vs_platforme!: Entite[];
 
 	/* START-USER-CODE */
