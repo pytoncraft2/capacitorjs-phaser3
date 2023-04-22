@@ -39,13 +39,15 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public image_entite: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
-	actionToucheGauche() { this.verifEtExecutionTouche("GAUCHE") }
-	actionToucheDroite() { this.verifEtExecutionTouche("DROITE") }
-	actionToucheHaut() { this.verifEtExecutionTouche("HAUT") }
-	actionToucheBas() { this.verifEtExecutionTouche("BAS") }
+	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
+	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
+	actionToucheHaut() { this.verifEtExecutionTouche("toucheHaut") }
+	actionToucheBas() { this.verifEtExecutionTouche("toucheBas") }
 	aucuneAction() {}
 
 	verifEtExecutionTouche(touche: string) {
+		console.log(Aptitudes);
+		
 		return Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
 	}
 	/* END-USER-CODE */

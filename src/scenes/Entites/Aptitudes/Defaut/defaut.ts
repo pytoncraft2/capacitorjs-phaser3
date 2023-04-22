@@ -12,9 +12,9 @@ const cle_image = entite.image_entite.texture.key
     console.log("GAUCHE");
     
   }
-    Aptitudes[cle_image].toucheEspace = (entite: Phaser.Physics.Arcade.Sprite, input: any) => {
+    Aptitudes[cle_image].toucheEspace = (entite: Entite, input: any) => {
       // if (entite.body.touching.down) {
-        entite.setVelocityY(-1150);
+        entite.body.setVelocityY(-1150);
         // entite.play("jump")
       // }
       // input.space = false
@@ -35,15 +35,15 @@ function direction(debut: boolean, fin: boolean, entite: any, _input: any, dir: 
     entite.play('walk', true)
   }
   else if (fin) {
-    entite.setVelocityX(0)
+    entite.body.setVelocityX(0)
     entite.play('idle_walk', true)
   }
-  else entite.setVelocityX(dir ? (entite as any).vel : -(entite as any).vel)
+  else entite.body.setVelocityX(dir ? (entite as any).vel : -(entite as any).vel)
 }
 
 function changementEtage(entite: any, velocite: any, delai: any){
     entite.body.checkCollision.none = true;
-    entite.setVelocityY(velocite);
+    entite.body.setVelocityY(velocite);
     entite.scene.time.delayedCall(delai, () => {
       entite.body.checkCollision.none = false;
     }, null, entite);
