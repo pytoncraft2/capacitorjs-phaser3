@@ -1,6 +1,6 @@
 type Touches = {
   [personnage:string]: {
-    [toucheAction:string]: (joueur: any, input: any) => void
+    [toucheAction:string]: (joueur: any, input: any, auto?: any) => void
   }
 };
 /**
