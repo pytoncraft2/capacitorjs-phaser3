@@ -5,10 +5,12 @@ const cle_image = entite.image_entite.texture.key
   Aptitudes[cle_image].toucheDroite = (entite: any, input: any) => {
     console.log("TOUCHE DROITE DEFAUT");
     
-    direction(input.right_debut, input.right_fin, entite, input, true)
+    // direction(input.right_debut, input.right_fin, entite, input, true)
   }
   Aptitudes[cle_image].toucheGauche = (entite: any, input: any) => {
-    direction(input.left_debut, input.left_fin, entite, input, false)
+    // direction(input.left_debut, input.left_fin, entite, input, false)
+    console.log("GAUCHE");
+    
   }
     Aptitudes[cle_image].toucheEspace = (entite: Phaser.Physics.Arcade.Sprite, input: any) => {
       // if (entite.body.touching.down) {

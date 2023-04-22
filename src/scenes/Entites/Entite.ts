@@ -31,10 +31,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.image_entite = image_entite;
 
 		/* START-USER-CTR-CODE */
-		console.log("AVANT: ",Aptitudes);
 		DefautDirection(Aptitudes, this)
-		console.log("Apres: ",Aptitudes);
-		
 		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
 		/* END-USER-CTR-CODE */
 	}
