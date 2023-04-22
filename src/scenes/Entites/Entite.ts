@@ -30,25 +30,26 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.image_entite = image_entite;
 
 		/* START-USER-CTR-CODE */
-		Aptitudes[this.image_entite.texture.key].InitialisationSpecifique.call(this, this, Aptitudes)
+		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique.call(this, this, Aptitudes);
 		/* END-USER-CTR-CODE */
 	}
 
 	public image_entite: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
-	// actionToucheGauche() { this.verifEtExecutionTouche("GAUCHE") }
-	// actionToucheDroite() { this.verifEtExecutionTouche("DROITE") }
-	// actionToucheHaut() { this.verifEtExecutionTouche("HAUT") }
-	// actionToucheBas() { this.verifEtExecutionTouche("BAS") }
-	// aucuneAction() {}
-	actionToucheGauche() { this.body.setVelocityX(-300) }
-	actionToucheDroite() { this.body.setVelocityX(300) }
-	actionToucheHaut() { this.body.setVelocityY(-300) }
-	actionToucheBas() { this.body.setMaxVelocityY(300) }
+	actionToucheGauche() { this.verifEtExecutionTouche("GAUCHE") }
+	actionToucheDroite() { this.verifEtExecutionTouche("DROITE") }
+	actionToucheHaut() { this.verifEtExecutionTouche("HAUT") }
+	actionToucheBas() { this.verifEtExecutionTouche("BAS") }
 	aucuneAction() {}
+	// actionToucheGauche() { this.body.setVelocityX(-300) }
+	// actionToucheDroite() { this.body.setVelocityX(300) }
+	// actionToucheHaut() { this.body.setVelocityY(-300) }
+	// actionToucheBas() { this.body.setMaxVelocityY(300) }
+	// aucuneAction() {}
 
 	verifEtExecutionTouche(touche: string) {
+		// return this.image_entite.texture.key in Aptitudes && typeof Aptitudes[this.image_entite.texture.key][touche] === "function" && Aptitudes[this.image_entite.texture.key][touche](this, {})
 		return this.image_entite.texture.key in Aptitudes && typeof Aptitudes[this.image_entite.texture.key][touche] === "function" && Aptitudes[this.image_entite.texture.key][touche](this, {})
 	}
 	/* END-USER-CODE */
