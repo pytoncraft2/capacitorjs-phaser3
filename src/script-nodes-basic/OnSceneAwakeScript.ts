@@ -21,10 +21,7 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	}
 
 	/* START-USER-CODE */
-
 	protected awake(): void {
-		console.log("AWAKE ON SCENE", this.scene.allies);
-		
 		this.scene.entiteControllable = this.scene.allies_niveau.getByName('huipat');
 	}
 
@@ -35,13 +32,6 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	get scene(): Niveau1  {
         return super.scene as Niveau1;
 	}
-	//  awake(): void {
-
-		// this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
-	// }
-    // scene() {
-    //     return super.scene as BaseNiveaux;
-    // }
 	/* END-USER-CODE */
 }
 

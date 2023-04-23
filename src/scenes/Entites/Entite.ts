@@ -29,11 +29,10 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.add(image_entite);
 
 		this.image_entite = image_entite;
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
-		DefautDirection(Aptitudes, this)
-		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
-		Aptitudes[this.image_entite.texture.key]?.auto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
 		/* END-USER-CTR-CODE */
 	}
 
@@ -41,6 +40,11 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public vitesseDeplacement: number = 300;
 
 	/* START-USER-CODE */
+	awake() {
+		DefautDirection(Aptitudes, this)
+		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
+		Aptitudes[this.image_entite.texture.key]?.auto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
+	}
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
 	actionToucheHaut() { this.verifEtExecutionTouche("toucheHaut") }
