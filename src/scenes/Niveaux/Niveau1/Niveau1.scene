@@ -213,10 +213,12 @@
                         "x",
                         "y",
                         "auto",
-                        "modeAuto"
+                        "modeAuto",
+                        "tempsEntreActions"
                     ],
                     "label": "entite",
-                    "modeAuto": false,
+                    "modeAuto": true,
+                    "tempsEntreActions": 1000,
                     "components": [],
                     "x": 384,
                     "y": 200,

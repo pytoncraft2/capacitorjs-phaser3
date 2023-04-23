@@ -43,14 +43,16 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public velociteX: number = 300;
 	public modeAuto: boolean = false;
 	public velociteY: number = 890;
+	public tempsCumule: number = 0;
+	public tempsEntreActions: number = 1000;
 
 	/* START-USER-CODE */
 	awake() {
 		DefautDirection(Aptitudes, this)
 		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
 		if (this.modeAuto) Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
-		this.scene.time.delayedCall(3000, () => (this.modeAuto = true))
-		this.scene.time.delayedCall(7000, () => (this.modeAuto = false))
+		// this.scene.time.delayedCall(3000, () => (this.modeAuto = true))
+		// this.scene.time.delayedCall(7000, () => (this.modeAuto = false))
 	}
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
