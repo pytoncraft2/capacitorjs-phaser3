@@ -27,10 +27,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// toucheBas
 		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-		// allies
-		const allies = this.add.layer();
-
-		this.allies = allies;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -40,7 +36,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
-	public allies!: Phaser.GameObjects.Layer;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;

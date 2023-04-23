@@ -3,16 +3,16 @@
 
 /* START OF COMPILED CODE */
 
-import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
+import ScriptNode from "./ScriptNode";
 /* START-USER-IMPORTS */
 import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
 /* END-USER-IMPORTS */
 
-export default class OnSceneAwakeScript extends ScriptNode {
+export default class OnSceneAwakeScript extends Phaser.GameObjects.Container {
 
-	constructor(parent: ScriptNode | Phaser.GameObjects.GameObject | Phaser.Scene) {
-		super(parent);
+	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+		super(scene, x ?? NaN, y ?? NaN);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -21,17 +21,13 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	/* START-USER-CODE */
 
-	protected override awake(): void {
-		console.log("ALLIES ON SCENE AVANT", this.scene.allies);
+	 awake(): void {
 		
-		// this.scene.editorCreateBase();
-		console.log("ALLIES ON SCENE APRES", this.scene.allies);
-		
-		this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
+		// this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
 	}
-    get scene() {
-        return super.scene as BaseNiveaux;
-    }
+    // scene() {
+    //     return super.scene as BaseNiveaux;
+    // }
 	/* END-USER-CODE */
 }
 
