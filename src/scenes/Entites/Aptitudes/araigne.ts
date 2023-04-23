@@ -4,11 +4,14 @@ export function __InitialisationSpecifique(entite: Entite, aptitudes:any) {
 }
 
 export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
-  entite.scene.tweens.add({
-    targets: entite,
-    alpha: 0.5,
-    yoyo: true,
-    loop: -1,
-    duration: 900
-  });
+  console.log("ARAIGNE MODE AUTO");
+  entite.body.setVelocityX(20)
+  
+  // entite.scene.tweens.add({
+  //   targets: entite,
+  //   alpha: 0.5,
+  //   yoyo: true,
+  //   loop: -1,
+  //   duration: 900
+  // });
 }

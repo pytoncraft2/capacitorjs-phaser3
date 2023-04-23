@@ -35,6 +35,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
+		this.scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -48,6 +49,8 @@ export default class Entite extends Phaser.GameObjects.Container {
 		DefautDirection(Aptitudes, this)
 		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
 		if (this.modeAuto) Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
+		this.scene.time.delayedCall(3000, () => (this.modeAuto = true))
+		this.scene.time.delayedCall(7000, () => (this.modeAuto = false))
 	}
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
@@ -58,6 +61,13 @@ export default class Entite extends Phaser.GameObjects.Container {
 	verifEtExecutionTouche(touche: string) {
 		return Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
 	}
+
+	preUpdate() {
+		if (this.modeAuto) {
+			this.verifEtExecutionTouche("modeAuto")			
+		}
+	}
+
 	/* END-USER-CODE */
 }
 

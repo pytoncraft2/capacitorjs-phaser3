@@ -216,7 +216,7 @@
                         "modeAuto"
                     ],
                     "label": "entite",
-                    "modeAuto": true,
+                    "modeAuto": false,
                     "components": [],
                     "x": 384,
                     "y": 200,
