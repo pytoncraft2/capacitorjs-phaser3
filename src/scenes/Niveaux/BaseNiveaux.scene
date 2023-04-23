@@ -57,5 +57,12 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "c0c85353-a296-49df-bbeb-7605a41cb275",
+            "label": "colision_entites_vs_platformes",
+            "scope": "PUBLIC"
+        }
+    ]
 }

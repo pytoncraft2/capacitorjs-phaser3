@@ -30,12 +30,16 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// allies
 		const allies = this.add.layer();
 
+		// lists
+		const colision_entites_vs_platformes: Array<any> = [];
+
 		this.allies = allies;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
 		this.toucheHaut = toucheHaut;
 		this.toucheBas = toucheBas;
+		this.colision_entites_vs_platformes = colision_entites_vs_platformes;
 
 		this.events.emit("scene-awake");
 	}
@@ -46,6 +50,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
 	private toucheHaut!: Phaser.Input.Keyboard.Key;
 	private toucheBas!: Phaser.Input.Keyboard.Key;
+	public colision_entites_vs_platformes!: Array<any>;
 
 	/* START-USER-CODE */
 
@@ -63,7 +68,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.editorCreateBase();
 		// this.entiteControllable = this.allies.getByName('huipat');
 		console.log("ALLIES",this.allies);
-		
+
 
 		console.log("INIT BASE_NIVEAUX");
 	}
