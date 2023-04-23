@@ -14,223 +14,140 @@
     },
     "displayList": [
         {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "de3b56d0-d6d4-42fb-b6cc-472af825a9e5",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat",
-            "useGameObjectName": true,
+            "type": "Layer",
+            "id": "94e12749-fa94-4b90-b2ed-19e85a365aa3",
+            "label": "groupe_adversaires",
             "components": [],
-            "x": 379,
-            "y": 242,
-            "nestedPrefabs": [],
-            "list": []
+            "list": [
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "72bc5fff-9ec0-4848-be08-a8b0bf821012",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "auto",
+                        "modeAuto",
+                        "allowGravity",
+                        "angularDrag",
+                        "body.velocity.x",
+                        "body.velocity.y"
+                    ],
+                    "label": "entite",
+                    "modeAuto": true,
+                    "components": [],
+                    "x": 471,
+                    "y": 162,
+                    "body.velocity.x": 100,
+                    "body.velocity.y": 0,
+                    "allowGravity": false,
+                    "angularDrag": 100,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "3a7eb5e1-8bc7-4b1b-827e-f0bdbacc3a22",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "image_entite",
+                            "components": [],
+                            "texture": {
+                                "key": "chauve_souris",
+                                "frame": "chauve_souris.png"
+                            },
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
+                    "list": []
+                }
+            ]
         },
         {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "baf99ae1-aed8-48df-97e2-d5f7ecc4c1a5",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat_1",
-            "useGameObjectName": true,
+            "type": "Layer",
+            "id": "5eac7b38-bf89-4cdd-b333-0a9bbd484105",
+            "label": "groupe_allies",
+            "scope": "PUBLIC",
             "components": [],
-            "x": 1339.621176049871,
-            "y": 372.61675980680695,
-            "nestedPrefabs": [
+            "list": [
                 {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "7f6fea0c-6114-4967-99b6-81fa4c651e12",
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "d8486faa-8482-4c6b-8bad-10800fdc0281",
                     "unlock": [
-                        "texture"
+                        "x",
+                        "y"
                     ],
-                    "label": "image_entite",
+                    "label": "huipat",
+                    "useGameObjectName": true,
                     "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
+                    "x": 1670,
+                    "y": 274,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "a6926d44-6d46-4ad4-971f-df7928a97137",
+                            "label": "image_entite",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "272e45be-9f0d-4309-b0b8-87bb279ed3e5",
+                                    "label": "onPointerDownScript_1",
+                                    "components": [],
+                                    "nestedPrefabs": [],
+                                    "list": [
+                                        {
+                                            "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
+                                            "id": "9c7ee83e-0238-43cb-b6b7-9e63fd75a067",
+                                            "label": "changeTextureScript",
+                                            "components": [],
+                                            "nestedPrefabs": [],
+                                            "list": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "d9093109-4e1d-4e75-a280-df54523b91e9",
+            "label": "platformes",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "f6ec8301-5a94-471c-b992-e480ba2933b8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 567,
+                    "y": 569,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "5132a4d8-e355-4681-8a44-f0c543d05024",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformePrefab_1",
+                    "components": [],
+                    "x": 1772,
+                    "y": 633,
                     "nestedPrefabs": [],
                     "list": []
                 }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "44bf48b5-0279-4f48-8b8c-1d3ed3fe08cc",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat_2",
-            "useGameObjectName": true,
-            "components": [],
-            "x": 1039.1629552797644,
-            "y": 209.7177244495202,
-            "nestedPrefabs": [
-                {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "f40bbdd7-641c-4cf8-818d-47c8495de50a",
-                    "unlock": [
-                        "texture"
-                    ],
-                    "label": "image_entite",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "0339cb33-aa29-43b9-8182-76b6856a1f5d",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat_3",
-            "useGameObjectName": true,
-            "components": [],
-            "x": 874.4539306407302,
-            "y": 446.82632035845984,
-            "nestedPrefabs": [
-                {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "7f9ec0bf-1ca9-43e8-82fd-6763ca56c05c",
-                    "unlock": [
-                        "texture"
-                    ],
-                    "label": "image_entite",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "b401c375-e543-42a3-ad0a-6952c97ef715",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat_4",
-            "useGameObjectName": true,
-            "components": [],
-            "x": 595.715581251595,
-            "y": 544.5657415728319,
-            "nestedPrefabs": [
-                {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "3c08d15e-2e71-41de-a66a-ebd3a0cd9a1e",
-                    "unlock": [
-                        "texture"
-                    ],
-                    "label": "image_entite",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "0a6308f2-70cc-4478-87ad-a86b4ee00a17",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat_5",
-            "useGameObjectName": true,
-            "components": [],
-            "x": 1522.4300935063818,
-            "y": 151.798067433596,
-            "nestedPrefabs": [
-                {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "7e12d305-b2a9-4eef-b788-8b730ffb9a98",
-                    "unlock": [
-                        "texture"
-                    ],
-                    "label": "image_entite",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-            "id": "3f90c4ed-caf4-41be-8dd6-b6233bc70fce",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "huipat_6",
-            "useGameObjectName": true,
-            "components": [],
-            "x": 821.9642414700489,
-            "y": 115.59828179864338,
-            "nestedPrefabs": [
-                {
-                    "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                    "id": "45dda731-9f00-4fc5-9b3e-4b19b2c7de31",
-                    "unlock": [
-                        "texture"
-                    ],
-                    "label": "image_entite",
-                    "components": [],
-                    "texture": {
-                        "key": "araigne",
-                        "frame": "araigne.png"
-                    },
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ],
-            "list": []
-        },
-        {
-            "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-            "id": "d8872c5e-e4a4-4f61-bc1b-415922a6e9f5",
-            "unlock": [
-                "x",
-                "y",
-                "scaleX",
-                "scaleY"
-            ],
-            "label": "platformePrefab",
-            "components": [],
-            "x": 979,
-            "y": 897,
-            "scaleX": 14.34331624775633,
-            "scaleY": 1,
-            "nestedPrefabs": [],
-            "list": []
+            ]
         },
         {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",

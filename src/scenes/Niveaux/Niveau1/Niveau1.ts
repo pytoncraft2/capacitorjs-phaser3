@@ -85,6 +85,9 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
+		// entite (prefab fields)
+		entite.modeAuto = true;
+
 		this.groupe_allies = groupe_allies;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 

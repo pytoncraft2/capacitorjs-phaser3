@@ -153,9 +153,11 @@
                     "unlock": [
                         "x",
                         "y",
-                        "auto"
+                        "auto",
+                        "modeAuto"
                     ],
                     "label": "entite",
+                    "modeAuto": true,
                     "components": [],
                     "x": 471,
                     "y": 162,

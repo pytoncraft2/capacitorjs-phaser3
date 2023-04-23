@@ -5,6 +5,8 @@
 
 import BaseNiveaux from "../BaseNiveaux";
 import Entite from "../../Entites/Entite";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import ChangeTextureScript from "../../../script-nodes/ChangeTextureScript";
 import PlatformePrefab from "../ObjetsNiveaux/PlatformePrefab";
 import OnSceneAwakeScript from "../../../script-nodes-basic/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
@@ -22,58 +24,55 @@ export default class Niveau2 extends BaseNiveaux {
 
 	editorCreate(): void {
 
+		// groupe_adversaires
+		const groupe_adversaires = this.add.layer();
+
+		// entite
+		const entite = new Entite(this, 471, 162);
+		entite.body.velocity.x = 100;
+		entite.body.velocity.y = 0;
+		entite.body.angularDrag = 100;
+		entite.body.allowGravity = false;
+		groupe_adversaires.add(entite);
+		entite.image_entite.setTexture("chauve_souris", "chauve_souris.png");
+
+		// groupe_allies
+		const groupe_allies = this.add.layer();
+
 		// huipat
-		const huipat = new Entite(this, 379, 242);
-		this.add.existing(huipat);
+		const huipat = new Entite(this, 1670, 274);
 		huipat.name = "huipat";
+		groupe_allies.add(huipat);
 
-		// huipat_1
-		const huipat_1 = new Entite(this, 1339.621176049871, 372.61675980680695);
-		this.add.existing(huipat_1);
-		huipat_1.name = "huipat_1";
-		huipat_1.image_entite.setTexture("araigne", "araigne.png");
+		// onPointerDownScript_1
+		const onPointerDownScript_1 = new OnPointerDownScript(huipat.image_entite);
 
-		// huipat_2
-		const huipat_2 = new Entite(this, 1039.1629552797644, 209.7177244495202);
-		this.add.existing(huipat_2);
-		huipat_2.name = "huipat_2";
-		huipat_2.image_entite.setTexture("araigne", "araigne.png");
+		// changeTextureScript
+		new ChangeTextureScript(onPointerDownScript_1);
 
-		// huipat_3
-		const huipat_3 = new Entite(this, 874.4539306407302, 446.82632035845984);
-		this.add.existing(huipat_3);
-		huipat_3.name = "huipat_3";
-		huipat_3.image_entite.setTexture("araigne", "araigne.png");
-
-		// huipat_4
-		const huipat_4 = new Entite(this, 595.715581251595, 544.5657415728319);
-		this.add.existing(huipat_4);
-		huipat_4.name = "huipat_4";
-		huipat_4.image_entite.setTexture("araigne", "araigne.png");
-
-		// huipat_5
-		const huipat_5 = new Entite(this, 1522.4300935063818, 151.798067433596);
-		this.add.existing(huipat_5);
-		huipat_5.name = "huipat_5";
-		huipat_5.image_entite.setTexture("araigne", "araigne.png");
-
-		// huipat_6
-		const huipat_6 = new Entite(this, 821.9642414700489, 115.59828179864338);
-		this.add.existing(huipat_6);
-		huipat_6.name = "huipat_6";
-		huipat_6.image_entite.setTexture("araigne", "araigne.png");
+		// platformes
+		const platformes = this.add.layer();
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 979, 897);
-		this.add.existing(platformePrefab);
-		platformePrefab.scaleX = 14.34331624775633;
-		platformePrefab.scaleY = 1;
+		const platformePrefab = new PlatformePrefab(this, 567, 569);
+		platformes.add(platformePrefab);
+
+		// platformePrefab_1
+		const platformePrefab_1 = new PlatformePrefab(this, 1772, 633);
+		platformes.add(platformePrefab_1);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
+		// entite (prefab fields)
+		entite.modeAuto = true;
+
+		this.groupe_allies = groupe_allies;
+
 		this.events.emit("scene-awake");
 	}
+
+	public groupe_allies!: Phaser.GameObjects.Layer;
 
 	/* START-USER-CODE */
 

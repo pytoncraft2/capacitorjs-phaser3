@@ -26,10 +26,6 @@ export default class OnSceneAwakeScript extends ScriptNode {
 		this.scene.entiteControllable = this.scene.groupe_allies.getByName('huipat') as Entite;
 	}
 
-	protected start(): void {
-		// this.scene.liste_colision_vs_platforme.push(this.scene.entiteControllable)
-	}
-
 	get scene(): Niveau1 {
         return super.scene as Niveau1;
 	}
