@@ -17,6 +17,8 @@ export default class PlatformePrefab extends Phaser.GameObjects.Rectangle {
 	constructor(scene: Phaser.Scene, x?: number, y?: number, width?: number, height?: number) {
 		super(scene, x ?? 541, y ?? 150, width ?? 128, height ?? 128);
 
+		this.scaleX = 3.1810352497675325;
+		this.scaleY = 0.20034715589478025;
 		scene.physics.add.existing(this, false);
 		this.body.allowGravity = false;
 		this.body.pushable = false;

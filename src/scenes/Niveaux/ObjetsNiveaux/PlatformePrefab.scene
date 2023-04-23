@@ -19,6 +19,8 @@
             "components": [],
             "x": 541,
             "y": 150,
+            "scaleX": 3.1810352497675325,
+            "scaleY": 0.20034715589478025,
             "ArcadeComponent.active": true,
             "allowGravity": false,
             "pushable": false,

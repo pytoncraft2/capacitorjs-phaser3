@@ -40,15 +40,11 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformes = this.add.layer();
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 1780, 663);
-		platformePrefab.scaleX = 12.955064222093448;
-		platformePrefab.scaleY = 1;
+		const platformePrefab = new PlatformePrefab(this, 1129, 571);
 		platformes.add(platformePrefab);
 
 		// platformePrefab_1
-		const platformePrefab_1 = new PlatformePrefab(this, -2, 476);
-		platformePrefab_1.scaleX = 12.955064222093448;
-		platformePrefab_1.scaleY = 1;
+		const platformePrefab_1 = new PlatformePrefab(this, 588, 383);
 		platformes.add(platformePrefab_1);
 
 		// groupe_allies
@@ -69,7 +65,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.layer();
 
 		// entite
-		const entite = new Entite(this, 471, 162);
+		const entite = new Entite(this, 471, 39);
 		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
 

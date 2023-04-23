@@ -54,37 +54,29 @@
             "list": [
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "f0b20208-7d94-4522-8011-c23389df9fb5",
+                    "id": "155386d5-d8cd-4150-b827-41772b77945c",
                     "unlock": [
                         "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
+                        "y"
                     ],
                     "label": "platformePrefab",
                     "components": [],
-                    "x": 1780,
-                    "y": 663,
-                    "scaleX": 12.955064222093448,
-                    "scaleY": 1,
+                    "x": 1129,
+                    "y": 571,
                     "nestedPrefabs": [],
                     "list": []
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "b4ef977b-69a1-4b46-9a08-3828196caeb1",
+                    "id": "54c9eec8-a4da-4edb-8ddf-9e0448ef15cf",
                     "unlock": [
                         "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
+                        "y"
                     ],
                     "label": "platformePrefab_1",
                     "components": [],
-                    "x": -2,
-                    "y": 476,
-                    "scaleX": 12.955064222093448,
-                    "scaleY": 1,
+                    "x": 588,
+                    "y": 383,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -160,7 +152,7 @@
                     "modeAuto": true,
                     "components": [],
                     "x": 471,
-                    "y": 162,
+                    "y": 39,
                     "nestedPrefabs": [
                         {
                             "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
