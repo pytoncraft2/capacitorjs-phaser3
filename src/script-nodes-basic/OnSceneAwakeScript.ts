@@ -5,6 +5,7 @@
 
 import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
+import Entite from "~/scenes/Entites/Entite";
 /* START-USER-IMPORTS */
 import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
 import Niveau1 from "~/scenes/Niveaux/Niveau1/Niveau1";
@@ -22,14 +23,14 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	/* START-USER-CODE */
 	protected awake(): void {
-		this.scene.entiteControllable = this.scene.groupe_allies.getByName('huipat');
+		this.scene.entiteControllable = this.scene.groupe_allies.getByName('huipat') as Entite;
 	}
 
 	protected start(): void {
 		// this.scene.liste_colision_vs_platforme.push(this.scene.entiteControllable)
 	}
 
-	get scene(): Niveau1  {
+	get scene(): Niveau1 {
         return super.scene as Niveau1;
 	}
 	/* END-USER-CODE */

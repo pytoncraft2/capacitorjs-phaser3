@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import Phaser, { GameObjects } from "phaser";
 /* START-USER-IMPORTS */
 import Entite from "../Entites/Entite";
 /* END-USER-IMPORTS */
@@ -45,7 +45,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	/* START-USER-CODE */
 
 	// Write your code here
-	public entiteControllable!: Entite | any
+	public entiteControllable!: Entite
 	private leftDown = false;
 	private rightDown = false;
 	private upDown = false;
@@ -84,13 +84,15 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 
-		if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
-		else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
-		else if (this.downDown) { this.entiteControllable.actionToucheBas() }
-		else { /*this.entiteControllable.aucuneAction()*/ }
+		if (this.entiteControllable) {
+			if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
+			else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
+			else if (this.downDown) { this.entiteControllable.actionToucheBas() }
+			else { /*this.entiteControllable.aucuneAction()*/ }
 
-		if (this.upDown && this.entiteControllable.body.touching.down) {
-			this.entiteControllable.actionToucheHaut();
+			if (this.upDown && this.entiteControllable.body.touching.down) {
+				this.entiteControllable.actionToucheHaut();
+			}
 		}
 
 		if (!this.isMobile) {
