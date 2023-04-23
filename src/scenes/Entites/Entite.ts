@@ -38,12 +38,13 @@ export default class Entite extends Phaser.GameObjects.Container {
 
 	public image_entite: Phaser.GameObjects.Image;
 	public vitesseDeplacement: number = 300;
+	public modeAuto: boolean = false;
 
 	/* START-USER-CODE */
 	awake() {
 		DefautDirection(Aptitudes, this)
 		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
-		Aptitudes[this.image_entite.texture.key]?.auto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
+		if (this.modeAuto) Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
 	}
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }

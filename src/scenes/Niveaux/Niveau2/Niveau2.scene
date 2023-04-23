@@ -27,6 +27,122 @@
             "y": 242,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "baf99ae1-aed8-48df-97e2-d5f7ecc4c1a5",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipat_1",
+            "useGameObjectName": true,
+            "components": [],
+            "x": 1339.621176049871,
+            "y": 372.61675980680695,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "44bf48b5-0279-4f48-8b8c-1d3ed3fe08cc",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipat_2",
+            "useGameObjectName": true,
+            "components": [],
+            "x": 1039.1629552797644,
+            "y": 209.7177244495202,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "0339cb33-aa29-43b9-8182-76b6856a1f5d",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipat_3",
+            "useGameObjectName": true,
+            "components": [],
+            "x": 874.4539306407302,
+            "y": 446.82632035845984,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "b401c375-e543-42a3-ad0a-6952c97ef715",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipat_4",
+            "useGameObjectName": true,
+            "components": [],
+            "x": 595.715581251595,
+            "y": 544.5657415728319,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "0a6308f2-70cc-4478-87ad-a86b4ee00a17",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipat_5",
+            "useGameObjectName": true,
+            "components": [],
+            "x": 1522.4300935063818,
+            "y": 151.798067433596,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+            "id": "3f90c4ed-caf4-41be-8dd6-b6233bc70fce",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "huipat_6",
+            "useGameObjectName": true,
+            "components": [],
+            "x": 821.9642414700489,
+            "y": 115.59828179864338,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+            "id": "d8872c5e-e4a4-4f61-bc1b-415922a6e9f5",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "platformePrefab",
+            "components": [],
+            "x": 979,
+            "y": 897,
+            "scaleX": 14.34331624775633,
+            "scaleY": 1,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "c7175b22-2824-472e-b631-b42b39bc91ae",
+            "label": "onSceneAwakeScript",
+            "components": [],
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [],

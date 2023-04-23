@@ -152,7 +152,8 @@
                     "id": "a11c51e8-9345-4b74-a3ea-bbd6bf62f1ac",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "auto"
                     ],
                     "label": "entite",
                     "components": [],

@@ -59,6 +59,16 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "modeAuto",
+            "label": "modeAuto",
+            "tooltip": "se déplace et/ou attaque automatiquement",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

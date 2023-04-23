@@ -22,7 +22,7 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	/* START-USER-CODE */
 	protected awake(): void {
-		this.scene.entiteControllable = this.scene.allies_niveau.getByName('huipat');
+		this.scene.entiteControllable = this.scene.allies_niveau?.getByName('huipat') ?? this.scene.children.getByName('huipat');
 	}
 
 	protected start(): void {
