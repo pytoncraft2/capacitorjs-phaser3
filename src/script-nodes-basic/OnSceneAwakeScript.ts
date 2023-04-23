@@ -7,6 +7,7 @@ import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
+import Niveau1 from "~/scenes/Niveaux/Niveau1/Niveau1";
 /* END-USER-IMPORTS */
 
 export default class OnSceneAwakeScript extends ScriptNode {
@@ -22,11 +23,17 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	/* START-USER-CODE */
 
 	protected awake(): void {
-		this.scene.entiteControllable = this.scene.allies.getByName('huipat');
+		console.log("AWAKE ON SCENE", this.scene.allies);
+		
+		this.scene.entiteControllable = this.scene.allies_niveau.getByName('huipat');
 	}
 
-	get scene(): BaseNiveaux {
-        return super.scene as BaseNiveaux;
+	protected start(): void {
+		console.log("------------START------------", this);
+	}
+
+	get scene(): Niveau1  {
+        return super.scene as Niveau1;
 	}
 	//  awake(): void {
 

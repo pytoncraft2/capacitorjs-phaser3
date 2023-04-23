@@ -4,8 +4,6 @@ export function changeAlpha__HAUT(entite: Entite, input?: any) {
 }
 
 export function __auto(entite: Entite, input: any, aptitudes: any) {
-  console.log("GOGOGOGO", entite);
-  
   entite.scene.tweens.add({
     targets: entite,
     alpha: 0.5,

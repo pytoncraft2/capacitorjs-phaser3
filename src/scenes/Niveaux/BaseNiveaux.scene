@@ -11,7 +11,16 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [],
+    "displayList": [
+        {
+            "type": "Layer",
+            "id": "3eca7277-cd2b-4779-b7f9-a6aa416e1d61",
+            "label": "allies",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": []
+        }
+    ],
     "plainObjects": [
         {
             "id": "8c38a74a-d5e6-45dd-9752-2ba3018a369f",

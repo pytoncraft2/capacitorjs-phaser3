@@ -93,7 +93,8 @@
         {
             "type": "Layer",
             "id": "2b87a2ad-5e34-4bca-86e9-b1d97dc23821",
-            "label": "allies",
+            "label": "allies_niveau",
+            "scope": "PUBLIC",
             "components": [],
             "list": [
                 {

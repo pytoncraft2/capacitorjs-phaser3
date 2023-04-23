@@ -51,13 +51,13 @@ export default class Niveau1 extends BaseNiveaux {
 		platformePrefab_1.scaleY = 1;
 		platformes.add(platformePrefab_1);
 
-		// allies
-		const allies = this.add.layer();
+		// allies_niveau
+		const allies_niveau = this.add.layer();
 
 		// huipat
 		const huipat = new Entite(this, 1059, 274);
 		huipat.name = "huipat";
-		allies.add(huipat);
+		allies_niveau.add(huipat);
 
 		// onPointerDownScript_1
 		const onPointerDownScript_1 = new OnPointerDownScript(huipat.image_entite);
@@ -85,11 +85,13 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
+		this.allies_niveau = allies_niveau;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 
 		this.events.emit("scene-awake");
 	}
 
+	public allies_niveau!: Phaser.GameObjects.Layer;
 	private liste_colision_vs_platforme!: Entite[];
 
 	/* START-USER-CODE */
