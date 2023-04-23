@@ -11,16 +11,7 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [
-        {
-            "type": "Layer",
-            "id": "3eca7277-cd2b-4779-b7f9-a6aa416e1d61",
-            "label": "allies",
-            "scope": "PUBLIC",
-            "components": [],
-            "list": []
-        }
-    ],
+    "displayList": [],
     "plainObjects": [
         {
             "id": "8c38a74a-d5e6-45dd-9752-2ba3018a369f",
@@ -50,14 +41,6 @@
             "id": "821a6ac8-7888-47dd-a708-5309280a228f",
             "type": "Keyboard.Key",
             "label": "toucheBas"
-        },
-        {
-            "id": "0c8395c5-f42e-4af6-bceb-7a4cc8211d8e",
-            "type": "Collider",
-            "label": "colision_vs_platforme",
-            "scope": "METHOD",
-            "object1": "allies.list",
-            "object2": "liste_colision_vs_platforme"
         }
     ],
     "meta": {
@@ -65,12 +48,5 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    },
-    "lists": [
-        {
-            "id": "c0c85353-a296-49df-bbeb-7605a41cb275",
-            "label": "liste_colision_vs_platforme",
-            "scope": "PUBLIC"
-        }
-    ]
+    }
 }

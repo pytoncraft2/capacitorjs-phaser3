@@ -51,13 +51,13 @@ export default class Niveau1 extends BaseNiveaux {
 		platformePrefab_1.scaleY = 1;
 		platformes.add(platformePrefab_1);
 
-		// allies_niveau
-		const allies_niveau = this.add.layer();
+		// groupe_allies
+		const groupe_allies = this.add.layer();
 
 		// huipat
 		const huipat = new Entite(this, 1059, 274);
 		huipat.name = "huipat";
-		allies_niveau.add(huipat);
+		groupe_allies.add(huipat);
 
 		// onPointerDownScript_1
 		const onPointerDownScript_1 = new OnPointerDownScript(huipat.image_entite);
@@ -65,26 +65,34 @@ export default class Niveau1 extends BaseNiveaux {
 		// changeTextureScript
 		new ChangeTextureScript(onPointerDownScript_1);
 
-		// adversaires
-		const adversaires = this.add.container(0, 0);
+		// groupe_adversaires
+		const groupe_adversaires = this.add.layer();
 
 		// entite
 		const entite = new Entite(this, 471, 162);
-		adversaires.add(entite);
+		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
+		// lists
+		const liste_colision_vs_platforme = [entite, huipat];
+
+		// colision_vs_platformes
+		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
+
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
-		this.allies_niveau = allies_niveau;
+		this.groupe_allies = groupe_allies;
+		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 
 		this.events.emit("scene-awake");
 	}
 
-	public allies_niveau!: Phaser.GameObjects.Layer;
+	public groupe_allies!: Phaser.GameObjects.Layer;
+	private liste_colision_vs_platforme!: Entite[];
 
 	/* START-USER-CODE */
 
