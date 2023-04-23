@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser, { GameObjects } from "phaser";
+import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Entite from "../Entites/Entite";
 /* END-USER-IMPORTS */
@@ -25,7 +25,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const toucheHaut = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
 
 		// toucheBas
-		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
@@ -88,7 +88,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (this.entiteControllable) {
 			if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
 			else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
-			else if (this.downDown) { this.entiteControllable.actionToucheBas() }
+			else if (this.downDown) { this.entiteControllable.actionToucheBas(); }
 			else { /*this.entiteControllable.aucuneAction()*/ }
 
 			if (this.upDown && this.entiteControllable.body.touching.down) {

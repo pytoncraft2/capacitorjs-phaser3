@@ -39,9 +39,9 @@ export default class Entite extends Phaser.GameObjects.Container {
 	}
 
 	public image_entite: Phaser.GameObjects.Image;
-	public vitesseDeplacement: number = 300;
+	public velociteX: number = 300;
 	public modeAuto: boolean = false;
-	public puissanceSautY: number = 890;
+	public velociteY: number = 890;
 
 	/* START-USER-CODE */
 	awake() {
@@ -51,7 +51,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	}
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
-	actionToucheHaut() { this.verifEtExecutionTouche("toucheHaut") }
+	actionToucheHaut() { this.verifEtExecutionTouche("toucheEspace") }
 	actionToucheBas() { this.verifEtExecutionTouche("toucheBas") }
 	aucuneAction() {}
 

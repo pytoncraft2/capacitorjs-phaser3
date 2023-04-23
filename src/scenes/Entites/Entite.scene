@@ -53,8 +53,8 @@
     },
     "prefabProperties": [
         {
-            "name": "vitesseDeplacement",
-            "label": "vitesseDeplacement",
+            "name": "velociteX",
+            "label": "velociteX",
             "tooltip": "vitesse de déplacement en x et y de l'entite",
             "defValue": 300,
             "customDefinition": false,
@@ -73,8 +73,8 @@
             }
         },
         {
-            "name": "puissanceSautY",
-            "label": "puissanceSautY",
+            "name": "velociteY",
+            "label": "velociteY",
             "tooltip": "velocité saut en y",
             "defValue": 890,
             "customDefinition": false,

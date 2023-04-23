@@ -40,7 +40,8 @@
         {
             "id": "821a6ac8-7888-47dd-a708-5309280a228f",
             "type": "Keyboard.Key",
-            "label": "toucheBas"
+            "label": "toucheBas",
+            "keyCode": "DOWN"
         }
     ],
     "meta": {
