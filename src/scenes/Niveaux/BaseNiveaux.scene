@@ -50,6 +50,14 @@
             "id": "821a6ac8-7888-47dd-a708-5309280a228f",
             "type": "Keyboard.Key",
             "label": "toucheBas"
+        },
+        {
+            "id": "0c8395c5-f42e-4af6-bceb-7a4cc8211d8e",
+            "type": "Collider",
+            "label": "colision_vs_platforme",
+            "scope": "METHOD",
+            "object1": "allies.list",
+            "object2": "liste_colision_vs_platforme"
         }
     ],
     "meta": {
@@ -61,7 +69,7 @@
     "lists": [
         {
             "id": "c0c85353-a296-49df-bbeb-7605a41cb275",
-            "label": "colision_entites_vs_platformes",
+            "label": "liste_colision_vs_platforme",
             "scope": "PUBLIC"
         }
     ]

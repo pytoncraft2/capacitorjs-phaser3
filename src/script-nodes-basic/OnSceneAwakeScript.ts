@@ -23,11 +23,12 @@ export default class OnSceneAwakeScript extends ScriptNode {
 	/* START-USER-CODE */
 	protected awake(): void {
 		this.scene.entiteControllable = this.scene.allies_niveau?.getByName('huipat') ?? this.scene.children.getByName('huipat');
-		this.scene.colision_entites_vs_platformes.push(this.scene.entiteControllable)
+		// this.scene.allies.add()
+		// this.scene.liste_colision_vs_platforme.push(this.scene.entiteControllable)
 	}
 
 	protected start(): void {
-		console.log("------------START------------", this);
+		// this.scene.liste_colision_vs_platforme.push(this.scene.entiteControllable)
 	}
 
 	get scene(): Niveau1  {

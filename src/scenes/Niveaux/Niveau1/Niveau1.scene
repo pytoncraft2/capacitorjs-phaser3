@@ -189,30 +189,11 @@
             "list": []
         }
     ],
-    "plainObjects": [
-        {
-            "id": "44de6f1a-4466-468a-a51d-ecb520fa16ec",
-            "type": "Collider",
-            "label": "colision_entites_vs_platformes",
-            "scope": "METHOD",
-            "object1": "liste_colision_vs_platforme",
-            "object2": "platformes.list"
-        }
-    ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    },
-    "lists": [
-        {
-            "id": "c2052b34-d16b-4185-a589-fdcb4a3d9312",
-            "label": "liste_colision_vs_platforme",
-            "objectIds": [
-                "a11c51e8-9345-4b74-a3ea-bbd6bf62f1ac",
-                "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef"
-            ]
-        }
-    ]
+    }
 }

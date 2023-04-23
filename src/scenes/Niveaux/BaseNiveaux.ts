@@ -31,7 +31,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const allies = this.add.layer();
 
 		// lists
-		const colision_entites_vs_platformes: Array<any> = [];
+		const liste_colision_vs_platforme: Array<any> = [];
+
+		// colision_vs_platforme
+		this.physics.add.collider(allies.list, liste_colision_vs_platforme);
 
 		this.allies = allies;
 		this.toucheEspace = toucheEspace;
@@ -39,7 +42,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.toucheDroite = toucheDroite;
 		this.toucheHaut = toucheHaut;
 		this.toucheBas = toucheBas;
-		this.colision_entites_vs_platformes = colision_entites_vs_platformes;
+		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 
 		this.events.emit("scene-awake");
 	}
@@ -50,7 +53,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
 	private toucheHaut!: Phaser.Input.Keyboard.Key;
 	private toucheBas!: Phaser.Input.Keyboard.Key;
-	public colision_entites_vs_platformes!: Array<any>;
+	public liste_colision_vs_platforme!: Array<any>;
 
 	/* START-USER-CODE */
 
