@@ -19,6 +19,8 @@
             "label": "container_1",
             "components": [],
             "ArcadeComponent.active": true,
+            "body.gravity.y": 800,
+            "collideWorldBounds": true,
             "body.width": 148,
             "body.height": 162,
             "body.offset.x": 36,
@@ -68,6 +70,16 @@
             "customDefinition": false,
             "type": {
                 "id": "boolean"
+            }
+        },
+        {
+            "name": "puissanceSautY",
+            "label": "puissanceSautY",
+            "tooltip": "velocité saut en y",
+            "defValue": 890,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
             }
         }
     ]

@@ -56,6 +56,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	init() {
 		this.editorCreateBase();
+		this.physics.world.setBoundsCollision(true, true, false, false)
 		console.log("INIT BASE_NIVEAUX");
 	}
 

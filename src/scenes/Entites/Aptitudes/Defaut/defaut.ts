@@ -9,6 +9,8 @@ const cle_image = entite.image_entite.texture.key
     deplacementGauche(joueur)
   }
   Aptitudes[cle_image].toucheEspace = (joueur: Entite, input: any) => {
+    console.log("TOUCHE ESPACE");
+    
     saut(joueur)
   }
   Aptitudes[cle_image].toucheHaut = (joueur: Entite, input: any) => {
@@ -22,7 +24,7 @@ const cle_image = entite.image_entite.texture.key
 function saut(joueur: Entite) {
   joueur.body.checkCollision.none = true;
   //TODO CHANGER VITESSE DEPLACMENT EN Y
-  joueur.body.setVelocityY(-joueur.vitesseDeplacement);
+  joueur.body.setVelocityY(-joueur.puissanceSautY);
   joueur.scene.time.delayedCall(500, () => (joueur.body.checkCollision.none = false), undefined, joueur);
 }
 function stopEntite(joueur: Entite) {

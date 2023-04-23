@@ -43,15 +43,35 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformePrefab = new PlatformePrefab(this, 1129, 571);
 		platformes.add(platformePrefab);
 
+		// platformePrefab_2
+		const platformePrefab_2 = new PlatformePrefab(this, 384, 800);
+		platformes.add(platformePrefab_2);
+
+		// platformePrefab_3
+		const platformePrefab_3 = new PlatformePrefab(this, 1536, 800);
+		platformes.add(platformePrefab_3);
+
+		// platformePrefab_4
+		const platformePrefab_4 = new PlatformePrefab(this, 1152, 200);
+		platformes.add(platformePrefab_4);
+
 		// platformePrefab_1
-		const platformePrefab_1 = new PlatformePrefab(this, 588, 383);
+		const platformePrefab_1 = new PlatformePrefab(this, 576, 400);
+		platformePrefab_1.scaleX = 8;
+		platformePrefab_1.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_1);
+
+		// platformePrefab_5
+		const platformePrefab_5 = new PlatformePrefab(this, 960, 1000);
+		platformePrefab_5.scaleX = 15;
+		platformePrefab_5.scaleY = 0.20034715589478025;
+		platformes.add(platformePrefab_5);
 
 		// groupe_allies
 		const groupe_allies = this.add.layer();
 
 		// huipat
-		const huipat = new Entite(this, 1059, 274);
+		const huipat = new Entite(this, 1536, 200);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
 
@@ -65,7 +85,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.layer();
 
 		// entite
-		const entite = new Entite(this, 471, 39);
+		const entite = new Entite(this, 384, 200);
 		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
 

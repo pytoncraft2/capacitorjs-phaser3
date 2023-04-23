@@ -20,6 +20,8 @@ export default class Entite extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		scene.physics.add.existing(this, false);
+		this.body.gravity.y = 800;
+		this.body.collideWorldBounds = true;
 		this.body.setOffset(36, 22);
 		this.body.setSize(148, 162, false);
 
@@ -39,6 +41,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public image_entite: Phaser.GameObjects.Image;
 	public vitesseDeplacement: number = 300;
 	public modeAuto: boolean = false;
+	public puissanceSautY: number = 890;
 
 	/* START-USER-CODE */
 	awake() {
