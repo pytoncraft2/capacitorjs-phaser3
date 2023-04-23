@@ -13,12 +13,10 @@
     },
     "displayList": [
         {
-            "type": "Container",
-            "id": "f48d1b11-bfce-4473-aea3-6981b0634c17",
+            "type": "ScriptNode",
+            "id": "fbc415de-991b-4671-9a50-0de12f4f4d7c",
             "label": "container_1",
             "components": [],
-            "x": null,
-            "y": null,
             "list": []
         }
     ],

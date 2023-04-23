@@ -3,16 +3,16 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
 import ScriptNode from "./ScriptNode";
+import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import BaseNiveaux from "~/scenes/Niveaux/BaseNiveaux";
 /* END-USER-IMPORTS */
 
-export default class OnSceneAwakeScript extends Phaser.GameObjects.Container {
+export default class OnSceneAwakeScript extends ScriptNode {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? NaN, y ?? NaN);
+	constructor(parent: ScriptNode | Phaser.GameObjects.GameObject | Phaser.Scene) {
+		super(parent);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -21,10 +21,17 @@ export default class OnSceneAwakeScript extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
-	 awake(): void {
-		
-		// this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
+	protected awake(): void {
+		this.scene.entiteControllable = this.scene.allies.getByName('huipat');
 	}
+
+	get scene(): BaseNiveaux {
+        return super.scene as BaseNiveaux;
+	}
+	//  awake(): void {
+
+		// this.scene.entiteControllable = (this.scene as BaseNiveaux | any).allies.getByName('huipat');
+	// }
     // scene() {
     //     return super.scene as BaseNiveaux;
     // }

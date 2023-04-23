@@ -27,14 +27,6 @@
             "y": 242,
             "nestedPrefabs": [],
             "list": []
-        },
-        {
-            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
-            "id": "718a95ed-3151-4a65-9dbc-4075bbef34b3",
-            "label": "onSceneAwakeScript",
-            "components": [],
-            "nestedPrefabs": [],
-            "list": []
         }
     ],
     "plainObjects": [],
