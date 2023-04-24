@@ -112,6 +112,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 		return false;
 	}
 
+	overlapAction(rectangleZoneDetection: any, ennemie: Phaser.Physics.Arcade.Sprite) {
+		rectangleZoneDetection.action(ennemie)
+	}
+
 	/* END-USER-CODE */
 }
 
