@@ -1,8 +1,14 @@
 import Entite from "../Entite"
+import { Aptitudes } from "./_autoImport";
 export function __InitialisationSpecifique(entite: Entite, aptitudes:any) {
-  console.log("APTITUDE",aptitudes);
   entite.body.setVelocityX(200);
-
+  Aptitudes[entite.image_entite.texture.key].toucheEspace = () => {
+    entite.body.checkCollision.none = true;
+    entite.scene.time.delayedCall(600, () => {
+      entite.body.checkCollision.none = false;
+    });
+    entite.body.setVelocityY(-300)
+  }
 }
 
 export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
@@ -11,18 +17,14 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
   entite.tempsCumule += dt
     const { left, right } = entite.body.blocked;
     
-
     if (left) {
-      console.log("BLOCKE GAUCE");
-      
       entite.body.setVelocityX(entite.velociteX)
       entite.image_entite.setFlipX(false)
+      return
     } else if (right) {
-      console.log("BLOCKE DROIT---");
       entite.body.setVelocityX(-entite.velociteX)
       entite.image_entite.setFlipX(true)
-      // entite.body.setVelocityX(velocite)
-      // return
+      return
     }
 
 

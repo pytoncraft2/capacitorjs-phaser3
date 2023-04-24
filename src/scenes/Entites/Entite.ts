@@ -51,6 +51,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		DefautDirection(Aptitudes, this)
 		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
 		if (this.modeAuto) Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
+		this.body.setSize(this.image_entite.displayWidth, this.image_entite.displayHeight)
 		// this.scene.time.delayedCall(3000, () => (this.modeAuto = true))
 		// this.scene.time.delayedCall(7000, () => (this.modeAuto = false))
 	}
