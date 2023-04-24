@@ -68,6 +68,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		if (this.modeAuto) {
 			this.verifEtExecutionTouche("modeAuto")			
 		}
+		this.scene.physics.world.wrap(this, 300);
 	}
 
 	/* END-USER-CODE */

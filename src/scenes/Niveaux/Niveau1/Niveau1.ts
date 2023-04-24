@@ -103,7 +103,7 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// entite (prefab fields)
 		entite.modeAuto = true;
-		entite.tempsEntreActions = 1000;
+		entite.tempsEntreActions = 300;
 
 		this.groupe_allies = groupe_allies;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
@@ -129,7 +129,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// this.allies.add(this.entite)
 		// console.log(this.entites_vs_platformes);
 	}
-
 
 	/* END-USER-CODE */
 }

@@ -218,7 +218,7 @@
                     ],
                     "label": "entite",
                     "modeAuto": true,
-                    "tempsEntreActions": 1000,
+                    "tempsEntreActions": 300,
                     "components": [],
                     "x": 384,
                     "y": 200,
