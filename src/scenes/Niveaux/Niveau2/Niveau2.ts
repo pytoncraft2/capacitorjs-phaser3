@@ -79,10 +79,7 @@ export default class Niveau2 extends BaseNiveaux {
 	// Write your code here
 
 	create() {
-
 		this.editorCreate();
-		console.log(this.scene.scene.children.getByName('huipat'));
-
 	}
 
 	/* END-USER-CODE */

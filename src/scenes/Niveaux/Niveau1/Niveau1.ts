@@ -116,18 +116,8 @@ export default class Niveau1 extends BaseNiveaux {
 
 	/* START-USER-CODE */
 
-	// Write your code here
-
 	create() {
-
-		// this.editorCreateBase()
 		this.editorCreate();
-		console.log("NIVEAU 1!!!!!!!!!!!!!!!!!!!!");
-		// this.allies.
-
-		// this.joueurcontrollable = this.allies.getByName('huipat')
-		// this.allies.add(this.entite)
-		// console.log(this.entites_vs_platformes);
 	}
 
 	/* END-USER-CODE */
