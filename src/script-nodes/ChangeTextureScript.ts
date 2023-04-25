@@ -42,8 +42,10 @@ export default class ChangeTextureScript extends ScriptNode {
 
 	changeTexture() {
 		let index = this.compteur % this.liste_texture.length;
-		this.compteur++;
-		// Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(this.gameObject, this.gameObject, Aptitudes)
+		++this.compteur;
+		
+		//@ts-ignore
+		this.gameObject.parentContainer.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(this.gameObject.parentContainer, this.gameObject.parentContainer, (this.gameObject.parentContainer as Entite).Aptitudes)
 		return this.liste_texture[index];
 	}
 	/* END-USER-CODE */
