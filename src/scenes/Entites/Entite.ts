@@ -5,7 +5,7 @@
 
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
-import { Aptitudes } from "./Aptitudes/_autoImport";
+import { Aptitudes, Touches } from "./Aptitudes/_autoImport";
 import { DefautDirection } from "./Aptitudes/Defaut/defaut";
 /* END-USER-IMPORTS */
 
@@ -47,11 +47,13 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public tempsEntreActions: number = 1000;
 
 	/* START-USER-CODE */
+	public Aptitudes: Touches = { ...Aptitudes }
 	awake() {
-		DefautDirection(Aptitudes, this)
-		Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, Aptitudes);
-		if (this.modeAuto) Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, Aptitudes[this.image_entite.texture.key]);
-		this.body.setSize(this.image_entite.displayWidth, this.image_entite.displayHeight)
+		DefautDirection(this.Aptitudes, this)
+		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
+		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
+		// this.body.setSize(this.image_entite.displayWidth, this.image_entite.displayHeight)
+		// this.image_entite.setOrigin(0.5, 1.5)
 		// this.scene.time.delayedCall(3000, () => (this.modeAuto = true))
 		// this.scene.time.delayedCall(7000, () => (this.modeAuto = false))
 	}
@@ -62,7 +64,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	aucuneAction() {}
 
 	verifEtExecutionTouche(touche: string) {
-		return Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
+		return this.Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
 	}
 
 	preUpdate() {

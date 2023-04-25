@@ -86,6 +86,7 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// entite
 		const entite = new Entite(this, 384, 200);
+		entite.body.setOffset(0, 0);
 		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
 

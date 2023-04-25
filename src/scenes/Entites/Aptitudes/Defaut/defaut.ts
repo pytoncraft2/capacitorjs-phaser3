@@ -1,6 +1,7 @@
 import Entite from "../../Entite"
 
-export const DefautDirection = (Aptitudes: any, entite: Entite) => {
+export const DefautDirection = (_Aptitudes: any, entite: Entite) => {
+const Aptitudes = entite.Aptitudes;
 const cle_image = entite.image_entite.texture.key
   Aptitudes[cle_image].toucheDroite = (joueur: Entite, input: any) => {
     deplacementDroite(joueur)

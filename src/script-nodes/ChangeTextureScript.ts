@@ -7,6 +7,7 @@ import ScriptNode from "../script-nodes-basic/ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import { Aptitudes } from "../scenes/Entites/Aptitudes/_autoImport";
+import Entite from "~/scenes/Entites/Entite";
 /* END-USER-IMPORTS */
 
 export default class ChangeTextureScript extends ScriptNode {
@@ -20,11 +21,11 @@ export default class ChangeTextureScript extends ScriptNode {
 	}
 
 	/* START-USER-CODE */
-	liste_texture = Object.keys(Aptitudes)
+	liste_texture = Object.keys({...Aptitudes})
 	compteur = 0;
 
 	override get gameObject() {
-		return super.gameObject as Phaser.Physics.Arcade.Sprite;
+		return super.gameObject as Entite;
 	}
 
 	override execute(args?: any): void {

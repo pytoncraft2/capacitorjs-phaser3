@@ -2,7 +2,7 @@ import Entite from "../Entite"
 import { Aptitudes } from "./_autoImport";
 export function __InitialisationSpecifique(entite: Entite, aptitudes:any) {
   entite.body.setVelocityX(200);
-  Aptitudes[entite.image_entite.texture.key].toucheEspace = () => {
+  entite.Aptitudes[entite.image_entite.texture.key].toucheEspace = () => {
     entite.body.checkCollision.none = true;
     entite.scene.time.delayedCall(600, () => {
       entite.body.checkCollision.none = false;

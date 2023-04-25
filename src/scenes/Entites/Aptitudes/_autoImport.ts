@@ -1,4 +1,4 @@
-type Touches = {
+export type Touches = {
   [personnage:string]: {
     [toucheAction:string]: (joueur: any, input: any, auto?: any) => void
   }
@@ -45,6 +45,7 @@ export const autoImport = [
   "chauve_souris.ts",
 ].map(file => {
       import('./' + file).then((m) => {
+        // TODO: mieux documenter
           //le nom du fichier devient la clé pour l'objet (Aptitudes)
           const personnage = file.substring(0, file.lastIndexOf('.'))
           Object.values(m).forEach((fn:any, _i) => {
