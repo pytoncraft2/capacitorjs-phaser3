@@ -63,4 +63,8 @@ export const autoImport = [
             }
           })
       });
+      setTimeout(() => {
+      console.log(Aptitudes);
+      }, 3000);
+      
     });

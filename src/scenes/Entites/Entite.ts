@@ -49,8 +49,9 @@ export default class Entite extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
 	awake() {
+		const self = this;
 		DefautDirection(this.Aptitudes, this)
-		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
+		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(self, self, self.Aptitudes);
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
 		// this.body.setSize(this.image_entite.displayWidth, this.image_entite.displayHeight)
 		// this.image_entite.setOrigin(0.5, 1.5)
