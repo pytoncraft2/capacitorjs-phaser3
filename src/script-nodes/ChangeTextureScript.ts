@@ -25,7 +25,7 @@ export default class ChangeTextureScript extends ScriptNode {
 	compteur = 0;
 
 	override get gameObject() {
-		return super.gameObject as Entite;
+		return super.gameObject as Phaser.GameObjects.Image & {parentContainer: Entite};
 	}
 
 	override execute(args?: any): void {
@@ -36,16 +36,16 @@ export default class ChangeTextureScript extends ScriptNode {
 				alpha: { value: 0, duration: 300, yoyo: true},
 				texture: { value: this.changeTexture(), duration: 0, delay: 300 }
 			},
-			ease: 'Linear'
+			ease: 'Linear',
+			onComplete: () => {
+				this.gameObject.parentContainer.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(this.gameObject.parentContainer, this.gameObject.parentContainer, (this.gameObject.parentContainer as Entite).Aptitudes)
+			}
 		});
 	}
 
 	changeTexture() {
 		let index = this.compteur % this.liste_texture.length;
 		++this.compteur;
-		
-		//@ts-ignore
-		this.gameObject.parentContainer.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(this.gameObject.parentContainer, this.gameObject.parentContainer, (this.gameObject.parentContainer as Entite).Aptitudes)
 		return this.liste_texture[index];
 	}
 	/* END-USER-CODE */
