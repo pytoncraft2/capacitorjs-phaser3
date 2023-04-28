@@ -6,7 +6,7 @@
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import { Aptitudes, Touches } from "./Aptitudes/_autoImport";
-import { DefautDirection } from "./Aptitudes/Defaut/defaut";
+import { DefautDirection } from "./Aptitudes/Defaut/deplacements";
 /* END-USER-IMPORTS */
 
 export default interface Entite {
@@ -54,11 +54,12 @@ export default class Entite extends Phaser.GameObjects.Container {
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
 	}
 
+	actionToucheEspace() { this.verifEtExecutionTouche("toucheEspace") }
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
-	actionToucheHaut() { this.verifEtExecutionTouche("toucheEspace") }
+	actionToucheHaut() { this.verifEtExecutionTouche("toucheHaut") }
 	actionToucheBas() { this.verifEtExecutionTouche("toucheBas") }
-	aucuneAction() {}
+	aucuneTouche() { this.verifEtExecutionTouche("aucuneTouche") }
 
 	verifEtExecutionTouche(touche: string) {
 		return this.Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})

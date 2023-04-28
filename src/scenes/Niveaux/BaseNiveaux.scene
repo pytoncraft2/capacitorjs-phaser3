@@ -16,8 +16,7 @@
         {
             "id": "8c38a74a-d5e6-45dd-9752-2ba3018a369f",
             "type": "Keyboard.Key",
-            "label": "toucheEspace",
-            "keyCode": "BACKSPACE"
+            "label": "toucheEspace"
         },
         {
             "id": "47f9f3ec-8593-4f12-81bb-9492fd6f6a58",

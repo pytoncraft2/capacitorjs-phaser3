@@ -13,7 +13,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	editorCreateBase(): void {
 
 		// toucheEspace
-		const toucheEspace = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.BACKSPACE);
+		const toucheEspace = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
 		// toucheGauche
 		const toucheGauche = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -62,7 +62,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	update(time: number, delta: number): void {
 		this.observeToucheDeplacement()
-		console.log("update base");
 	}
 
 	observeToucheDeplacement() {
@@ -75,7 +74,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (Phaser.Input.Keyboard.JustDown(this.toucheEspace)) {
-			// this.entiteControllable.envoieProjectileToile()
+			// touche espace ou touche d'attaque
+			this.entiteControllable.actionToucheEspace()
 		}
 
 		if (this.isMobile) {
@@ -90,7 +90,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
 			else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
 			else if (this.downDown) { this.entiteControllable.actionToucheBas(); }
-			else { /*this.entiteControllable.aucuneAction()*/ }
+			else { this.entiteControllable.aucuneTouche() }
 
 			if (this.upDown && this.entiteControllable.body.touching.down) {
 				this.entiteControllable.actionToucheHaut();
