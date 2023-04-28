@@ -35,12 +35,13 @@ function stopEntite(joueur: Entite) {
 }
 function deplacementDroite(joueur: Entite) {
   joueur.image_entite.setFlipX(false);
-  // joueur?.zone_attaque_physique.setPosition(this.huipat.getRightCenter().x,this.huipat.getRightCenter().y)
+  joueur.rectangle_zone_interaction.setPosition(joueur.image_entite.getRightCenter().x,joueur.image_entite.getRightCenter().y)
   joueur.body.setVelocityX(joueur.velociteX);
 }
 function deplacementGauche(joueur: Entite) {
   joueur.image_entite.setFlipX(true);
-  // joueur.zone_attaque_physique.setPosition(this.huipat.getLeftCenter().x,this.huipat.getLeftCenter().y)
+  // tout le temp appelé ? la position change en permanence ??
+  joueur.rectangle_zone_interaction.setPosition(joueur.image_entite.getLeftCenter().x,joueur.image_entite.getLeftCenter().y)
   joueur.body.setVelocityX(-joueur.velociteX)
 }
 function deplacementBas(joueur: Entite): any {

@@ -44,7 +44,7 @@
                 {
                     "type": "Rectangle",
                     "id": "b736a01b-b670-4106-882e-e49f53139a94",
-                    "label": "rectangleZoneInteraction",
+                    "label": "rectangle_zone_interaction",
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "x": 180,
