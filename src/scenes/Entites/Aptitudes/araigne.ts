@@ -1,21 +1,17 @@
 import Entite from "../Entite"
-export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
-  // entite.Aptitudes[entite.image_entite.texture.key].toucheBas = (_entite, input) => {
-  //   if (_entite.body.touching.down) {
-  //     _entite.body.checkCollision.none = true;
-  //     _entite.scene.time.delayedCall(600, () => {
-  //       _entite.body.checkCollision.none = false;
-  //     });
-  //     _entite.body.setVelocityY(-300)
-  //   }
-  // }
+export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
+
+export function sautVersLeBas__toucheBas(entite: any, input?: any) {
+  if (entite.body.touching.down) {
+    entite.body.checkCollision.none = true;
+    entite.scene.time.delayedCall(600, () => {
+      entite.body.checkCollision.none = false;
+    });
+    entite.body.setVelocityY(-300)
+  }
 }
 
-export function yoyo__toucheBas(entite: any, input?: any) {
-  console.log("TOUCHE BAS A R A I G N E");
-}
-
-export function __toucheEspace(entite: Entite, aptitudes: any) {
+export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
   console.log("TOUCHE ATTAQUE ARAIGNEEEEEEEEEEEEEEE!!!");
 }
 
