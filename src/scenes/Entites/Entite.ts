@@ -49,7 +49,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
 	awake() {
-		DefautDirection(this.Aptitudes, this)
+		DefautDirection(this.Aptitudes, this);
 		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
 	}
@@ -69,6 +69,11 @@ export default class Entite extends Phaser.GameObjects.Container {
 			this.verifEtExecutionTouche("modeAuto")			
 		}
 		this.scene.physics.world.wrap(this, 300);
+	}
+
+	reinitialiseBody() {
+		this.body.checkCollision.none = false;
+		this.alpha = 1;
 	}
 
 	/* END-USER-CODE */

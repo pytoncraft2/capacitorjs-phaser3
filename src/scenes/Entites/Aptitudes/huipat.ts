@@ -1,13 +1,9 @@
 import Entite from "../Entite"
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
-    console.log("INIT SPECIFIQUE HUIPAT");
-}
-export function __auto(entite: Entite, input: any, aptitudes: any) {
-  entite.scene.tweens.add({
-    targets: entite,
-    alpha: 0.5,
-    loop: -1,
-    duration: 900,
-    onLoop: () => console.log("LOOP")
-  });
+  // entite.Aptitudes[entite.image_entite.texture.key].toucheBas = (_entite, input) => {
+  //   _entite.image_entite.setAlpha(0.2)
+  // }
+  // entite.Aptitudes[entite.image_entite.texture.key].toucheEspace = (_entite, input) => {
+  //   _entite.image_entite.setAlpha(1)
+  // }
 }

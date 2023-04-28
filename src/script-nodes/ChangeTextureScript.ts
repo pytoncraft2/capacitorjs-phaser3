@@ -8,6 +8,7 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import { Aptitudes } from "../scenes/Entites/Aptitudes/_autoImport";
 import Entite from "~/scenes/Entites/Entite";
+import { partir } from "../scenes/Entites/Aptitudes/Defaut/ChangerEtat";
 /* END-USER-IMPORTS */
 
 export default class ChangeTextureScript extends ScriptNode {
@@ -39,6 +40,7 @@ export default class ChangeTextureScript extends ScriptNode {
 			ease: 'Linear',
 			onComplete: () => {
 				this.gameObject.parentContainer.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(this.gameObject.parentContainer, this.gameObject.parentContainer, (this.gameObject.parentContainer as Entite).Aptitudes)
+				partir(this.gameObject.parentContainer);
 			}
 		});
 	}
