@@ -45,7 +45,6 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public velociteY: number = 890;
 	public tempsCumule: number = 0;
 	public tempsEntreActions: number = 1000;
-	public bonusVelociteX: number = 0;
 
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }

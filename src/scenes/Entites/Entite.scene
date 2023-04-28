@@ -101,16 +101,6 @@
             "type": {
                 "id": "number"
             }
-        },
-        {
-            "name": "bonusVelociteX",
-            "label": "bonusVelociteX",
-            "tooltip": "bonus (acceleration) velocite x",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
         }
     ]
 }

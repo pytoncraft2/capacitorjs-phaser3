@@ -31,52 +31,5 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
   if (entite.tempsCumule < entite.tempsEntreActions) { return }
   else {
     entite.tempsCumule = 0
-    // let velocite = entite.body.velocity.x > 0 ? -entite.velociteX : entite.body.velocity.x < 0 ? entite.velociteX : -entite.velociteX;
-
-    switch (Phaser.Math.Between(0, 5)) {
-      case 0:
-      case 1:
-      case 2:
-      case 3:
-            break
-      case 4:
-          entite.image_entite.setFlipX(!entite.image_entite.flipX)
-          break
-      case 5:
-          entite.image_entite.setFlipX(!entite.image_entite.flipX)
-          break
-    }
-    // switch (Phaser.Math.Between(0, 20)) {
-    //   case 0:
-    //   case 1:
-    //   case 2:
-    //   case 3: 
-    //     {
-    //       entite.body.setVelocityX(velocite)
-    //       entite.image_entite.setFlipX(!entite.image_entite.flipX)
-
-    //       break
-    //     }
-    //   case 1:
-    //     {
-    //       entite.body.touching.down && entite.actionToucheBas()
-    //       break
-    //     }
-    //   case 2:
-    //     {
-    //       entite.body.touching.down && entite.actionToucheHaut()
-    //       break
-    //     }
-    //   case 3:
-    //     {
-    //       entite.body.touching.down && entite.actionToucheDroite()
-    //       break
-    //     }
-    //   case 4:
-    //     {
-    //       entite.body.touching.down && entite.actionToucheGauche()
-    //       break
-    //     }
-    // }
   }
 }
