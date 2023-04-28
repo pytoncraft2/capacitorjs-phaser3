@@ -30,7 +30,15 @@ export default class Entite extends Phaser.GameObjects.Container {
 		image_entite.name = "image_entite";
 		this.add(image_entite);
 
+		// rectangleZoneInteraction
+		const rectangleZoneInteraction = scene.add.rectangle(180, 105, 128, 128);
+		rectangleZoneInteraction.scaleX = 0.6925933668609348;
+		rectangleZoneInteraction.scaleY = 1.0715877953914617;
+		rectangleZoneInteraction.isFilled = true;
+		this.add(rectangleZoneInteraction);
+
 		this.image_entite = image_entite;
+		this.rectangleZoneInteraction = rectangleZoneInteraction;
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -40,6 +48,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	}
 
 	public image_entite: Phaser.GameObjects.Image;
+	public rectangleZoneInteraction: Phaser.GameObjects.Rectangle;
 	public velociteX: number = 300;
 	public modeAuto: boolean = false;
 	public velociteY: number = 890;

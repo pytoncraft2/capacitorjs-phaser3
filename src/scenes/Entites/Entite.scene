@@ -40,6 +40,21 @@
                     "x": 110,
                     "y": 103,
                     "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "b736a01b-b670-4106-882e-e49f53139a94",
+                    "label": "rectangleZoneInteraction",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 180,
+                    "y": 105,
+                    "scaleX": 0.6925933668609348,
+                    "scaleY": 1.0715877953914617,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
                 }
             ]
         }
