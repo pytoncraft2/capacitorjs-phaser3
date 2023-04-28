@@ -35,14 +35,17 @@ function stopEntite(joueur: Entite) {
 }
 function deplacementDroite(joueur: Entite) {
   joueur.image_entite.setFlipX(false);
-  joueur.rectangle_zone_interaction.setPosition(joueur.image_entite.getRightCenter().x,joueur.image_entite.getRightCenter().y)
   joueur.body.setVelocityX(joueur.velociteX);
+
+  if (joueur.rectangle_zone_interaction.x != joueur.image_entite.getRightCenter().x)
+    joueur.rectangle_zone_interaction.setPosition(joueur.image_entite.getRightCenter().x, joueur.image_entite.getRightCenter().y);
 }
 function deplacementGauche(joueur: Entite) {
   joueur.image_entite.setFlipX(true);
-  // tout le temp appelé ? la position change en permanence ??
-  joueur.rectangle_zone_interaction.setPosition(joueur.image_entite.getLeftCenter().x,joueur.image_entite.getLeftCenter().y)
   joueur.body.setVelocityX(-joueur.velociteX)
+
+  if (joueur.rectangle_zone_interaction.x != joueur.image_entite.getLeftCenter().x)
+    joueur.rectangle_zone_interaction.setPosition(joueur.image_entite.getLeftCenter().x, joueur.image_entite.getLeftCenter().y);
 }
 function deplacementBas(joueur: Entite): any {
   joueur.body.checkCollision.none = true;

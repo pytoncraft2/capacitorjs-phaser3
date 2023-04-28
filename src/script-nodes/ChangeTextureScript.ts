@@ -39,8 +39,10 @@ export default class ChangeTextureScript extends ScriptNode {
 			},
 			ease: 'Linear',
 			onComplete: () => {
-				this.gameObject.parentContainer.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(this.gameObject.parentContainer, this.gameObject.parentContainer, (this.gameObject.parentContainer as Entite).Aptitudes)
-				partir(this.gameObject.parentContainer);
+				const entite = this.gameObject.parentContainer;
+				entite.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(entite, entite, (entite as Entite).Aptitudes)
+				partir(entite);
+				entite.rectangle_zone_interaction.setPosition(entite.image_entite.getLeftCenter().x, entite.image_entite.getLeftCenter().y)
 			}
 		});
 	}
