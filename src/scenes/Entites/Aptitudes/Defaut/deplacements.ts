@@ -11,9 +11,9 @@ console.log("AVANT",Aptitudes);
   Aptitudes[cle_image].toucheGauche = (joueur: Entite, input: any) => {
     deplacementGauche(joueur)
   }
-  Aptitudes[cle_image].toucheEspace = (joueur: Entite, input: any) => {
-    console.log("ATTAQUE");
-  }
+  // Aptitudes[cle_image].toucheEspace = (joueur: Entite, input: any) => {
+  //   console.log("ATTAQUE");
+  // }
   Aptitudes[cle_image].toucheHaut = (joueur: Entite, input: any) => {
     saut(joueur)
   }

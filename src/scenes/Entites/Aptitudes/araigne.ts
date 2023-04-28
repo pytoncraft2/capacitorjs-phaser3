@@ -1,27 +1,18 @@
 import Entite from "../Entite"
-export function __InitialisationSpecifique(entite: Entite, aptitudes:any) {
-  // entite.Aptitudes[entite.image_entite.texture.key].toucheBas = (_entite, input) => {
-  //   if (_entite.body.touching.down) {
-  //     _entite.body.checkCollision.none = true;
-  //     _entite.scene.time.delayedCall(600, () => {
-  //       _entite.body.checkCollision.none = false;
-  //     });
-  //     _entite.body.setVelocityY(-300)
-  //   }
-  // }
-
-  // entite.Aptitudes[entite.image_entite.texture.key].toucheEspace = (_entite, input) => {
-  //   if (_entite.body.touching.down) {
-  //     _entite.body.setVelocityY(-300)
-  //     _entite.scene.time.delayedCall(600, () => {
-  //       // _entite.body.checkCollision.none = false;
-  //     });
-  //   }
-  // }
+export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
+  entite.Aptitudes[entite.image_entite.texture.key].toucheBas = (_entite, input) => {
+    if (_entite.body.touching.down) {
+      _entite.body.checkCollision.none = true;
+      _entite.scene.time.delayedCall(600, () => {
+        _entite.body.checkCollision.none = false;
+      });
+      _entite.body.setVelocityY(-300)
+    }
+  }
 }
 
-export function lalal__toucheBas(entite: any, input?: any) {
-  console.log("toucheBas araigne");
+export function __toucheEspace(entite: Entite, aptitudes: any) {
+  console.log("TOUCHE ATTAQUE ARAIGNEEEEEEEEEEEEEEE!!!");
 }
 
 export function __modeAuto(entite: Entite, input: any, aptitudes: any) {

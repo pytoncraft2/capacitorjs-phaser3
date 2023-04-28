@@ -70,11 +70,9 @@ export default class Entite extends Phaser.GameObjects.Container {
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
 	actionToucheHaut() { this.verifEtExecutionTouche("toucheHaut") }
 	actionToucheBas() { this.verifEtExecutionTouche("toucheBas") }
-	// aucuneTouche() { this.verifEtExecutionTouche("aucuneTouche") }
+	aucuneTouche() { this.verifEtExecutionTouche("aucuneTouche") }
 
 	verifEtExecutionTouche(touche: string) {
-		console.log("?????", this.Aptitudes);
-		
 		return this.Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
 	}
 
