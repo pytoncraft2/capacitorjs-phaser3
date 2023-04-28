@@ -1,28 +1,26 @@
 import Entite from "../../Entite"
 
 export const DefautDirection = (_Aptitudes: any, entite: Entite) => {
-const Aptitudes = entite.Aptitudes;
 const cle_image = entite.image_entite.texture.key
-console.log("AVANT",Aptitudes);
 
-  Aptitudes[cle_image].toucheDroite = (joueur: Entite, input: any) => {
+  _Aptitudes[cle_image].toucheDroite = (joueur: Entite, input: any) => {
     deplacementDroite(joueur)
   }
-  Aptitudes[cle_image].toucheGauche = (joueur: Entite, input: any) => {
+  _Aptitudes[cle_image].toucheGauche = (joueur: Entite, input: any) => {
     deplacementGauche(joueur)
   }
   // Aptitudes[cle_image].toucheEspace = (joueur: Entite, input: any) => {
   //   console.log("ATTAQUE");
   // }
-  Aptitudes[cle_image].toucheHaut = (joueur: Entite, input: any) => {
+  _Aptitudes[cle_image].toucheHaut = (joueur: Entite, input: any) => {
     saut(joueur)
   }
-  Aptitudes[cle_image].toucheBas = (joueur: Entite, input: any) => {
+  _Aptitudes[cle_image].toucheBas = (joueur: Entite, input: any) => {
     console.log("TOUCHE BAS");
     deplacementBas(joueur)
   }
 
-  Aptitudes[cle_image].aucuneTouche = (joueur: Entite, input: any) => {
+  _Aptitudes[cle_image].aucuneTouche = (joueur: Entite, input: any) => {
     stopEntite(joueur)
   }
 }

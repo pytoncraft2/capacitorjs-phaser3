@@ -208,28 +208,19 @@
             "list": [
                 {
                     "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
-                    "id": "a11c51e8-9345-4b74-a3ea-bbd6bf62f1ac",
+                    "id": "9630c212-9d76-4b17-9df7-fe0144fc0a35",
                     "unlock": [
                         "x",
-                        "y",
-                        "auto",
-                        "modeAuto",
-                        "tempsEntreActions",
-                        "body.offset.x",
-                        "body.offset.y"
+                        "y"
                     ],
                     "label": "entite",
-                    "modeAuto": true,
-                    "tempsEntreActions": 300,
                     "components": [],
-                    "x": 384,
-                    "y": 200,
-                    "body.offset.x": 0,
-                    "body.offset.y": 0,
+                    "x": 317,
+                    "y": 198,
                     "nestedPrefabs": [
                         {
                             "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
-                            "id": "b1f94db2-80d7-4d42-ba14-24a1a9ffd77d",
+                            "id": "f5d6f10c-d38f-4a3a-ab54-0a84ce57d739",
                             "unlock": [
                                 "texture"
                             ],
@@ -277,8 +268,8 @@
             "id": "b9927f79-503d-4f61-ac40-c824b9151c36",
             "label": "liste_colision_vs_platforme",
             "objectIds": [
-                "a11c51e8-9345-4b74-a3ea-bbd6bf62f1ac",
-                "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef"
+                "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
+                "9630c212-9d76-4b17-9df7-fe0144fc0a35"
             ]
         }
     ]

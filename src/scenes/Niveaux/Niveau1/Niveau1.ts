@@ -85,8 +85,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.layer();
 
 		// entite
-		const entite = new Entite(this, 384, 200);
-		entite.body.setOffset(0, 0);
+		const entite = new Entite(this, 317, 198);
 		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
 
@@ -94,17 +93,13 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_colision_vs_platforme = [entite, huipat];
+		const liste_colision_vs_platforme = [huipat, entite];
 
 		// colision_vs_platformes
 		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
-
-		// entite (prefab fields)
-		entite.modeAuto = true;
-		entite.tempsEntreActions = 300;
 
 		this.groupe_allies = groupe_allies;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
