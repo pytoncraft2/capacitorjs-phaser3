@@ -1,4 +1,8 @@
 import Entite from "../Entite"
+import { FlipX, ZoneInteractionADroite, ZoneInteractionAGauche, saut } from "./Defaut/deplacements";
+
+const bonusVitesseAraigne = 200;
+
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
 
 export function sautVersLeBas__toucheBas(entite: any, input?: any) {
@@ -11,8 +15,30 @@ export function sautVersLeBas__toucheBas(entite: any, input?: any) {
   }
 }
 
+export function sautVersLeHaut__toucheHaut(entite: any, input?: any) {
+  saut(entite)
+}
+
+export function deplacementDroite__toucheDroite(entite: any, input?: any) {
+  entite.body.setVelocityX(entite.velociteX + bonusVitesseAraigne)
+
+  FlipX(entite, false)
+  ZoneInteractionADroite(entite)
+}
+
+export function deplacementGauche__toucheGauche(entite: any, input?: any) {
+  entite.body.setVelocityX(-(entite.velociteX + bonusVitesseAraigne))
+
+  FlipX(entite, true)
+  ZoneInteractionAGauche(entite)
+}
+
 export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
   console.log("TOUCHE ATTAQUE ARAIGNEEEEEEEEEEEEEEE!!!");
+}
+
+export function __aucuneTouche(entite: Entite, aptitudes: any) {
+  entite.body.setVelocityX(0)
 }
 
 export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
