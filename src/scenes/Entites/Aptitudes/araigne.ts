@@ -3,7 +3,9 @@ import { FlipX, ZoneInteractionADroite, ZoneInteractionAGauche, saut } from "./D
 
 const bonusVitesseAraigne = 200;
 
-export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
+export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
+  // entite.image_entite.setOriginFromFrame()
+}
 
 export function sautVersLeBas__toucheBas(entite: any, input?: any) {
   if (entite.body.touching.down) {

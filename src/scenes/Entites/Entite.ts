@@ -60,6 +60,10 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
 		console.log(this);
+		this.body
+			.setSize(this.image_entite.frame.width, this.image_entite.frame.height, false)
+			.setOffset(0, 0);
+		this.image_entite.setOrigin(0.5, 1);
 		
 	}
 

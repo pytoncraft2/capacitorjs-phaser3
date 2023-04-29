@@ -43,6 +43,28 @@ export default class ChangeTextureScript extends ScriptNode {
 				entite.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(entite, entite, (entite as Entite).Aptitudes)
 				partir(entite);
 				entite.rectangle_zone_interaction.setPosition(entite.image_entite.getLeftCenter().x, entite.image_entite.getLeftCenter().y)
+				
+				// entite.body.setSize(entite.image_entite.width, entite.image_entite.height)
+				// entite.image_entite.setDisplaySize(entite.image_entite.displayWidth, entite.image_entite.displayHeight)
+				// entite.body
+					// .setSize(entite.image_entite.frame.width, entite.image_entite.height, true)
+				// entite.image_entite.setOriginFromFrame()
+				    // let img = this.add.image(320, 100, 'img');
+					// console.log(entite.displayWidth);
+					
+				// console.log(entite.image_entite.width);
+					// entite.image_entite.displayWidth = 400;
+					
+					// entite.image_entite.displayWidth = 2;
+
+				// extra line to scale the image proportional
+				// img.scaleY = img.scaleX;
+				// entite.image_entite.scaleX = entite.image_entite.scaleY
+				// 	.setOffset(0, 24);
+				// entite.image_entite.setOrigin(0, 1);
+				entite.body.setSize(entite.image_entite.width, 100)
+				console.log(entite.body.width);
+				
 			}
 		});
 	}
