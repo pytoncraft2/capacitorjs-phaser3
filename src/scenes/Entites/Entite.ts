@@ -25,7 +25,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.body.setSize(148, 162, false);
 
 		// image_entite
-		const image_entite = scene.add.image(110, 103, "huipat", "huipat.png");
+		const image_entite = scene.add.sprite(110, 103, "huipat", "huipat.png");
 		image_entite.name = "image_entite";
 		this.add(image_entite);
 
@@ -43,10 +43,13 @@ export default class Entite extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		this.scene.add.existing(this)
+		// console.log(this.image_entite.texture.source);
+
+		// this.body.setSize(this.image_entite.texture.source[0].width, this.image_entite.texture.source[0].height)
 		/* END-USER-CTR-CODE */
 	}
 
-	public image_entite: Phaser.GameObjects.Image;
+	public image_entite: Phaser.GameObjects.Sprite;
 	public rectangle_zone_interaction: Phaser.GameObjects.Rectangle;
 	public velociteX: number = 300;
 	public modeAuto: boolean = false;
@@ -60,11 +63,9 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
 		console.log(this);
-		this.body
-			.setSize(this.image_entite.frame.width, this.image_entite.frame.height, false)
-			.setOffset(0, 0);
-		this.image_entite.setOrigin(0.5, 1);
-		
+		// this.setSize(this.image_entite.frame.width, this.image_entite.height)
+			// .setOffset(0, 0);
+		// this.image_entite.setOrigin(1, 1);
 	}
 
 	actionToucheEspace() { this.verifEtExecutionTouche("toucheEspace") }

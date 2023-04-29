@@ -27,7 +27,7 @@
             "body.offset.y": 22,
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "1c6f60c0-33ab-4402-814e-805a73e56303",
                     "label": "image_entite",
                     "useGameObjectName": true,
