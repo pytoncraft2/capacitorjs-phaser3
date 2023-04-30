@@ -18,22 +18,23 @@ export function sautVersLeBas__toucheBas(entite: any, input?: any) {
 }
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
-  // entite.body.setGravityY(-entite.body.gravity)
-  console.log("ACTION TOUCHE HAUT");
- 
-  // if (entite.body.touching.down) saut(entite);
-  // console.log("INPUT", input);
-  
-  entite.image_entite.setFlipY(!entite.image_entite.flipY)
+  console.log(entite.image_entite.flipY);
+
   const inverse = entite.body.gravity.y *= -1;
-  // entite.body.setGravityY(inverse + 1700);
-  entite.body.gravity.y = inverse - 1700;
+  if (entite.image_entite.flipY) {
+    entite.body.checkCollision.none = true;
+    entite.image_entite.setFlipY(!entite.image_entite.flipY)
+    //TODO CHANGER VITESSE DEPLACMENT EN Y
+    entite.body.setVelocityY(-entite.velociteY - 200);
+    entite.scene.time.delayedCall(500, () => {
+      entite.body.checkCollision.none = false;
+      entite.body.gravity.y = inverse - 1700;
+    }, undefined, entite);
+  } else {
+    entite.image_entite.setFlipY(!entite.image_entite.flipY)
+    entite.body.gravity.y = inverse - 1700;
+  }
   
-  
-  // entite.body.checkCollision.none = true;
-  //TODO CHANGER VITESSE DEPLACMENT EN Y
-  // entite.body.setVelocityY(inverse);
-  // joueur.scene.time.delayedCall(500, () => (joueur.body.checkCollision.none = false), undefined, joueur);
 }
 
 export function deplacementDroite__toucheDroite(entite: any, input?: any) {
