@@ -24,13 +24,13 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.body.setSize(148, 162, false);
 
 		// image_entite
-		const image_entite = scene.add.image(2, 1, "huipat", "huipat.png");
+		const image_entite = scene.add.image(0, 0, "huipat", "huipat.png");
 		image_entite.name = "image_entite";
 		image_entite.setOrigin(0, 0);
 		this.add(image_entite);
 
 		// rectangle_zone_interaction
-		const rectangle_zone_interaction = scene.add.rectangle(238, 103, 128, 128);
+		const rectangle_zone_interaction = scene.add.rectangle(207, 86, 128, 128);
 		rectangle_zone_interaction.isFilled = true;
 		this.add(rectangle_zone_interaction);
 
