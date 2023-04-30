@@ -21,17 +21,18 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
   // entite.body.setGravityY(-entite.body.gravity)
   console.log("ACTION TOUCHE HAUT");
  
-  if (entite.body.touching.down) saut(entite);
+  // if (entite.body.touching.down) saut(entite);
   // console.log("INPUT", input);
   
-  // entite.image_entite.setFlipY(!entite.image_entite.flipY)
-  // const inverse = entite.body.gravity.y *= -1;
-  // entite.body.setGravityY(inverse + 200);
+  entite.image_entite.setFlipY(!entite.image_entite.flipY)
+  const inverse = entite.body.gravity.y *= -1;
+  // entite.body.setGravityY(inverse + 1700);
+  entite.body.gravity.y = inverse - 1700;
   
   
   // entite.body.checkCollision.none = true;
   //TODO CHANGER VITESSE DEPLACMENT EN Y
-  // joueur.body.setVelocityY(-joueur.velociteY);
+  // entite.body.setVelocityY(inverse);
   // joueur.scene.time.delayedCall(500, () => (joueur.body.checkCollision.none = false), undefined, joueur);
 }
 
