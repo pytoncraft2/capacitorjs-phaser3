@@ -17,8 +17,19 @@ export function sautVersLeBas__toucheBas(entite: any, input?: any) {
   }
 }
 
-export function sautVersLeHaut__toucheHaut(entite: any, input?: any) {
-  saut(entite)
+export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
+  // entite.body.setGravityY(-entite.body.gravity)
+  console.log("INPUT", input);
+  
+  entite.image_entite.setFlipY(!entite.image_entite.flipY)
+  const inverse = entite.body.gravity.y *= -1;
+  entite.body.setGravityY(inverse + 200);
+  
+  
+  // entite.body.checkCollision.none = true;
+  //TODO CHANGER VITESSE DEPLACMENT EN Y
+  // joueur.body.setVelocityY(-joueur.velociteY);
+  // joueur.scene.time.delayedCall(500, () => (joueur.body.checkCollision.none = false), undefined, joueur);
 }
 
 export function deplacementDroite__toucheDroite(entite: any, input?: any) {
