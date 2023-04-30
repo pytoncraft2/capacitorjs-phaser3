@@ -25,8 +25,9 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.body.setSize(148, 162, false);
 
 		// image_entite
-		const image_entite = scene.add.sprite(110, 103, "huipat", "huipat.png");
+		const image_entite = scene.add.sprite(110, 176, "huipat", "huipat.png");
 		image_entite.name = "image_entite";
+		image_entite.setOrigin(0.5, 1);
 		this.add(image_entite);
 
 		// rectangle_zone_interaction
@@ -63,7 +64,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
 		console.log(this);
-		// this.setSize(this.image_entite.frame.width, this.image_entite.height)
+		// this.body.setSize(this.image_entite.frame.width, this.image_entite.height)
 			// .setOffset(0, 0);
 		// this.image_entite.setOrigin(1, 1);
 	}

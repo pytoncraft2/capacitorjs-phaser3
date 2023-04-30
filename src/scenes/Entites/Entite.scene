@@ -2,6 +2,9 @@
     "id": "9d863a98-4951-44fb-a653-e7abb37ab252",
     "sceneType": "PREFAB",
     "settings": {
+        "snapEnabled": true,
+        "snapWidth": 148,
+        "snapHeight": 162,
         "exportClass": true,
         "autoImport": true,
         "generateAwakeHandler": true,
@@ -38,7 +41,8 @@
                         "frame": "huipat.png"
                     },
                     "x": 110,
-                    "y": 103,
+                    "y": 176,
+                    "originY": 1,
                     "list": []
                 },
                 {

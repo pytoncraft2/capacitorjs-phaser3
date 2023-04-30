@@ -26,7 +26,7 @@ export default class ChangeTextureScript extends ScriptNode {
 	compteur = 0;
 
 	override get gameObject() {
-		return super.gameObject as Phaser.GameObjects.Image & {parentContainer: Entite};
+		return super.gameObject as Phaser.GameObjects.Sprite & {parentContainer: Entite};
 	}
 
 	override execute(args?: any): void {
@@ -36,8 +36,10 @@ export default class ChangeTextureScript extends ScriptNode {
 		entite.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(entite, entite, (entite as Entite).Aptitudes)
 		partir(entite);
 		entite.rectangle_zone_interaction.setPosition(entite.image_entite.getLeftCenter().x, entite.image_entite.getLeftCenter().y)
-		entite.body.destroy()
-		entite.scene.add.existing(entite)
+		entite.body.setSize(entite.image_entite.frame.width, entite.image_entite.height)
+		// entite.image_entite.setOrigin(0.5, 1)
+		// entite.body.destroy()
+		// entite.scene.time.delayedCall(1000, () => entite.image_entite.setOrigin(0.5, 0.5));
 		// entite.scene.physics.world.enable(entite)
 		// entite.body.ad
 		
