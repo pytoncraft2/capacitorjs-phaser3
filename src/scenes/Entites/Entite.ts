@@ -21,19 +21,16 @@ export default class Entite extends Phaser.GameObjects.Container {
 		scene.physics.add.existing(this, false);
 		this.body.gravity.y = 800;
 		this.body.collideWorldBounds = true;
-		this.body.setOffset(36, 22);
 		this.body.setSize(148, 162, false);
 
 		// image_entite
-		const image_entite = scene.add.sprite(110, 176, "huipat", "huipat.png");
+		const image_entite = scene.add.image(2, 1, "huipat", "huipat.png");
 		image_entite.name = "image_entite";
-		image_entite.setOrigin(0.5, 1);
+		image_entite.setOrigin(0, 0);
 		this.add(image_entite);
 
 		// rectangle_zone_interaction
-		const rectangle_zone_interaction = scene.add.rectangle(180, 105, 128, 128);
-		rectangle_zone_interaction.scaleX = 0.6925933668609348;
-		rectangle_zone_interaction.scaleY = 1.0715877953914617;
+		const rectangle_zone_interaction = scene.add.rectangle(238, 103, 128, 128);
 		rectangle_zone_interaction.isFilled = true;
 		this.add(rectangle_zone_interaction);
 
@@ -50,7 +47,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public image_entite: Phaser.GameObjects.Sprite;
+	public image_entite: Phaser.GameObjects.Image;
 	public rectangle_zone_interaction: Phaser.GameObjects.Rectangle;
 	public velociteX: number = 300;
 	public modeAuto: boolean = false;
