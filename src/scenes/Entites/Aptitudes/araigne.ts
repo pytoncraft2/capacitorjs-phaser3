@@ -7,7 +7,7 @@ export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
   // entite.image_entite.setOriginFromFrame()
 }
 
-export function sautVersLeBas__toucheBas(entite: any, input?: any) {
+export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
   // if (entite.body.touching.down) {
   //   entite.body.checkCollision.none = true;
   //   entite.scene.time.delayedCall(600, () => {
@@ -15,25 +15,24 @@ export function sautVersLeBas__toucheBas(entite: any, input?: any) {
   //   });
   //   entite.body.setVelocityY(-300)
   // }
-  const inverse = entite.body.gravity.y *= -1;
-  if (!entite.image_entite.flipY) {
-    entite.body.checkCollision.none = true;
-    entite.image_entite.setFlipY(!entite.image_entite.flipY)
-    //TODO CHANGER VITESSE DEPLACMENT EN Y
-    entite.body.setVelocityY(entite.velociteY - 700);
-    entite.scene.time.delayedCall(500, () => {
-      entite.body.checkCollision.none = false;
-      entite.body.gravity.y = inverse - 1700;
-    }, undefined, entite);
-  } else {
-    entite.image_entite.setFlipY(!entite.image_entite.flipY)
-    entite.body.gravity.y = inverse - 1700;
-  }
+
+    const inverse = entite.body.gravity.y *= -1;
+    if (!entite.image_entite.flipY) {
+        entite.body.checkCollision.none = true;
+        entite.image_entite.setFlipY(!entite.image_entite.flipY)
+        //TODO CHANGER VITESSE DEPLACMENT EN Y
+        entite.body.setVelocityY(entite.velociteY - 700);
+        entite.scene.time.delayedCall(500, () => {
+          entite.body.checkCollision.none = false;
+          entite.body.gravity.y = inverse - 1700;
+        }, undefined, entite);
+    } else {
+        entite.image_entite.setFlipY(!entite.image_entite.flipY)
+        entite.body.gravity.y = inverse - 1700;
+    }
 }
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
-  console.log(entite.image_entite.flipY);
-
   const inverse = entite.body.gravity.y *= -1;
   if (entite.image_entite.flipY) {
     entite.body.checkCollision.none = true;
