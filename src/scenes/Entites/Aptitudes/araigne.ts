@@ -19,11 +19,14 @@ export function sautVersLeBas__toucheBas(entite: any, input?: any) {
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
   // entite.body.setGravityY(-entite.body.gravity)
-  console.log("INPUT", input);
+  console.log("ACTION TOUCHE HAUT");
+ 
+  if (entite.body.touching.down) saut(entite);
+  // console.log("INPUT", input);
   
-  entite.image_entite.setFlipY(!entite.image_entite.flipY)
-  const inverse = entite.body.gravity.y *= -1;
-  entite.body.setGravityY(inverse + 200);
+  // entite.image_entite.setFlipY(!entite.image_entite.flipY)
+  // const inverse = entite.body.gravity.y *= -1;
+  // entite.body.setGravityY(inverse + 200);
   
   
   // entite.body.checkCollision.none = true;

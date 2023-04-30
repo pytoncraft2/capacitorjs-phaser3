@@ -92,7 +92,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			else if (this.downDown) { this.entiteControllable.actionToucheBas(); }
 			else { this.entiteControllable.aucuneTouche() }
 
-			if (this.upDown && this.entiteControllable.body.touching.down) {
+			if (Phaser.Input.Keyboard.JustDown(this.toucheHaut)) {
 				this.entiteControllable.actionToucheHaut();
 			}
 		}
