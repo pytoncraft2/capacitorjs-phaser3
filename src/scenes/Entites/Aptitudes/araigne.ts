@@ -17,24 +17,24 @@ export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
   // }
 
     const inverse = entite.body.gravity.y *= -1;
-    if (!entite.image_entite.flipY) {
-        entite.body.checkCollision.none = true;
-        entite.image_entite.setFlipY(!entite.image_entite.flipY)
-        //TODO CHANGER VITESSE DEPLACMENT EN Y
-        entite.body.setVelocityY(entite.velociteY - 700);
-        entite.scene.time.delayedCall(500, () => {
-          entite.body.checkCollision.none = false;
-          entite.body.gravity.y = inverse - 1700;
-        }, undefined, entite);
-    } else {
-        entite.image_entite.setFlipY(!entite.image_entite.flipY)
+    if (!entite.image_entite.flipY && entite.body.touching.down) {
+      entite.body.checkCollision.none = true;
+      entite.image_entite.setFlipY(!entite.image_entite.flipY)
+      //TODO CHANGER VITESSE DEPLACMENT EN Y
+      entite.body.setVelocityY(entite.velociteY - 700);
+      entite.scene.time.delayedCall(500, () => {
+        entite.body.checkCollision.none = false;
         entite.body.gravity.y = inverse - 1700;
+      }, undefined, entite);
+    } else {
+      entite.image_entite.setFlipY(!entite.image_entite.flipY)
+      entite.body.gravity.y = inverse - 1700;
     }
 }
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
   const inverse = entite.body.gravity.y *= -1;
-  if (entite.image_entite.flipY) {
+  if (entite.image_entite.flipY && entite.body.touching.up) {
     entite.body.checkCollision.none = true;
     entite.image_entite.setFlipY(!entite.image_entite.flipY)
     //TODO CHANGER VITESSE DEPLACMENT EN Y
