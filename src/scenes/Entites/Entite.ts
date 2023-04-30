@@ -41,9 +41,6 @@ export default class Entite extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		this.scene.add.existing(this)
-		// console.log(this.image_entite.texture.source);
-
-		// this.body.setSize(this.image_entite.texture.source[0].width, this.image_entite.texture.source[0].height)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -60,10 +57,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	awake() {
 		this.Aptitudes[this.image_entite.texture.key]?.InitialisationSpecifique?.call(this, this, this.Aptitudes);
 		if (this.modeAuto) this.Aptitudes[this.image_entite.texture.key]?.modeAuto?.(this, {}, this.Aptitudes[this.image_entite.texture.key]);
-		console.log(this);
-		// this.body.setSize(this.image_entite.frame.width, this.image_entite.height)
-			// .setOffset(0, 0);
-		// this.image_entite.setOrigin(1, 1);
+		this.body.setSize(this.image_entite.frame.width, this.image_entite.height)
 	}
 
 	actionToucheEspace() { this.verifEtExecutionTouche("toucheEspace") }
