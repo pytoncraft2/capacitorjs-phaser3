@@ -46,12 +46,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	// Write your code here
 	public entiteControllable!: Entite
-	public leftDown = false;
-	public rightDown = false;
-	public upDown = false;
-	public downDown = false;
-	public spaceDown = false;
-	public spaceDownTouch = false;
+	private leftDown = false;
+	private rightDown = false;
+	private upDown = false;
+	private downDown = false;
+	private spaceDown = false;
+	private spaceDownTouch = false;
 	private isMobile = false;
 
 	init() {
