@@ -5,25 +5,6 @@ const bonusVitesseAraigne = 200;
 
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
 
-export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
-    const inverse = entite.body.gravity.y *= -1;
-    if (!entite.image_entite.flipY && entite.body.touching.down) {
-      entite.body.checkCollision.none = true;
-      entite.image_entite.setFlipY(!entite.image_entite.flipY)
-      //TODO CHANGER VITESSE DEPLACMENT EN Y
-      entite.body.setVelocityY(entite.velociteY - 700);
-      entite.scene.time.delayedCall(500, () => {
-        entite.body.checkCollision.none = false;
-        entite.body.gravity.y = inverse - 1700;
-      }, undefined, entite);
-    } else {
-      console.log("ELSE BASE");
-      
-      entite.image_entite.setFlipY(false)
-      entite.body.gravity.y = inverse - 1700;
-    }
-}
-
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
 
   const alendroit = entite.image_entite.flipY === false;
@@ -52,6 +33,27 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
     }
   }
 }
+
+export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
+    const inverse = entite.body.gravity.y *= -1;
+    if (!entite.image_entite.flipY && entite.body.touching.down) {
+      entite.body.checkCollision.none = true;
+      entite.image_entite.setFlipY(!entite.image_entite.flipY)
+      //TODO CHANGER VITESSE DEPLACMENT EN Y
+      entite.body.setVelocityY(entite.velociteY - 700);
+      entite.scene.time.delayedCall(500, () => {
+        entite.body.checkCollision.none = false;
+        entite.body.gravity.y = inverse - 1700;
+      }, undefined, entite);
+    } else {
+      console.log("ELSE BASE");
+      
+      entite.image_entite.setFlipY(false)
+      entite.body.gravity.y = inverse - 1700;
+    }
+}
+
+
 
 export function deplacementDroite__toucheDroite(entite: any, input?: any) {
   entite.body.setVelocityX(entite.velociteX + bonusVitesseAraigne)
