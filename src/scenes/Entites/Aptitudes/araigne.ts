@@ -74,14 +74,8 @@ export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
   {
     // * POSITION A L'ENVERS
     if (alenvers) {
-      console.log("A LENVERT, todo inversion");
-      // entite.body.checkCollision.down = true;
-      // entite.image_entite.setFlipY(false)
-      // entite.body.setVelocityY(-900);
-      // entite.body.gravity.y = graviteVersLeBas;
-      // entite.scene.time.delayedCall(100, () => {
-      //   entite.body.checkCollision.up = true;
-      // }, undefined, entite);
+      entite.image_entite.setFlipY(false)
+      entite.body.gravity.y = graviteVersLeBas;
     }
   }
 }
