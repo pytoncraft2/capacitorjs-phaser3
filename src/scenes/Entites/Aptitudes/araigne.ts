@@ -11,7 +11,6 @@ export function sautVersLeHaut__toucheHaut(entite: Entite) {
   if (entite.body.touching.down && !entite.body.touching.up)
   {
     const alendroit = entite.image_entite.flipY === false;
-    // if (alendroit) flipYEtGravite(entite, true, graviteVersLeHaut);
     if (alendroit) saut(entite, true, graviteVersLeHaut);
   }
   else if (!entite.body.touching.down && entite.body.touching.up)
@@ -19,13 +18,8 @@ export function sautVersLeHaut__toucheHaut(entite: Entite) {
     const alenvers = entite.image_entite.flipY === true;
     if (alenvers)
     {
-      saut(entite, false, 2500, "up")
-      // entite.body.checkCollision.up = false;
+      saut(entite, false, graviteVersLeBas, "up")
       entite.body.setVelocityY(-900);
-      // flipYEtGravite(entite, false, 2500);
-      // entite.scene.time.delayedCall(100, () => {
-        // entite.body.checkCollision.up = true;
-      // }, undefined, entite);
     }
   }
 }
@@ -37,27 +31,23 @@ export function sautVersLeBas__toucheBas(entite: Entite) {
     if (alendroit)
     {
       saut(entite, true, graviteVersLeHaut, 'down')
-      // entite.body.checkCollision.down = false;
       entite.body.setVelocityY(600);
-      // flipYEtGravite(entite, true, graviteVersLeHaut);
-      // entite.scene.time.delayedCall(100, () => {
-        // entite.body.checkCollision.down = true;
-      // }, undefined, entite);
     }
   }
   else if (!entite.body.touching.down && entite.body.touching.up)
   {
     const alenvers = entite.image_entite.flipY === true;
-    // if (alenvers) flipYEtGravite(entite, false, 2500);
-    if (alenvers) saut(entite, false, 2500);
+    if (alenvers) saut(entite, false, graviteVersLeBas);
   }
 }
 
-// function flipYEtGravite(entite: Entite, flipY: boolean, gravityY: number) {
-//   entite.image_entite.setFlipY(flipY);
-//   entite.body.gravity.y = gravityY;
-// }
-
+/**
+ * @description effectue un saut vers le haut ou vers le bas en changeant la gravité et optionnelement traverser la platforme
+ * @param entite
+ * @param flipY
+ * @param gravityY
+ * @param checkCollision 
+ */
 function saut(entite: Entite, flipY: boolean, gravityY: number, checkCollision?: 'up' | 'down') {
   entite.image_entite.setFlipY(flipY);
   entite.body.gravity.y = gravityY;
@@ -68,29 +58,6 @@ function saut(entite: Entite, flipY: boolean, gravityY: number, checkCollision?:
     }, undefined, entite);
   }
 }
-
-// export function sautVersLeHaut__toucheHaut(entite: Entite) {
-//   if (entite.body.touching.down && !entite.body.touching.up) {
-//     // * POSITION A L'ENDROIT
-//     const alendroit = entite.image_entite.flipY === false;
-//     if (alendroit) saut(entite, true, graviteVersLeHaut);
-//   } else if (!entite.body.touching.down && entite.body.touching.up) {
-//     // * POSITION A L'ENVERS
-//     const alenvers = entite.image_entite.flipY === true;
-//     if (alenvers) saut(entite, false, graviteVersLeBas, 'up');
-//   }
-// }
-
-// export function sautVersLeBas__toucheBas(entite: Entite) {
-//   if (entite.body.touching.down && !entite.body.touching.up) {
-//     const alendroit = entite.image_entite.flipY === false;
-//     if (alendroit) saut(entite, true, graviteVersLeHaut, 'down');
-//   } else if (!entite.body.touching.down && entite.body.touching.up) {
-//     const alenvers = entite.image_entite.flipY === true;
-//     if (alenvers) saut(entite, false, graviteVersLeBas);
-//   }
-// }
-
 
 export function deplacementDroite__toucheDroite(entite: any, input?: any) {
   entite.body.setVelocityX(entite.velociteX + bonusVitesseAraigne)
