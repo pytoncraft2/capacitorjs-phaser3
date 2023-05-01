@@ -62,57 +62,103 @@ export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
 //   }
 // }
 
-function configurerEntite(entite: Entite, alendroit: boolean, alenvers: boolean, graviteVersLeHaut: number, graviteVersLeBas: number, toucheHaut: boolean, toucheBas: boolean) {
-  if (toucheHaut) {
+
+
+// function configurerEntite(entite: Entite, alendroit: boolean, alenvers: boolean, graviteVersLeHaut: number, graviteVersLeBas: number, toucheHaut: boolean, toucheBas: boolean) {
+//   if (toucheHaut) {
+//     if (alendroit) {
+//       entite.image_entite.setFlipY(true)
+//       entite.body.gravity.y = graviteVersLeHaut;
+//     }
+//     else if (alenvers) {
+//       entite.body.checkCollision.up = false;
+//       entite.image_entite.setFlipY(false)
+//       entite.body.setVelocityY(-900);
+//       entite.body.gravity.y = graviteVersLeBas;
+//       entite.scene.time.delayedCall(100, () => {
+//         entite.body.checkCollision.up = true;
+//       }, undefined, entite);
+//     }
+//   }
+//   else if (toucheBas) {
+//     if (alendroit) {
+//       entite.body.checkCollision.down = false;
+//       entite.image_entite.setFlipY(true)
+//       entite.body.setVelocityY(600);
+//       entite.body.gravity.y = graviteVersLeHaut;
+//       entite.scene.time.delayedCall(100, () => {
+//         entite.body.checkCollision.down = true;
+//       }, undefined, entite);
+//     }
+//     else if (alenvers) {
+//       entite.image_entite.setFlipY(false)
+//       entite.body.gravity.y = graviteVersLeBas;
+//     }
+//   }
+// }
+
+// export function sautVersLeHaut__toucheHaut(entite: Entite) {
+//   const alendroit = entite.image_entite.flipY === false;
+//   const alenvers = entite.image_entite.flipY === true;
+//   const graviteVersLeHaut = -2500;
+//   const graviteVersLeBas = 2500;
+//   configurerEntite(entite, alendroit, alenvers, graviteVersLeHaut, graviteVersLeBas, entite.body.touching.down && !entite.body.touching.up, !entite.body.touching.down && entite.body.touching.up);
+// }
+
+// export function sautVersLeBas__toucheBas(entite: Entite) {
+//   const alendroit = entite.image_entite.flipY === false;
+//   const alenvers = entite.image_entite.flipY === true;
+//   const graviteVersLeHaut = -2500;
+//   const graviteVersLeBas = 2500;
+//   configurerEntite(entite, alendroit, alenvers, graviteVersLeHaut, graviteVersLeBas, !entite.body.touching.down && entite.body.touching.up, entite.body.touching.down && !entite.body.touching.up);
+// }
+
+export function sautVersLeHaut__toucheHaut(entite: Entite) {
+  const graviteVersLeHaut = -2500;
+
+  if (entite.body.touching.down && !entite.body.touching.up) {
+    const alendroit = entite.image_entite.flipY === false;
     if (alendroit) {
-      entite.image_entite.setFlipY(true)
-      entite.body.gravity.y = graviteVersLeHaut;
+      flipEtGravity(entite, true, graviteVersLeHaut);
     }
-    else if (alenvers) {
+  } else if (!entite.body.touching.down && entite.body.touching.up) {
+    const alenvers = entite.image_entite.flipY === true;
+    if (alenvers) {
       entite.body.checkCollision.up = false;
-      entite.image_entite.setFlipY(false)
       entite.body.setVelocityY(-900);
-      entite.body.gravity.y = graviteVersLeBas;
+      flipEtGravity(entite, false, 2500);
       entite.scene.time.delayedCall(100, () => {
         entite.body.checkCollision.up = true;
       }, undefined, entite);
     }
   }
-  else if (toucheBas) {
+}
+
+export function sautVersLeBas__toucheBas(entite: Entite) {
+  const graviteVersLeHaut = -2500;
+  
+  if (entite.body.touching.down && !entite.body.touching.up) {
+    const alendroit = entite.image_entite.flipY === false;
     if (alendroit) {
       entite.body.checkCollision.down = false;
-      entite.image_entite.setFlipY(true)
       entite.body.setVelocityY(600);
-      entite.body.gravity.y = graviteVersLeHaut;
+      flipEtGravity(entite, true, graviteVersLeHaut);
       entite.scene.time.delayedCall(100, () => {
         entite.body.checkCollision.down = true;
       }, undefined, entite);
     }
-    else if (alenvers) {
-      entite.image_entite.setFlipY(false)
-      entite.body.gravity.y = graviteVersLeBas;
+  } else if (!entite.body.touching.down && entite.body.touching.up) {
+    const alenvers = entite.image_entite.flipY === true;
+    if (alenvers) {
+      flipEtGravity(entite, false, 2500);
     }
   }
 }
 
-export function sautVersLeHaut__toucheHaut(entite: Entite) {
-  const alendroit = entite.image_entite.flipY === false;
-  const alenvers = entite.image_entite.flipY === true;
-  const graviteVersLeHaut = -2500;
-  const graviteVersLeBas = 2500;
-  configurerEntite(entite, alendroit, alenvers, graviteVersLeHaut, graviteVersLeBas, entite.body.touching.down && !entite.body.touching.up, !entite.body.touching.down && entite.body.touching.up);
+function flipEtGravity(entite: Entite, flipY: boolean, gravityY: number) {
+  entite.image_entite.setFlipY(flipY);
+  entite.body.gravity.y = gravityY;
 }
-
-export function sautVersLeBas__toucheBas(entite: Entite) {
-  const alendroit = entite.image_entite.flipY === false;
-  const alenvers = entite.image_entite.flipY === true;
-  const graviteVersLeHaut = -2500;
-  const graviteVersLeBas = 2500;
-  configurerEntite(entite, alendroit, alenvers, graviteVersLeHaut, graviteVersLeBas, !entite.body.touching.down && entite.body.touching.up, entite.body.touching.down && !entite.body.touching.up);
-}
-
-
-
 
 export function deplacementDroite__toucheDroite(entite: any, input?: any) {
   entite.body.setVelocityX(entite.velociteX + bonusVitesseAraigne)
