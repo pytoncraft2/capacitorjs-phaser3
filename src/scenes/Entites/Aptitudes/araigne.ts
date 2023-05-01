@@ -8,14 +8,6 @@ export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
 }
 
 export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
-  // if (entite.body.touching.down) {
-  //   entite.body.checkCollision.none = true;
-  //   entite.scene.time.delayedCall(600, () => {
-  //     entite.body.checkCollision.none = false;
-  //   });
-  //   entite.body.setVelocityY(-300)
-  // }
-
     const inverse = entite.body.gravity.y *= -1;
     if (!entite.image_entite.flipY && entite.body.touching.down) {
       entite.body.checkCollision.none = true;
@@ -38,32 +30,32 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
   console.log("TOP ?: ", entite.body.touching.up);
   const alendroit = entite.image_entite.flipY === false;
   const alenvers = entite.image_entite.flipY === true;
+  console.log("GRAVITE DE BASE Y: ", entite.body.gravity.y);
   
-  
+
   if (entite.body.touching.down && !entite.body.touching.up)
   {
+  const graviteVersLeHaut = entite.body.gravity.y *= -1;
+  console.log(graviteVersLeHaut);
+  
     // * POSITION A L'ENDROIT
-    console.log("A LENDROITE FLIPY", entite.image_entite.flipY);
-    
-    const inverse = entite.body.gravity.y *= -1;
-    if (alenvers) {
-      console.log("A LENVERS ??????????????????");
-      
-      // entite.body.checkCollision.none = true;
-      // entite.image_entite.setFlipY(!entite.image_entite.flipY)
-      // entite.body.setVelocityY(-entite.velociteY - 200);
-      // entite.scene.time.delayedCall(500, () => {
-      //   entite.body.checkCollision.none = false;
-      //   entite.body.gravity.y = inverse - 1700;
-      // }, undefined, entite);
-    } else if (alendroit) {
-      console.log("ELSE HAUT");
+    if (alendroit) {
       entite.image_entite.setFlipY(true)
-      entite.body.gravity.y = inverse - 1700;
+      entite.body.gravity.y = graviteVersLeHaut - 1700;
     }
   } else if (!entite.body.touching.down && entite.body.touching.up)
   {
-    // * POSITION A L'ENVERS
+  // const inverseGravite = entite.body.gravity.y *= -1;
+  //   // * POSITION A L'ENVERS
+  //   if (alenvers) {
+  //     entite.body.checkCollision.none = true;
+  //     entite.image_entite.setFlipY(!entite.image_entite.flipY)
+  //     entite.body.setVelocityY(-entite.velociteY - 200);
+  //     entite.scene.time.delayedCall(500, () => {
+  //       entite.body.checkCollision.none = false;
+  //       entite.body.gravity.y = inverse - 1700;
+  //     }, undefined, entite);
+  //   }
   }
 }
 
