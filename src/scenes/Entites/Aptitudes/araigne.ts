@@ -66,13 +66,16 @@ export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
       entite.image_entite.setFlipY(true)
       entite.body.setVelocityY(600);
       entite.body.gravity.y = graviteVersLeHaut;
+      entite.scene.time.delayedCall(100, () => {
+        entite.body.checkCollision.down = true;
+      }, undefined, entite);
     }
   } else if (!entite.body.touching.down && entite.body.touching.up)
   {
     // * POSITION A L'ENVERS
     if (alenvers) {
       console.log("A LENVERT, todo inversion");
-      entite.body.checkCollision.down = true;
+      // entite.body.checkCollision.down = true;
       // entite.image_entite.setFlipY(false)
       // entite.body.setVelocityY(-900);
       // entite.body.gravity.y = graviteVersLeBas;
