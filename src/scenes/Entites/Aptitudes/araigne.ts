@@ -27,27 +27,39 @@ export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
         entite.body.gravity.y = inverse - 1700;
       }, undefined, entite);
     } else {
-      entite.image_entite.setFlipY(!entite.image_entite.flipY)
+      console.log("ELSE BASE");
+      
+      entite.image_entite.setFlipY(false)
       entite.body.gravity.y = inverse - 1700;
     }
 }
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
-  const inverse = entite.body.gravity.y *= -1;
-  if (entite.image_entite.flipY && entite.body.touching.up) {
-    entite.body.checkCollision.none = true;
-    entite.image_entite.setFlipY(!entite.image_entite.flipY)
-    //TODO CHANGER VITESSE DEPLACMENT EN Y
-    entite.body.setVelocityY(-entite.velociteY - 200);
-    entite.scene.time.delayedCall(500, () => {
-      entite.body.checkCollision.none = false;
-      entite.body.gravity.y = inverse - 1700;
-    }, undefined, entite);
-  } else {
-    entite.image_entite.setFlipY(!entite.image_entite.flipY)
-    entite.body.gravity.y = inverse - 1700;
-  }
+  console.log("TOP ?: ", entite.body.touching.up);
   
+  if (entite.body.touching.down && !entite.body.touching.up)
+  {
+    // * POSITION A L'ENDROIT
+    console.log("A LENDROITE FLIPY", entite.image_entite.flipY);
+    
+    const inverse = entite.body.gravity.y *= -1;
+    if (entite.image_entite.flipY) {
+      entite.body.checkCollision.none = true;
+      entite.image_entite.setFlipY(!entite.image_entite.flipY)
+      entite.body.setVelocityY(-entite.velociteY - 200);
+      entite.scene.time.delayedCall(500, () => {
+        entite.body.checkCollision.none = false;
+        entite.body.gravity.y = inverse - 1700;
+      }, undefined, entite);
+    } else {
+      console.log("ELSE HAUT");
+      entite.image_entite.setFlipY(true)
+      entite.body.gravity.y = inverse - 1700;
+    }
+  } else if (!entite.body.touching.down && entite.body.touching.up)
+  {
+    // * POSITION A L'ENVERS
+  }
 }
 
 export function deplacementDroite__toucheDroite(entite: any, input?: any) {
