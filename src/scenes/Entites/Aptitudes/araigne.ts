@@ -36,6 +36,9 @@ export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
   console.log("TOP ?: ", entite.body.touching.up);
+  const alendroit = entite.image_entite.flipY === false;
+  const alenvers = entite.image_entite.flipY === true;
+  
   
   if (entite.body.touching.down && !entite.body.touching.up)
   {
@@ -43,15 +46,17 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
     console.log("A LENDROITE FLIPY", entite.image_entite.flipY);
     
     const inverse = entite.body.gravity.y *= -1;
-    if (entite.image_entite.flipY) {
-      entite.body.checkCollision.none = true;
-      entite.image_entite.setFlipY(!entite.image_entite.flipY)
-      entite.body.setVelocityY(-entite.velociteY - 200);
-      entite.scene.time.delayedCall(500, () => {
-        entite.body.checkCollision.none = false;
-        entite.body.gravity.y = inverse - 1700;
-      }, undefined, entite);
-    } else {
+    if (alenvers) {
+      console.log("A LENVERS ??????????????????");
+      
+      // entite.body.checkCollision.none = true;
+      // entite.image_entite.setFlipY(!entite.image_entite.flipY)
+      // entite.body.setVelocityY(-entite.velociteY - 200);
+      // entite.scene.time.delayedCall(500, () => {
+      //   entite.body.checkCollision.none = false;
+      //   entite.body.gravity.y = inverse - 1700;
+      // }, undefined, entite);
+    } else if (alendroit) {
       console.log("ELSE HAUT");
       entite.image_entite.setFlipY(true)
       entite.body.gravity.y = inverse - 1700;
