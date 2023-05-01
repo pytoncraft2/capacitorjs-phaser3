@@ -27,21 +27,18 @@ export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
 }
 
 export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
-  console.log("TOP ?: ", entite.body.touching.up);
+
   const alendroit = entite.image_entite.flipY === false;
   const alenvers = entite.image_entite.flipY === true;
-  console.log("GRAVITE DE BASE Y: ", entite.body.gravity.y);
-  
+  const graviteVersLeHaut = -2500;
+  const graviteVersLeBas = 2500;
 
   if (entite.body.touching.down && !entite.body.touching.up)
   {
-  const graviteVersLeHaut = entite.body.gravity.y *= -1;
-  console.log(graviteVersLeHaut);
-  
     // * POSITION A L'ENDROIT
     if (alendroit) {
       entite.image_entite.setFlipY(true)
-      entite.body.gravity.y = graviteVersLeHaut - 1700;
+      entite.body.gravity.y = graviteVersLeHaut;
     }
   } else if (!entite.body.touching.down && entite.body.touching.up)
   {
