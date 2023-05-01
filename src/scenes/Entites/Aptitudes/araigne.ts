@@ -3,9 +3,7 @@ import { FlipX, ZoneInteractionADroite, ZoneInteractionAGauche, saut } from "./D
 
 const bonusVitesseAraigne = 200;
 
-export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
-  // entite.image_entite.setOriginFromFrame()
-}
+export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
 
 export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
     const inverse = entite.body.gravity.y *= -1;
