@@ -44,10 +44,10 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
     if (alenvers) {
       entite.body.checkCollision.up = false;
       entite.image_entite.setFlipY(false)
-      entite.body.setVelocityY(-500);
+      entite.body.setVelocityY(-900);
+      entite.body.gravity.y = graviteVersLeBas;
       entite.scene.time.delayedCall(100, () => {
         entite.body.checkCollision.up = true;
-        entite.body.gravity.y = graviteVersLeBas;
       }, undefined, entite);
     }
   }
