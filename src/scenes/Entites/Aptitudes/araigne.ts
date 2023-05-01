@@ -40,17 +40,16 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
     }
   } else if (!entite.body.touching.down && entite.body.touching.up)
   {
-  // const inverseGravite = entite.body.gravity.y *= -1;
-  //   // * POSITION A L'ENVERS
-  //   if (alenvers) {
-  //     entite.body.checkCollision.none = true;
-  //     entite.image_entite.setFlipY(!entite.image_entite.flipY)
-  //     entite.body.setVelocityY(-entite.velociteY - 200);
-  //     entite.scene.time.delayedCall(500, () => {
-  //       entite.body.checkCollision.none = false;
-  //       entite.body.gravity.y = inverse - 1700;
-  //     }, undefined, entite);
-  //   }
+    // * POSITION A L'ENVERS
+    if (alenvers) {
+      entite.body.checkCollision.up = false;
+      entite.image_entite.setFlipY(false)
+      entite.body.setVelocityY(-500);
+      entite.scene.time.delayedCall(100, () => {
+        entite.body.checkCollision.up = true;
+        entite.body.gravity.y = graviteVersLeBas;
+      }, undefined, entite);
+    }
   }
 }
 
