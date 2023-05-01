@@ -35,22 +35,52 @@ export function sautVersLeHaut__toucheHaut(entite: Entite, input?: any) {
 }
 
 export function sautVersLeBas__toucheBas(entite: Entite, input?: any) {
-    const inverse = entite.body.gravity.y *= -1;
-    if (!entite.image_entite.flipY && entite.body.touching.down) {
-      entite.body.checkCollision.none = true;
-      entite.image_entite.setFlipY(!entite.image_entite.flipY)
-      //TODO CHANGER VITESSE DEPLACMENT EN Y
-      entite.body.setVelocityY(entite.velociteY - 700);
-      entite.scene.time.delayedCall(500, () => {
-        entite.body.checkCollision.none = false;
-        entite.body.gravity.y = inverse - 1700;
-      }, undefined, entite);
-    } else {
-      console.log("ELSE BASE");
+    // const inverse = entite.body.gravity.y *= -1;
+    // if (!entite.image_entite.flipY && entite.body.touching.down) {
+    //   entite.body.checkCollision.none = true;
+    //   entite.image_entite.setFlipY(!entite.image_entite.flipY)
+    //   //TODO CHANGER VITESSE DEPLACMENT EN Y
+    //   entite.body.setVelocityY(entite.velociteY - 700);
+    //   entite.scene.time.delayedCall(500, () => {
+    //     entite.body.checkCollision.none = false;
+    //     entite.body.gravity.y = inverse - 1700;
+    //   }, undefined, entite);
+    // } else {
+    //   console.log("ELSE BASE");
       
-      entite.image_entite.setFlipY(false)
-      entite.body.gravity.y = inverse - 1700;
+    //   entite.image_entite.setFlipY(false)
+    //   entite.body.gravity.y = inverse - 1700;
+    // }
+
+
+  const alendroit = entite.image_entite.flipY === false;
+  const alenvers = entite.image_entite.flipY === true;
+  const graviteVersLeHaut = -2500;
+  const graviteVersLeBas = 2500;
+
+  if (entite.body.touching.down && !entite.body.touching.up)
+  {
+    // * POSITION A L'ENDROIT
+    if (alendroit) {
+      entite.body.checkCollision.down = false;
+      entite.image_entite.setFlipY(true)
+      entite.body.setVelocityY(600);
+      entite.body.gravity.y = graviteVersLeHaut;
     }
+  } else if (!entite.body.touching.down && entite.body.touching.up)
+  {
+    // * POSITION A L'ENVERS
+    if (alenvers) {
+      console.log("A LENVERT, todo inversion");
+      entite.body.checkCollision.down = true;
+      // entite.image_entite.setFlipY(false)
+      // entite.body.setVelocityY(-900);
+      // entite.body.gravity.y = graviteVersLeBas;
+      // entite.scene.time.delayedCall(100, () => {
+      //   entite.body.checkCollision.up = true;
+      // }, undefined, entite);
+    }
+  }
 }
 
 
