@@ -18,7 +18,7 @@ export function sautVersLeHaut__toucheHaut(entite: Entite) {
     const alenvers = entite.image_entite.flipY === true;
     if (alenvers)
     {
-      saut(entite, false, graviteVersLeBas, "up")
+      saut(entite, false, graviteVersLeBas, 'up')
       entite.body.setVelocityY(-900);
     }
   }
@@ -74,7 +74,65 @@ export function deplacementGauche__toucheGauche(entite: any, input?: any) {
 }
 
 export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
-  console.log("TOUCHE ATTAQUE ARAIGNEEEEEEEEEEEEEEE!!!");
+    const jumpHeight = entite.image_entite.flipY ? -90 : 90;
+    const jumpDuration = 100;
+    const jumpEase = 'Sine';
+    const landDuration = 100;
+    const landEase = 'Back';
+
+    // Créer le tween de saut
+  entite.image_entite.setTintFill(0x000000)
+    const jumpTween = entite.scene.tweens.add({
+      targets: entite,
+      y: '-=' + jumpHeight,
+      ease: jumpEase,
+      duration: jumpDuration,
+      x: entite.image_entite.flipX ? entite.x - 200 : entite.x + 200,
+      // yoyo: true,
+      onComplete: () => {
+        // Créer le tween d'atterrissage une fois que le saut est terminé
+        const landTween = entite.scene.tweens.add({
+          targets: entite,
+          y: '+=' + jumpHeight,
+          x: entite.image_entite.flipX ? entite.x - 200 : entite.x + 200,
+          ease: landEase,
+          duration: landDuration,
+          onComplete: () => entite.image_entite.clearTint()
+        });
+      }
+    });
+    // const jumpHeight = 50;
+    // const jumpDuration = 200;
+
+    // Créer le tween
+    // const jumpTween = entite.scene.tweens.add({
+    //   targets: entite,
+    //   y: '-=' + jumpHeight,
+    //   x: entite.image_entite.flipX ? entite.x - 300 : entite.x + 300,
+    //   ease: 'Power2',
+    //   duration: jumpDuration,
+    //   // yoyo: true,
+    //   repeat: 0
+    // });
+// const timeline = entite.scene.add.timeline([
+//     {
+//         at: 100,
+//         tween: {
+//             targets: entite,
+//             setVelocityY: -400
+//         }
+//     },
+//     {
+//         at: 200,
+//         tween: {
+//           targets: entite,
+//           setVelocityY: 0,
+//         }
+//     }
+// ]);
+
+// timeline.play();
+
 }
 
 export function __aucuneTouche(entite: Entite, aptitudes: any) {
