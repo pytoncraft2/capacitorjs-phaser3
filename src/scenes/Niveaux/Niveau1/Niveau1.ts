@@ -89,6 +89,9 @@ export default class Niveau1 extends BaseNiveaux {
 		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
 
+		// groupe_projectile_toiles
+		const groupe_projectile_toiles = this.add.container(0, 0);
+
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
@@ -102,12 +105,14 @@ export default class Niveau1 extends BaseNiveaux {
 		startSceneActionScript.sceneKey = "Niveau2";
 
 		this.groupe_allies = groupe_allies;
+		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 
 		this.events.emit("scene-awake");
 	}
 
 	public groupe_allies!: Phaser.GameObjects.Layer;
+	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	private liste_colision_vs_platforme!: Entite[];
 
 	/* START-USER-CODE */
