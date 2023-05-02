@@ -2,10 +2,10 @@ import Entite from "../Entite"
 import ToileHuipatPrefab from "../Projectiles/ToileHuipatPrefab"
 import { deplacementBas, deplacementDroite, deplacementGauche, saut, stopEntite } from "./Defaut/deplacements"
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
-  (entite as any).scene.groupe_projectile_toiles = entite.scene.physics.add.group({
-    runChildUpdate: true,
-    maxSize: 4
-  })
+  // (entite as any).scene.groupe_projectile_toiles = entite.scene.physics.add.group({
+  //   runChildUpdate: true,
+  //   maxSize: 4
+  // })
 }
 
 
@@ -28,7 +28,7 @@ export function __toucheBas(entite: Entite, aptitudes: any) {
 export function __toucheEspace(entite: Entite) {
   if (!entite.body.moves) return;
   const toile = new ToileHuipatPrefab(entite.scene, entite.image_entite.getBounds().centerX, entite.image_entite.getBounds().centerY);
-  (entite as any).scene.groupe_projectile_toiles.add(toile);
+  // (entite as any).scene.groupe_projectile_toiles.add(toile);
   toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
 
   entite.scene.time.delayedCall(500, () => {
