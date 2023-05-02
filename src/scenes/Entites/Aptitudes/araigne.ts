@@ -73,6 +73,7 @@ export function deplacementGauche__toucheGauche(entite: any, input?: any) {
   ZoneInteractionAGauche(entite)
 }
 
+// TODO GARDER OU SUPPRMIER SAUT ARAIGNE
 export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
   if (!entite.body.touching.down) return;
     const jumpHeight = entite.image_entite.flipY ? -90 : 90;
@@ -102,38 +103,6 @@ export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
         });
       }
     });
-    // const jumpHeight = 50;
-    // const jumpDuration = 200;
-
-    // Créer le tween
-    // const jumpTween = entite.scene.tweens.add({
-    //   targets: entite,
-    //   y: '-=' + jumpHeight,
-    //   x: entite.image_entite.flipX ? entite.x - 300 : entite.x + 300,
-    //   ease: 'Power2',
-    //   duration: jumpDuration,
-    //   // yoyo: true,
-    //   repeat: 0
-    // });
-// const timeline = entite.scene.add.timeline([
-//     {
-//         at: 100,
-//         tween: {
-//             targets: entite,
-//             setVelocityY: -400
-//         }
-//     },
-//     {
-//         at: 200,
-//         tween: {
-//           targets: entite,
-//           setVelocityY: 0,
-//         }
-//     }
-// ]);
-
-// timeline.play();
-
 }
 
 export function __aucuneTouche(entite: Entite, aptitudes: any) {
