@@ -8,7 +8,6 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import { Aptitudes } from "../scenes/Entites/Aptitudes/_autoImport";
 import Entite from "~/scenes/Entites/Entite";
-import { partir } from "../scenes/Entites/Aptitudes/Defaut/ChangerEtat";
 /* END-USER-IMPORTS */
 
 export default class ChangeTextureScript extends ScriptNode {
@@ -40,8 +39,8 @@ export default class ChangeTextureScript extends ScriptNode {
 			onComplete: () => {
 				const entite = this.gameObject.parentContainer;
 				entite.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(entite, entite, (entite as Entite).Aptitudes)
-				partir(entite);
 				entite.rectangle_zone_interaction.setPosition(entite.image_entite.getLeftCenter().x, entite.image_entite.getLeftCenter().y)
+				entite.transformation(false)
 				entite.body.setSize(entite.image_entite.frame.width, entite.image_entite.height)
 			}
 		});

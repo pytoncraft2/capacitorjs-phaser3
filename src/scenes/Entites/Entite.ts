@@ -78,9 +78,10 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.scene.physics.world.wrap(this, 300);
 	}
 
-	reinitialiseBody() {
-		this.body.checkCollision.none = false;
-		this.alpha = 1;
+	transformation(reinitialise: boolean, changement?: CallableFunction) {
+		console.log("TRANSFORMATION: ", reinitialise);
+		if (changement) changement(reinitialise)
+		// changement(reinitialise)
 	}
 
 	/* END-USER-CODE */
