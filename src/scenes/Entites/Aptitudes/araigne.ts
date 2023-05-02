@@ -74,11 +74,12 @@ export function deplacementGauche__toucheGauche(entite: any, input?: any) {
 }
 
 export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
+  if (!entite.body.touching.down) return;
     const jumpHeight = entite.image_entite.flipY ? -90 : 90;
     const jumpDuration = 100;
-    const jumpEase = 'Sine';
-    const landDuration = 100;
-    const landEase = 'Back';
+    const jumpEase = 'Quad.easeIn';
+    const landDuration = 50;
+    const landEase = 'Quad.easeIn';
 
     // Créer le tween de saut
   entite.image_entite.setTintFill(0x000000)
@@ -93,7 +94,7 @@ export function attaqueSurprise__toucheEspace(entite: Entite, aptitudes: any) {
         // Créer le tween d'atterrissage une fois que le saut est terminé
         const landTween = entite.scene.tweens.add({
           targets: entite,
-          y: '+=' + jumpHeight,
+          // y: '+=' + jumpHeight,
           x: entite.image_entite.flipX ? entite.x - 200 : entite.x + 200,
           ease: landEase,
           duration: landDuration,
