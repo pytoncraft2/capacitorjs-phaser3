@@ -1,8 +1,9 @@
 import Entite from "../Entite";
+import { init } from "./Defaut/reinitialisePhysique";
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
-  (entite.physiqueEtParametreSpecifique = (activation: boolean) => {
-    entite.body.checkCollision.none = activation ? true : false;
-  })(true);
+  init(entite, true, (activation: boolean) => {
+    entite.body.checkCollision.none = activation ? true : false
+  })
 }
 export function heyhey__toucheBas(entite: any, input?: any) {
   console.log("TOUCHE BAS CHAUVE");

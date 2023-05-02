@@ -1,11 +1,18 @@
 import Entite from "../Entite"
 import { FlipX, ZoneInteractionADroite, ZoneInteractionAGauche } from "./Defaut/deplacements";
+import { init } from "./Defaut/reinitialisePhysique";
 
 const bonusVitesseAraigne = 200;
 const graviteVersLeHaut = -2500;
 const graviteVersLeBas = 2500;
 
-export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {}
+export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
+  init(entite, true, (activation: boolean) => {
+    const graviteYInitial = entite.body.gravity.y;
+    entite.body.setGravityY(activation ? 2500 : graviteYInitial)
+  })
+
+}
 
 export function sautVersLeHaut__toucheHaut(entite: Entite) {
   if (entite.body.touching.down && !entite.body.touching.up)

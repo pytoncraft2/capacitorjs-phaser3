@@ -42,14 +42,11 @@ export default class ChangeTextureScript extends ScriptNode {
 				entite.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(entite, entite, (entite as Entite).Aptitudes)
 				entite.rectangle_zone_interaction.setPosition(entite.image_entite.getLeftCenter().x, entite.image_entite.getLeftCenter().y)
 				entite.body.setSize(entite.image_entite.frame.width, entite.image_entite.height)
-				// entite.transformation(true)
 			}
 		});
 	}
 
 	changeTexture() {
-		console.log("CHANGE TEXT");
-		
 		let index = this.compteur % this.liste_texture.length;
 		++this.compteur;
 		return this.liste_texture[index];
