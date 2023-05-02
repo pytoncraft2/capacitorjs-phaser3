@@ -22,7 +22,8 @@ export function __toucheBas(entite: Entite, aptitudes: any) {
 
 export function __toucheEspace(entite: Entite) {
   if (!entite.body.moves) return;
-  const toile = new ToileHuipatPrefab(entite.scene, entite.image_entite.getBounds().centerX, entite.image_entite.getBounds().centerY);
+  const { centerX, centerY } = entite.image_entite.getBounds();
+  const toile = new ToileHuipatPrefab(entite.scene, centerX, centerY);
   
   (entite as any).scene.groupe_projectile_toiles.add(toile);
   toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
