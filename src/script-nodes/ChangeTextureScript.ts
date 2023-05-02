@@ -29,6 +29,7 @@ export default class ChangeTextureScript extends ScriptNode {
 	}
 
 	override execute(args?: any): void {
+		this.gameObject.parentContainer.physiqueEtParametreSpecifique(false)
 		this.scene.tweens.add({
 			targets: this.gameObject,
 			props: {
@@ -40,8 +41,8 @@ export default class ChangeTextureScript extends ScriptNode {
 				const entite = this.gameObject.parentContainer;
 				entite.Aptitudes[this.gameObject.texture.key]?.InitialisationSpecifique?.call(entite, entite, (entite as Entite).Aptitudes)
 				entite.rectangle_zone_interaction.setPosition(entite.image_entite.getLeftCenter().x, entite.image_entite.getLeftCenter().y)
-				entite.transformation(false)
 				entite.body.setSize(entite.image_entite.frame.width, entite.image_entite.height)
+				// entite.transformation(true)
 			}
 		});
 	}
