@@ -31,7 +31,6 @@ export default class Entite extends Phaser.GameObjects.Container {
 
 		// rectangle_zone_interaction
 		const rectangle_zone_interaction = scene.add.rectangle(207, 86, 128, 128);
-		rectangle_zone_interaction.isFilled = true;
 		this.add(rectangle_zone_interaction);
 
 		this.image_entite = image_entite;

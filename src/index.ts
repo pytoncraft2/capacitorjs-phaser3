@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
 				gravity: {
 					y: 900
 				},
-				debug: true
+				debug: false
 			}
 		},
 		scene: [Boot, Preload, Menu, Niveau1, Niveau2]
