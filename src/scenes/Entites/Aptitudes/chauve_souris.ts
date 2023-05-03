@@ -1,7 +1,7 @@
 import Entite from "../Entite";
-import { init } from "./Defaut/reinitialisePhysique";
+import { initPhysique } from "./Defaut/reinitialisePhysique";
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
-  init(entite, true, (activation: boolean) => {
+  initPhysique(entite, true, (activation: boolean) => {
     entite.body.checkCollision.none = activation ? true : false
   })
 }
