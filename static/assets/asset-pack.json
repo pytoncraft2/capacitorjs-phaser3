@@ -18,6 +18,12 @@
                 "textureURL": "assets/entites/huipat.png",
                 "type": "atlas",
                 "key": "huipat"
+            },
+            {
+                "atlasURL": "assets/entites/moustique.json",
+                "textureURL": "assets/entites/moustique.png",
+                "type": "atlas",
+                "key": "moustique"
             }
         ]
     },

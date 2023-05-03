@@ -43,6 +43,7 @@ export const autoImport = [
   "araigne.ts",
   "huipat.ts",
   "chauve_souris.ts",
+  "moustique.ts",
 ].map(file => {
       import('./' + file).then((m) => {
         // TODO: mieux documenter
