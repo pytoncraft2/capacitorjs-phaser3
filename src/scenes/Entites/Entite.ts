@@ -34,8 +34,16 @@ export default class Entite extends Phaser.GameObjects.Container {
 		const rectangle_zone_interaction = scene.add.rectangle(207, 86, 128, 128);
 		this.add(rectangle_zone_interaction);
 
+		// texte_compteur_blocage
+		const texte_compteur_blocage = scene.add.text(65, 0, "", {});
+		texte_compteur_blocage.setOrigin(0.5, 1);
+		texte_compteur_blocage.text = "0/5";
+		texte_compteur_blocage.setStyle({ "color": "#000000ff" });
+		this.add(texte_compteur_blocage);
+
 		this.image_entite = image_entite;
 		this.rectangle_zone_interaction = rectangle_zone_interaction;
+		this.texte_compteur_blocage = texte_compteur_blocage;
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -46,13 +54,14 @@ export default class Entite extends Phaser.GameObjects.Container {
 
 	public image_entite: Phaser.GameObjects.Image;
 	public rectangle_zone_interaction: Phaser.GameObjects.Rectangle;
+	public texte_compteur_blocage: Phaser.GameObjects.Text;
 	public velociteX: number = 300;
 	public modeAuto: boolean = false;
 	public velociteY: number = 890;
 	public tempsCumule: number = 0;
 	public tempsEntreActions: number = 1000;
 	public nombreEnchainementBlocage: number = 0;
-	public maxEnchainementPossible: number = 0;
+	public maxEnchainementPossible: number = 7;
 
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
@@ -86,8 +95,10 @@ export default class Entite extends Phaser.GameObjects.Container {
 		if (this.nombreEnchainementBlocage === 0) {
 			this.body.moves = false;
 			this.nombreEnchainementBlocage += 1;
+			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
 			this.nombreEnchainementBlocage += 1;
+			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 		} else if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
 			this.image_entite.setTintFill(0x008000);
 		}

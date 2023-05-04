@@ -52,6 +52,19 @@
                     "width": 128,
                     "height": 128,
                     "list": []
+                },
+                {
+                    "type": "Text",
+                    "id": "fdf50105-d9a9-4e86-897d-4d96a014010b",
+                    "label": "texte_compteur_blocage",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 65,
+                    "originX": 0.5,
+                    "originY": 1,
+                    "text": "0/5",
+                    "color": "#000000ff",
+                    "list": []
                 }
             ]
         }
@@ -128,7 +141,7 @@
             "name": "maxEnchainementPossible",
             "label": "maxEnchainementPossible",
             "tooltip": "augmentation maxiimum de la taille de la toile",
-            "defValue": 0,
+            "defValue": 7,
             "customDefinition": false,
             "type": {
                 "id": "number"
