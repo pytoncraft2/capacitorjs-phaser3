@@ -211,9 +211,11 @@
                     "id": "9630c212-9d76-4b17-9df7-fe0144fc0a35",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "modeAuto"
                     ],
                     "label": "entite",
+                    "modeAuto": true,
                     "components": [],
                     "x": 317,
                     "y": 198,
@@ -263,6 +265,14 @@
             "scope": "METHOD",
             "object1": "liste_colision_vs_platforme",
             "object2": "platformes.list"
+        },
+        {
+            "id": "92250569-4282-4704-8c39-5a897361ee7d",
+            "type": "Collider",
+            "label": "projectiles_vs_entites",
+            "scope": "METHOD",
+            "object1": "groupe_projectile_toiles.list",
+            "object2": "groupe_adversaires.list"
         }
     ],
     "meta": {

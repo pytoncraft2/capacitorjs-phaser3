@@ -6,6 +6,7 @@
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Entite from "../Entites/Entite";
+import ToileHuipatPrefab from "../Entites/Projectiles/ToileHuipatPrefab";
 /* END-USER-IMPORTS */
 
 export default class BaseNiveaux extends Phaser.Scene {
@@ -118,6 +119,18 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	overlapAction(rectangleZoneDetection: any, ennemie: Phaser.Physics.Arcade.Sprite) {
 		rectangleZoneDetection.action(ennemie)
+	}
+
+	envoieProjectileToile(entite: Entite) {
+		if (!entite.body.moves) return;
+
+		const toile = new ToileHuipatPrefab(this, entite.getBounds().centerX, entite.getBounds().centerY);
+		(this.scene as any).groupe_projectile_toiles.add(toile);
+		toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
+
+		this.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
+			groupe_toiles.remove(toile, true);
+		}, [toile, (this as any).groupe_projectile_toiles], this);		
 	}
 
 	/* END-USER-CODE */

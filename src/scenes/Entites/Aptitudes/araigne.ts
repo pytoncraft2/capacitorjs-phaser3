@@ -8,6 +8,7 @@ const graviteVersLeBas = 2500;
 
 export function __InitialisationSpecifique(entite: Entite, aptitudes: any) {
   const {x, y} = entite.body.gravity;
+  entite.body.setVelocityX(300)
   initPhysique(entite, true, (activation: boolean) => {
     entite.body.setGravity(x, activation ? graviteVersLeBas : y)
   })

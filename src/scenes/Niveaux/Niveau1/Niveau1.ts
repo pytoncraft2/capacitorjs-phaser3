@@ -101,8 +101,14 @@ export default class Niveau1 extends BaseNiveaux {
 		// colision_vs_platformes
 		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
 
+		// projectiles_vs_entites
+		this.physics.add.collider(groupe_projectile_toiles.list, groupe_adversaires.list);
+
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
+
+		// entite (prefab fields)
+		entite.modeAuto = true;
 
 		this.groupe_allies = groupe_allies;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
