@@ -249,6 +249,28 @@
             "list": []
         },
         {
+            "type": "Container",
+            "id": "e979ffb8-6f3c-47d9-a59a-9f3cf46b27cf",
+            "label": "groupe_projectile_boule_toile",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "24c4089b-ffe0-4d2e-8e2d-4994566398e5",
+                    "id": "cadff09a-c5da-4708-b644-7c1b2bdc5dff",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "toileMouvante",
+                    "components": [],
+                    "x": 1152,
+                    "y": 0,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "3defd774-ba02-4961-9f57-d225d7b81fd7",
             "label": "onSceneAwakeScript",
@@ -297,7 +319,8 @@
             "label": "liste_colision_vs_platforme",
             "objectIds": [
                 "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
-                "9630c212-9d76-4b17-9df7-fe0144fc0a35"
+                "9630c212-9d76-4b17-9df7-fe0144fc0a35",
+                "cadff09a-c5da-4708-b644-7c1b2bdc5dff"
             ]
         },
         {
