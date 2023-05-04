@@ -7,6 +7,7 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import { Aptitudes, Touches } from "./Aptitudes/_autoImport";
 import ToileHuipatPrefab from "./Projectiles/ToileHuipatPrefab";
+import ToileMouvante from "./Projectiles/ToileMouvante";
 /* END-USER-IMPORTS */
 
 export default interface Entite {
@@ -117,7 +118,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	diminueNombreEnchainementBlocage() {
 		this.nombreEnchainementBlocage -=  1;
 		this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
-		if (this.nombreEnchainementBlocage == 0 && !this.body.moves)
+		if (this.nombreEnchainementBlocage === 0 && !this.body.moves)
 		{
 			this.body.moves = true;
 		}

@@ -262,6 +262,7 @@
                         "y"
                     ],
                     "label": "toileMouvante",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 1152,
                     "y": 0,
@@ -320,7 +321,8 @@
             "objectIds": [
                 "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
                 "9630c212-9d76-4b17-9df7-fe0144fc0a35",
-                "cadff09a-c5da-4708-b644-7c1b2bdc5dff"
+                "cadff09a-c5da-4708-b644-7c1b2bdc5dff",
+                "4b6e1cb7-ae47-4800-a6b8-b6f5c9ee02c0"
             ]
         },
         {
