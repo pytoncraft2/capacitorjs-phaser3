@@ -102,7 +102,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
 
 		// projectiles_vs_entites
-		this.physics.add.collider(groupe_projectile_toiles.list, groupe_adversaires.list);
+		this.physics.add.collider(groupe_projectile_toiles.list, groupe_adversaires.list, this.superpositionToileVSentite as any);
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";

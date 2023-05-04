@@ -68,7 +68,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	observeToucheDeplacement() {
 		this.leftDown = this.leftDown || this.isKeyDown(this.toucheGauche);
 		this.rightDown = this.rightDown || this.isKeyDown(this.toucheDroite);
-		this.upDown = this.upDown || this.isKeyDown(this.toucheHaut) ;
+		this.upDown = this.upDown || this.isKeyDown(this.toucheHaut);
 		this.downDown = this.downDown || this.isKeyDown(this.toucheBas);
 		if (this.isMobile) {
 			this.spaceDown = this.spaceDown || this.isKeyDown(this.toucheEspace) || this.spaceDownTouch;
@@ -121,16 +121,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 		rectangleZoneDetection.action(ennemie)
 	}
 
-	envoieProjectileToile(entite: Entite) {
-		if (!entite.body.moves) return;
-
-		const toile = new ToileHuipatPrefab(this, entite.getBounds().centerX, entite.getBounds().centerY);
-		(this.scene as any).groupe_projectile_toiles.add(toile);
-		toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
-
-		this.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
-			groupe_toiles.remove(toile, true);
-		}, [toile, (this as any).groupe_projectile_toiles], this);		
+	superpositionToileVSentite(toile: ToileHuipatPrefab, entite: Entite): void {
+		console.log("TOUCHE", toile, "VS", entite);
 	}
 
 	/* END-USER-CODE */

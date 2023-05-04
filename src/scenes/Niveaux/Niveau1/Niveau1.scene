@@ -272,7 +272,8 @@
             "label": "projectiles_vs_entites",
             "scope": "METHOD",
             "object1": "groupe_projectile_toiles.list",
-            "object2": "groupe_adversaires.list"
+            "object2": "groupe_adversaires.list",
+            "collideCallback": "this.superpositionToileVSentite as any"
         }
     ],
     "meta": {
