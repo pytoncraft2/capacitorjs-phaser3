@@ -106,6 +106,20 @@ export default class Entite extends Phaser.GameObjects.Container {
 		toile.destroy();
 	}
 
+	augmenteNombreEnchainementBlocage() {
+		this.nombreEnchainementBlocage +=  1;
+		this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
+	}
+
+	diminueNombreEnchainementBlocage() {
+		this.nombreEnchainementBlocage -=  1;
+		this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
+		if (this.nombreEnchainementBlocage == 0 && !this.body.moves)
+		{
+			this.body.moves = true;
+		}
+	}
+
 	/* END-USER-CODE */
 }
 

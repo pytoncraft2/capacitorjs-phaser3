@@ -121,6 +121,9 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
 
   entite.tempsCumule += dt
     const { left, right } = entite.body.blocked;
+
+    // console.log(entite.nombreEnchainementBlocage);
+    
     
     if (left) {
       entite.body.setVelocityX(entite.velociteX)
@@ -135,6 +138,11 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
 
   if (entite.tempsCumule < entite.tempsEntreActions) { return }
   else {
+    if (entite.nombreEnchainementBlocage > 0)
+    {
+      entite.diminueNombreEnchainementBlocage()
+    }
+    // console.log("C L'HEURE!");
     entite.tempsCumule = 0
   }
 }
