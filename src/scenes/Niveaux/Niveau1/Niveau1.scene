@@ -275,6 +275,14 @@
             "object2": "groupe_adversaires.list",
             "overlapOnly": true,
             "collideCallback": "this.superpositionToileVSentite as any"
+        },
+        {
+            "id": "3300385d-b79e-41e2-809a-8b140e1085c1",
+            "type": "Collider",
+            "label": "rectangle_interaction_proche_vs_entites",
+            "scope": "METHOD",
+            "object1": "groupe_adversaires.list",
+            "object2": "liste_colision_rectangle_detection_vs_entites"
         }
     ],
     "meta": {
@@ -291,6 +299,10 @@
                 "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
                 "9630c212-9d76-4b17-9df7-fe0144fc0a35"
             ]
+        },
+        {
+            "id": "d36a8666-767f-423e-9a92-8794cbdd580d",
+            "label": "liste_colision_rectangle_detection_vs_entites"
         }
     ]
 }

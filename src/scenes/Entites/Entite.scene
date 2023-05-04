@@ -47,8 +47,11 @@
                     "label": "rectangle_zone_interaction",
                     "scope": "NESTED_PREFAB",
                     "components": [],
-                    "x": 207,
+                    "x": 145,
                     "y": 86,
+                    "scaleX": 0.6435136753828983,
+                    "scaleY": 1.0810936118434191,
+                    "isFilled": true,
                     "width": 128,
                     "height": 128,
                     "list": []

@@ -97,12 +97,16 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// lists
 		const liste_colision_vs_platforme = [huipat, entite];
+		const liste_colision_rectangle_detection_vs_entites: Array<any> = [];
 
 		// colision_vs_platformes
 		this.physics.add.collider(liste_colision_vs_platforme, platformes.list);
 
 		// projectiles_vs_entites
 		this.physics.add.overlap(groupe_projectile_toiles.list, groupe_adversaires.list, this.superpositionToileVSentite as any);
+
+		// rectangle_interaction_proche_vs_entites
+		this.physics.add.collider(groupe_adversaires.list, liste_colision_rectangle_detection_vs_entites);
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
@@ -113,6 +117,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.groupe_allies = groupe_allies;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
+		this.liste_colision_rectangle_detection_vs_entites = liste_colision_rectangle_detection_vs_entites;
 
 		this.events.emit("scene-awake");
 	}
@@ -120,6 +125,7 @@ export default class Niveau1 extends BaseNiveaux {
 	public groupe_allies!: Phaser.GameObjects.Layer;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	private liste_colision_vs_platforme!: Entite[];
+	private liste_colision_rectangle_detection_vs_entites!: Array<any>;
 
 	/* START-USER-CODE */
 
