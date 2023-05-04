@@ -122,6 +122,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	superpositionToileVSentite(toile: ToileHuipatPrefab, entite: Entite): void {
+		entite.enchainementBlocage(1, toile)
+		// entite.vsToile(toile)
 		console.log("TOUCHE", toile, "VS", entite);
 	}
 

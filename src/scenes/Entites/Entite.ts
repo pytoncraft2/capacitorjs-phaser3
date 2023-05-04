@@ -6,6 +6,7 @@
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import { Aptitudes, Touches } from "./Aptitudes/_autoImport";
+import ToileHuipatPrefab from "./Projectiles/ToileHuipatPrefab";
 /* END-USER-IMPORTS */
 
 export default interface Entite {
@@ -50,6 +51,8 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public velociteY: number = 890;
 	public tempsCumule: number = 0;
 	public tempsEntreActions: number = 1000;
+	public nombreEnchainementBlocage: number = 0;
+	public maxEnchainementPossible: number = 0;
 
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
@@ -78,6 +81,19 @@ export default class Entite extends Phaser.GameObjects.Container {
 	}
 
 	physiqueEtParametreSpecifique(activation: boolean) { }
+
+	enchainementBlocage(_degat: number, toile: ToileHuipatPrefab) {
+		if (this.nombreEnchainementBlocage === 0) {
+			this.body.moves = false;
+			this.nombreEnchainementBlocage += 1;
+		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
+			this.nombreEnchainementBlocage += 1;
+		} else if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
+			this.image_entite.setTintFill(0x008000);
+		}
+		// this.diminutionTailleToile()
+		toile.destroy();
+	}
 
 	/* END-USER-CODE */
 }

@@ -29,7 +29,7 @@ export function __toucheEspace(entite: Entite) {
   toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
   
   entite.scene.time.delayedCall(500, () => {
-    (entite as any).scene.groupe_projectile_toiles.remove(toile, true)
+    // (entite as any).scene.groupe_projectile_toiles.remove(toile, true)
   }, undefined, entite.scene);
 }
 

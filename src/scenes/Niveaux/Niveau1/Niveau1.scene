@@ -273,6 +273,7 @@
             "scope": "METHOD",
             "object1": "groupe_projectile_toiles.list",
             "object2": "groupe_adversaires.list",
+            "overlapOnly": true,
             "collideCallback": "this.superpositionToileVSentite as any"
         }
     ],

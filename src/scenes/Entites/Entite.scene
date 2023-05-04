@@ -113,6 +113,26 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "nombreEnchainementBlocage",
+            "label": "nombreEnchainementBlocage",
+            "tooltip": "nombre de fois que l'entité est bloqué par une toile",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "maxEnchainementPossible",
+            "label": "maxEnchainementPossible",
+            "tooltip": "augmentation maxiimum de la taille de la toile",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }
