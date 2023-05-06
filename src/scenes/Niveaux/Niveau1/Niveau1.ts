@@ -104,7 +104,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_colision_vs_platforme = [huipat, entite, toileMouvante, groupe_projectile_toiles];
+		const liste_colision_vs_platforme = [huipat, entite, toileMouvante];
 		const liste_colision_rectangle_detection_vs_entites: Array<any> = [];
 
 		// colision_vs_platformes
@@ -125,6 +125,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.groupe_allies = groupe_allies;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.toileMouvante = toileMouvante;
+		this.groupe_projectile_boule_toile = groupe_projectile_boule_toile;
 		this.liste_colision_vs_platforme = liste_colision_vs_platforme;
 		this.liste_colision_rectangle_detection_vs_entites = liste_colision_rectangle_detection_vs_entites;
 
@@ -134,7 +135,8 @@ export default class Niveau1 extends BaseNiveaux {
 	public groupe_allies!: Phaser.GameObjects.Layer;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	private toileMouvante!: ToileMouvante;
-	private liste_colision_vs_platforme!: Array<Entite|ToileMouvante|Phaser.GameObjects.Container>;
+	public groupe_projectile_boule_toile!: Phaser.GameObjects.Container;
+	private liste_colision_vs_platforme!: Array<Entite|ToileMouvante>;
 	private liste_colision_rectangle_detection_vs_entites!: Array<any>;
 
 	/* START-USER-CODE */

@@ -24,15 +24,36 @@ export default class ToileMouvante extends Phaser.GameObjects.Ellipse {
 		this.body.collideWorldBounds = true;
 		this.body.setSize(128, 128, false);
 		this.isFilled = true;
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		//@ts-ignore
+		// this.scene.events.once("scene-awake", () => );
+		// console.log("CREATE");
+		
+		//@ts-ignore
+		// this.scene.groupe_projectile_boule_toile.add(this)
+		// console.log(scene);
+		
 		/* END-USER-CTR-CODE */
 	}
+	// init() {
+	// 	console.log("INII");
+		
+	// }
 
 	/* START-USER-CODE */
+	awake() {
+		
+		//@ts-ignore
+		// console.log(this.scene.groupe_projectile_boule_toile);
+		//@ts-ignore
+		// this.scene.groupe_projectile_boule_toile.add(this)
+		//@ts-ignore
+		// console.log(this.scene.groupe_projectile_boule_toile);
 
-	// Write your code here.
+	}
 
 	/* END-USER-CODE */
 }
