@@ -140,7 +140,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	verifToucheEntiteAdverse(allie: any, adversaire: Entite) {
 		
-			if (allie.refToile?.ejectable)
+			if (adversaire.refToile?.ejectable)
 			{
 				console.log("EJECTABLE !!");
 				
@@ -157,11 +157,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// obj2.timerDiminutionToile?.remove();
 		// obj2.body.moves = true;
-		allie.body.checkCollision.none = true;
+		adversaire.body.checkCollision.none = true;
 
 
-		allie.scene.tweens.add({
-			targets: [allie.image_entite],
+		adversaire.scene.tweens.add({
+			targets: [adversaire.image_entite],
 			// angle: allie.parentContainer.huipat.flipX ? -960 : 960,
 			angle: 960,
 			alpha: 0,
@@ -169,8 +169,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 			duration: 1000
 		});
 		// obj2.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
-		allie.body.setVelocity(-500, -1800);
-		allie.scene.time.delayedCall(800, () => {
+		adversaire.body.setVelocity(-500, -1800);
+		adversaire.scene.time.delayedCall(800, () => {
 
 			// this.groupe_arraigne.remove(obj2, true)
 			console.log("DESTRUCTION");

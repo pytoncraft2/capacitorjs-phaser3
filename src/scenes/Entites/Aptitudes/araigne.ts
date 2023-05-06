@@ -130,7 +130,10 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
   else {
     if (entite.nombreEnchainementBlocage > 0)
     {
-      entite.diminueNombreEnchainementBlocage()
+      if (!entite.refToile?.ejectable) {
+        entite.diminueNombreEnchainementBlocage()
+      }
+      
     }
     entite.tempsCumule = 0
   }

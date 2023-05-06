@@ -416,8 +416,8 @@
             "type": "Collider",
             "label": "rectangle_interaction_proche_vs_entites",
             "scope": "METHOD",
-            "object1": "groupe_adversaires.list",
-            "object2": "groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction)",
+            "object1": "groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction)",
+            "object2": "groupe_adversaires.list ",
             "overlapOnly": true,
             "collideCallback": "this.toucheEntiteAdverse as any",
             "processCallback": "this.verifToucheEntiteAdverse as any"
