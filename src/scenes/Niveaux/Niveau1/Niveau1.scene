@@ -381,23 +381,7 @@
             "label": "groupe_projectile_boule_toile",
             "scope": "PUBLIC",
             "components": [],
-            "list": [
-                {
-                    "prefabId": "24c4089b-ffe0-4d2e-8e2d-4994566398e5",
-                    "id": "cadff09a-c5da-4708-b644-7c1b2bdc5dff",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "toileMouvante",
-                    "scope": "CLASS",
-                    "components": [],
-                    "x": 576,
-                    "y": 8,
-                    "nestedPrefabs": [],
-                    "list": []
-                }
-            ]
+            "list": []
         },
         {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",

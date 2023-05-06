@@ -34,16 +34,11 @@ export function __toucheBas(entite: Entite, aptitudes: any) {
 export function __toucheEspace(entite: Entite) {
   if (!entite.body.moves) return;
   const { centerX, centerY } = entite.image_entite.getBounds();
-  const obj_entite = entite.scene.physics.add.existing(new ToileMouvante(entite.scene, centerX, centerY));
-  // entite.scene.add.existing(obj_entite);
-  
-  (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
-  // (entite as any).scene.groupe_projectile_toiles.add(toileMouvante);
-  // toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
-  
-  // entite.scene.time.delayedCall(500, () => {
-    // (entite as any).scene.groupe_projectile_toiles.remove(toile, true)
-  // }, undefined, entite.scene);
+  const toile = entite.scene.physics.add.existing(new ToileMouvante(entite.scene, centerX, centerY));
+  toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
+
+  // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
+  (entite as any).scene.groupe_projectile_toiles.add(toile);
 }
 
 
