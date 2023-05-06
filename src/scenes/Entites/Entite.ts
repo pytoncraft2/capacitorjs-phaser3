@@ -74,6 +74,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public tempsEntreActions: number = 1000;
 	public nombreEnchainementBlocage: number = 0;
 	public maxEnchainementPossible: number = 7;
+	public refToile!: ToileMouvante | null;
 
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
@@ -103,7 +104,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 
 	physiqueEtParametreSpecifique(activation: boolean) { }
 
-	enchainementBlocage(_degat: number, toile: ToileHuipatPrefab) {
+	enchainementBlocage(_degat: number, toile: ToileMouvante) {
 		if (this.nombreEnchainementBlocage === 0) {
 			this.body.moves = false;
 			this.nombreEnchainementBlocage += 1;
@@ -114,6 +115,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 			toile.setPosition(centerX, centerY)
 			toile.body.moves = false;
 			toile.setScale(0.50, 0.50)
+			this.refToile = toile
 		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
@@ -122,7 +124,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		}
 		// this.diminutionTailleToile()
 		// console.log(toile);
-		
+
 		// toile.destroy()
 		// toile.setPosition();
 	}
@@ -138,6 +140,8 @@ export default class Entite extends Phaser.GameObjects.Container {
 		if (this.nombreEnchainementBlocage === 0 && !this.body.moves)
 		{
 			this.body.moves = true;
+			this.refToile?.destroy()
+			this.refToile = null;
 		}
 	}
 

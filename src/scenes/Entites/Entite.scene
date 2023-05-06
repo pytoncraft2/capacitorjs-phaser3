@@ -158,6 +158,17 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "refToile",
+            "label": "refToile",
+            "tooltip": "reference à la toile qui bloque l'entité",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "ToileMouvante | null"
+            }
         }
     ]
 }

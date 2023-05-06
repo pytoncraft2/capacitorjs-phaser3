@@ -7,6 +7,7 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Entite from "../Entites/Entite";
 import ToileHuipatPrefab from "../Entites/Projectiles/ToileHuipatPrefab";
+import ToileMouvante from "../Entites/Projectiles/ToileMouvante";
 /* END-USER-IMPORTS */
 
 export default class BaseNiveaux extends Phaser.Scene {
@@ -121,7 +122,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		rectangleZoneDetection.action(ennemie)
 	}
 
-	superpositionToileVSentite(toile: ToileHuipatPrefab, entite: Entite): void {
+	superpositionToileVSentite(toile: ToileMouvante, entite: Entite): void {
 		entite.enchainementBlocage(1, toile)
 		
 		// entite.vsToile(toile)
