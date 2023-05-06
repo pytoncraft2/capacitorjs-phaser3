@@ -434,7 +434,8 @@
             "scope": "METHOD",
             "object1": "groupe_adversaires.list",
             "object2": "groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction)",
-            "collideCallback": "() => console.log(\"TOUCHE\")"
+            "overlapOnly": true,
+            "collideCallback": "() => console.log(\"TOUCH\")"
         }
     ],
     "meta": {

@@ -134,7 +134,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.overlap(groupe_projectile_toiles.list, groupe_adversaires.list, this.superpositionToileVSentite as any);
 
 		// rectangle_interaction_proche_vs_entites
-		this.physics.add.collider(groupe_adversaires.list, groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction), () => console.log("TOUCHE"));
+		this.physics.add.overlap(groupe_adversaires.list, groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction), () => console.log("TOUCH"));
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
