@@ -392,8 +392,8 @@
                     "label": "toileMouvante",
                     "scope": "CLASS",
                     "components": [],
-                    "x": 836,
-                    "y": 858,
+                    "x": 576,
+                    "y": 8,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -436,6 +436,14 @@
             "object2": "groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction)",
             "overlapOnly": true,
             "collideCallback": "() => console.log(\"TOUCH\")"
+        },
+        {
+            "id": "c7f6be0b-a83c-49f8-9af6-f0a56f9f7d79",
+            "type": "Collider",
+            "label": "colision_boules_vs_platformes",
+            "scope": "METHOD",
+            "object1": "groupe_projectile_boule_toile.list",
+            "object2": "platformes.list"
         }
     ],
     "meta": {
@@ -451,7 +459,6 @@
             "objectIds": [
                 "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
                 "9630c212-9d76-4b17-9df7-fe0144fc0a35",
-                "cadff09a-c5da-4708-b644-7c1b2bdc5dff",
                 "5f0f1e14-b341-4717-8135-298f3a3084ed",
                 "2a644c94-ba76-4a52-9315-8f0af4704bb3",
                 "207433fc-7d27-4e77-bacc-14339bb039dc",

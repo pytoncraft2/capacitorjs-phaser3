@@ -117,14 +117,14 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_projectile_boule_toile = this.add.container(0, 0);
 
 		// toileMouvante
-		const toileMouvante = new ToileMouvante(this, 836, 858);
+		const toileMouvante = new ToileMouvante(this, 576, 8);
 		groupe_projectile_boule_toile.add(toileMouvante);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_colision_vs_platforme = [huipat, entite, toileMouvante, entite_1, entite_4, entite_3, entite_2];
+		const liste_colision_vs_platforme = [huipat, entite, entite_1, entite_4, entite_3, entite_2];
 		const liste_colision_rectangle_detection_vs_entites: Array<any> = [];
 
 		// colision_vs_platformes
@@ -135,6 +135,9 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// rectangle_interaction_proche_vs_entites
 		this.physics.add.overlap(groupe_adversaires.list, groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction), () => console.log("TOUCH"));
+
+		// colision_boules_vs_platformes
+		this.physics.add.collider(groupe_projectile_boule_toile.list, platformes.list);
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
@@ -168,13 +171,14 @@ export default class Niveau1 extends BaseNiveaux {
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	private toileMouvante!: ToileMouvante;
 	public groupe_projectile_boule_toile!: Phaser.GameObjects.Container;
-	private liste_colision_vs_platforme!: Array<Entite|ToileMouvante>;
+	private liste_colision_vs_platforme!: Entite[];
 	private liste_colision_rectangle_detection_vs_entites!: Array<any>;
 
 	/* START-USER-CODE */
 
 	create() {
 		this.editorCreate();
+
 	}
 
 	/* END-USER-CODE */
