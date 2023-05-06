@@ -39,6 +39,9 @@ export function __toucheEspace(entite: Entite) {
 
   // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
   (entite as any).scene.groupe_projectile_toiles.add(toile);
+  entite.scene.time.delayedCall(500, () => {
+    // (entite as any).scene.groupe_projectile_toiles.remove(toile, true)
+  }, undefined, entite.scene);
 }
 
 
