@@ -129,7 +129,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.overlap(groupe_projectile_toiles.list, groupe_adversaires.list, this.superpositionToileVSentite as any);
 
 		// rectangle_interaction_proche_vs_entites
-		this.physics.add.overlap(groupe_adversaires.list, groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction), () => console.log("TOUCH"));
+		this.physics.add.overlap(groupe_adversaires.list, groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction), this.toucheEntiteAdverse as any, this.verifToucheEntiteAdverse as any);
 
 		// colision_boules_vs_platformes
 		this.physics.add.collider(groupe_projectile_boule_toile.list, platformes.list);

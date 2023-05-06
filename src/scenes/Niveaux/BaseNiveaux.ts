@@ -131,11 +131,56 @@ export default class BaseNiveaux extends Phaser.Scene {
 		rectangleZoneDetection.action(ennemie)
 	}
 
-	superpositionToileVSentite(toile: ToileMouvante, entite: Entite): void {
+	superpositionToileVSentite(toile: ToileMouvante, entite: Entite) {
 		entite.enchainementBlocage(1, toile)
 		
 		// entite.vsToile(toile)
 		// console.log("TOUCHE", toile, "VS", entite);
+	}
+
+	verifToucheEntiteAdverse(allie: any, adversaire: Entite) {
+			if (adversaire.ejectable)
+			{
+				console.log("EJECTABLE !!");
+				
+				return true;
+			}
+			else
+			{
+				console.log("NOP !!");
+				return false;
+			}
+	}
+
+	toucheEntiteAdverse(allie: Entite, adversaire: Entite) {
+
+		// obj2.timerDiminutionToile?.remove();
+		// obj2.body.moves = true;
+		adversaire.body.checkCollision.none = true;
+
+
+		this.tweens.add({
+			targets: [adversaire.image_entite],
+			// angle: allie.parentContainer.huipat.flipX ? -960 : 960,
+			angle: 960,
+			alpha: 0,
+			ease: 'Linear',
+			duration: 1000
+		});
+		// obj2.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
+		adversaire.body.setVelocity(-500, -1800);
+		this.time.delayedCall(800, () => {
+
+			// this.groupe_arraigne.remove(obj2, true)
+			console.log("DESTRUCTION");
+
+			// obj2.active && obj2.destroy(true);
+			// obj1.parentContainer.killedEnnemy += 1;
+			// if (obj1.parentContainer.killedEnnemy == this.liste_fonds_ecran[score.niveau].nombreEnnemieAVaincre) {
+				// score.niveauSuivant();
+				// obj1.parentContainer.killedEnnemy = 0;
+			// }
+		})
 	}
 
 	/* END-USER-CODE */

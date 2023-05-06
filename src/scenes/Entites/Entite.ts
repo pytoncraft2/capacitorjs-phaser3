@@ -75,6 +75,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public nombreEnchainementBlocage: number = 0;
 	public maxEnchainementPossible: number = 7;
 	public refToile!: ToileMouvante | null;
+	public ejectable: boolean = false;
 
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
@@ -125,7 +126,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 				this.refToile?.setScale(agrandissementScale);
 			}
 		}
-		
+
 		if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
 			toile.destroy()
 			this.refToile?.couleurDeplacable();

@@ -419,7 +419,8 @@
             "object1": "groupe_adversaires.list",
             "object2": "groupe_allies.list.map((e) => (e as Entite).rectangle_zone_interaction)",
             "overlapOnly": true,
-            "collideCallback": "() => console.log(\"TOUCH\")"
+            "collideCallback": "this.toucheEntiteAdverse as any",
+            "processCallback": "this.verifToucheEntiteAdverse as any"
         },
         {
             "id": "c7f6be0b-a83c-49f8-9af6-f0a56f9f7d79",
