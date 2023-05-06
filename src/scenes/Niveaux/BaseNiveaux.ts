@@ -168,8 +168,16 @@ export default class BaseNiveaux extends Phaser.Scene {
 			ease: 'Linear',
 			duration: 1000
 		});
-		// obj2.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
-		adversaire.body.setVelocity(-500, -1800);
+		// adversaire.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
+		// adversaire.body.setVelocity(-500, -1800);
+		console.log(adversaire);
+		
+		if (adversaire.refToile) {
+			adversaire.refToile.body.enable = true;
+			adversaire.refToile.body.setVelocity(-500, -1800);
+			//@ts-ignore
+			adversaire.scene.groupe_projectile_boule_toile.add(adversaire.refToile)
+		}
 		adversaire.scene.time.delayedCall(800, () => {
 
 			// this.groupe_arraigne.remove(obj2, true)

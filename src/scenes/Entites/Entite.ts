@@ -123,7 +123,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 			if (this.refToile) {
-				const agrandissementScale = this.refToile.scaleX + 0.30;
+				const agrandissementScale = this.refToile.scaleX + 0.10;
 				this.refToile?.setScale(agrandissementScale);
 			}
 		}
@@ -151,7 +151,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.nombreEnchainementBlocage -=  1;
 		this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 		if (this.refToile) {
-			const diminutionScale = this.refToile.scaleX - 0.30;
+			const diminutionScale = this.refToile.scaleX - 0.10;
 			this.refToile.ejectable = false;
 			this.refToile?.couleurBasic();
 			this.refToile?.setScale(diminutionScale);
