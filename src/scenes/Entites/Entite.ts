@@ -123,9 +123,11 @@ export default class Entite extends Phaser.GameObjects.Container {
 				const agrandissementScale = this.refToile.scaleX + 0.10;
 				this.refToile?.setScale(agrandissementScale);
 			}
-		} else if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
+		}
+		
+		if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
 			toile.destroy()
-			this.image_entite.setTintFill(0x008000);
+			this.refToile?.couleurDeplacable();
 		}
 		// this.diminutionTailleToile()
 		// console.log(toile);
@@ -143,6 +145,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 		if (this.refToile) {
 			const diminutionScale = this.refToile.scaleX - 0.10;
+			this.refToile?.couleurBasic();
 			this.refToile?.setScale(diminutionScale);
 		}
 		if (this.nombreEnchainementBlocage === 0 && !this.body.moves)

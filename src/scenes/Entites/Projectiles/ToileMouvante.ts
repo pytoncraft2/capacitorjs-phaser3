@@ -19,6 +19,7 @@ export default class ToileMouvante extends Phaser.GameObjects.Ellipse {
 
 		this.scaleX = 0.8042695872537553;
 		this.scaleY = 0.18602173204849204;
+		this.alpha = 0.5;
 		scene.physics.add.existing(this, false);
 		this.body.bounce.x = 1;
 		this.body.collideWorldBounds = true;
@@ -30,6 +31,12 @@ export default class ToileMouvante extends Phaser.GameObjects.Ellipse {
 	}
 
 	/* START-USER-CODE */
+	couleurDeplacable() {
+		this.fillColor = 4582482;
+	}
+	couleurBasic() {
+		if (this.fillColor !== 16777215) this.fillColor = 16777215;
+	}
 	/* END-USER-CODE */
 }
 
