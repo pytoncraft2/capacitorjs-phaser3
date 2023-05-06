@@ -174,9 +174,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 		
 		if (adversaire.refToile) {
 			adversaire.refToile.body.enable = true;
-			adversaire.refToile.body.setVelocity(-500, -1800);
+			// adversaire.refToile.body.setVelocity(-500, -1800);
 			//@ts-ignore
 			adversaire.scene.groupe_projectile_boule_toile.add(adversaire.refToile)
+			//@ts-ignore
+			adversaire.scene.groupe_projectile_toiles.remove(adversaire.refToile)
 		}
 		adversaire.scene.time.delayedCall(800, () => {
 
