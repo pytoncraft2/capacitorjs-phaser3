@@ -30,6 +30,8 @@ export default class ToileMouvante extends Phaser.GameObjects.Ellipse {
 		/* END-USER-CTR-CODE */
 	}
 
+	public aUneRef: boolean = false;
+
 	/* START-USER-CODE */
 	couleurDeplacable() {
 		this.fillColor = 4582482;

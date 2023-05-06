@@ -115,6 +115,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 			toile.setPosition(centerX, centerY)
 			toile.setScale(0.50, 0.50)
 			this.refToile = toile
+			toile.aUneRef = true;
 		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
 			toile.destroy()
 			this.nombreEnchainementBlocage += 1;

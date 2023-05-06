@@ -39,5 +39,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "aUneRef",
+            "label": "aUneRef",
+            "tooltip": "verfie si c'est pas une boule qui grossit , qui ne doit pas être détruit",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
 }
