@@ -2,7 +2,6 @@
     "id": "4d404255-0a0a-4fe6-a004-6f14ee599cac",
     "sceneType": "SCENE",
     "settings": {
-        "snapEnabled": true,
         "snapWidth": 192,
         "snapHeight": 200,
         "exportClass": true,
@@ -166,8 +165,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "components": [],
-                    "x": 1536,
-                    "y": 200,
+                    "x": 688,
+                    "y": 79,
                     "nestedPrefabs": [
                         {
                             "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
@@ -217,12 +216,140 @@
                     "label": "entite",
                     "modeAuto": true,
                     "components": [],
-                    "x": 317,
-                    "y": 198,
+                    "x": 1109,
+                    "y": 65,
                     "nestedPrefabs": [
                         {
                             "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
                             "id": "f5d6f10c-d38f-4a3a-ab54-0a84ce57d739",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "image_entite",
+                            "components": [],
+                            "texture": {
+                                "key": "araigne",
+                                "frame": "araigne.png"
+                            },
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
+                    "list": []
+                },
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "5f0f1e14-b341-4717-8135-298f3a3084ed",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "modeAuto"
+                    ],
+                    "label": "entite_1",
+                    "modeAuto": true,
+                    "components": [],
+                    "x": 192,
+                    "y": 200,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "246d2abb-ed23-45e5-873e-b04fae2a2c15",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "image_entite",
+                            "components": [],
+                            "texture": {
+                                "key": "araigne",
+                                "frame": "araigne.png"
+                            },
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
+                    "list": []
+                },
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "d82014e3-b75c-4e41-8ca6-4cfc934c96fe",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "modeAuto"
+                    ],
+                    "label": "entite_2",
+                    "modeAuto": true,
+                    "components": [],
+                    "x": 1576,
+                    "y": 664,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "c5fd3c3d-c5cc-49d8-b9ee-4a1c28397a2d",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "image_entite",
+                            "components": [],
+                            "texture": {
+                                "key": "araigne",
+                                "frame": "araigne.png"
+                            },
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
+                    "list": []
+                },
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "207433fc-7d27-4e77-bacc-14339bb039dc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "modeAuto"
+                    ],
+                    "label": "entite_3",
+                    "modeAuto": true,
+                    "components": [],
+                    "x": 331,
+                    "y": 532,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "9c410ce6-5700-4d84-a913-f8003e60bff1",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "image_entite",
+                            "components": [],
+                            "texture": {
+                                "key": "araigne",
+                                "frame": "araigne.png"
+                            },
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
+                    "list": []
+                },
+                {
+                    "prefabId": "9d863a98-4951-44fb-a653-e7abb37ab252",
+                    "id": "2a644c94-ba76-4a52-9315-8f0af4704bb3",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "modeAuto"
+                    ],
+                    "label": "entite_4",
+                    "modeAuto": true,
+                    "components": [],
+                    "x": 1017,
+                    "y": 453,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "1c6f60c0-33ab-4402-814e-805a73e56303",
+                            "id": "626b0b29-c524-41ee-be48-91b76b38fe12",
                             "unlock": [
                                 "texture"
                             ],
@@ -265,8 +392,8 @@
                     "label": "toileMouvante",
                     "scope": "CLASS",
                     "components": [],
-                    "x": 1152,
-                    "y": 0,
+                    "x": 836,
+                    "y": 858,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -306,7 +433,8 @@
             "label": "rectangle_interaction_proche_vs_entites",
             "scope": "METHOD",
             "object1": "groupe_adversaires.list",
-            "object2": "liste_colision_rectangle_detection_vs_entites"
+            "object2": "groupe_allies.list.map((e: any) => e.rectangle_zone_interaction)",
+            "collideCallback": "() => console.log(\"TOUCHE\")"
         }
     ],
     "meta": {
@@ -322,7 +450,11 @@
             "objectIds": [
                 "604095c6-fcdc-4bb5-9d72-9d52f5b1e3ef",
                 "9630c212-9d76-4b17-9df7-fe0144fc0a35",
-                "cadff09a-c5da-4708-b644-7c1b2bdc5dff"
+                "cadff09a-c5da-4708-b644-7c1b2bdc5dff",
+                "5f0f1e14-b341-4717-8135-298f3a3084ed",
+                "2a644c94-ba76-4a52-9315-8f0af4704bb3",
+                "207433fc-7d27-4e77-bacc-14339bb039dc",
+                "d82014e3-b75c-4e41-8ca6-4cfc934c96fe"
             ]
         },
         {

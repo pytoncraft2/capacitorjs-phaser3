@@ -72,7 +72,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_allies = this.add.layer();
 
 		// huipat
-		const huipat = new Entite(this, 1536, 200);
+		const huipat = new Entite(this, 688, 79);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
 
@@ -86,9 +86,29 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.layer();
 
 		// entite
-		const entite = new Entite(this, 317, 198);
+		const entite = new Entite(this, 1109, 65);
 		groupe_adversaires.add(entite);
 		entite.image_entite.setTexture("araigne", "araigne.png");
+
+		// entite_1
+		const entite_1 = new Entite(this, 192, 200);
+		groupe_adversaires.add(entite_1);
+		entite_1.image_entite.setTexture("araigne", "araigne.png");
+
+		// entite_2
+		const entite_2 = new Entite(this, 1576, 664);
+		groupe_adversaires.add(entite_2);
+		entite_2.image_entite.setTexture("araigne", "araigne.png");
+
+		// entite_3
+		const entite_3 = new Entite(this, 331, 532);
+		groupe_adversaires.add(entite_3);
+		entite_3.image_entite.setTexture("araigne", "araigne.png");
+
+		// entite_4
+		const entite_4 = new Entite(this, 1017, 453);
+		groupe_adversaires.add(entite_4);
+		entite_4.image_entite.setTexture("araigne", "araigne.png");
 
 		// groupe_projectile_toiles
 		const groupe_projectile_toiles = this.add.container(0, 0);
@@ -97,14 +117,14 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_projectile_boule_toile = this.add.container(0, 0);
 
 		// toileMouvante
-		const toileMouvante = new ToileMouvante(this, 1152, 0);
+		const toileMouvante = new ToileMouvante(this, 836, 858);
 		groupe_projectile_boule_toile.add(toileMouvante);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_colision_vs_platforme = [huipat, entite, toileMouvante];
+		const liste_colision_vs_platforme = [huipat, entite, toileMouvante, entite_1, entite_4, entite_3, entite_2];
 		const liste_colision_rectangle_detection_vs_entites: Array<any> = [];
 
 		// colision_vs_platformes
@@ -114,13 +134,25 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.overlap(groupe_projectile_toiles.list, groupe_adversaires.list, this.superpositionToileVSentite as any);
 
 		// rectangle_interaction_proche_vs_entites
-		this.physics.add.collider(groupe_adversaires.list, liste_colision_rectangle_detection_vs_entites);
+		this.physics.add.collider(groupe_adversaires.list, groupe_allies.list.map((e: any) => e.rectangle_zone_interaction), () => console.log("TOUCHE"));
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
 		// entite (prefab fields)
 		entite.modeAuto = true;
+
+		// entite_1 (prefab fields)
+		entite_1.modeAuto = true;
+
+		// entite_2 (prefab fields)
+		entite_2.modeAuto = true;
+
+		// entite_3 (prefab fields)
+		entite_3.modeAuto = true;
+
+		// entite_4 (prefab fields)
+		entite_4.modeAuto = true;
 
 		this.groupe_allies = groupe_allies;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
