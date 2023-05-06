@@ -105,18 +105,18 @@ export default class Entite extends Phaser.GameObjects.Container {
 	physiqueEtParametreSpecifique(activation: boolean) { }
 
 	enchainementBlocage(_degat: number, toile: ToileMouvante) {
+			toile.body.enable = false;
 		if (this.nombreEnchainementBlocage === 0) {
 			this.body.moves = false;
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 
-			toile.body.enable = false;
 			const { centerX, centerY } = this.image_entite.getBounds();
 			toile.setPosition(centerX, centerY)
-			toile.body.moves = false;
 			toile.setScale(0.50, 0.50)
 			this.refToile = toile
 		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
+			toile.destroy()
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 			if (this.refToile) {
