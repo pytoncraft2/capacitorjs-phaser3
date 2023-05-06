@@ -32,9 +32,17 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.add(image_entite);
 
 		// rectangle_zone_interaction
-		const rectangle_zone_interaction = scene.add.rectangle(145, 86, 128, 128);
+		const rectangle_zone_interaction = scene.add.rectangle(145, 86, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		rectangle_zone_interaction.scaleX = 0.6435136753828983;
 		rectangle_zone_interaction.scaleY = 1.0810936118434191;
+		scene.physics.add.existing(rectangle_zone_interaction, false);
+		rectangle_zone_interaction.body.moves = false;
+		rectangle_zone_interaction.body.allowGravity = false;
+		rectangle_zone_interaction.body.allowDrag = false;
+		rectangle_zone_interaction.body.allowRotation = false;
+		rectangle_zone_interaction.body.pushable = false;
+		rectangle_zone_interaction.body.immovable = true;
+		rectangle_zone_interaction.body.setSize(128, 128, false);
 		rectangle_zone_interaction.isFilled = true;
 		this.add(rectangle_zone_interaction);
 
@@ -57,7 +65,7 @@ export default class Entite extends Phaser.GameObjects.Container {
 	}
 
 	public image_entite: Phaser.GameObjects.Image;
-	public rectangle_zone_interaction: Phaser.GameObjects.Rectangle;
+	public rectangle_zone_interaction: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public texte_compteur_blocage: Phaser.GameObjects.Text;
 	public velociteX: number = 300;
 	public modeAuto: boolean = false;
