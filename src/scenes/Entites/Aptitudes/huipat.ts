@@ -26,6 +26,7 @@ export function __toucheEspace(entite: Entite, touche: any) {
     const { centerX, centerY } = entite.image_entite.getBounds();
     const toile = entite.scene.physics.add.existing(new ToileMouvante(entite.scene, centerX, centerY));
     toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
+    toile.refEntite = entite;
 
     // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
     (entite as any).scene.groupe_projectile_toiles.add(toile);

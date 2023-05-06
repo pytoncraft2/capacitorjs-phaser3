@@ -50,6 +50,27 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "refEntite",
+            "label": "refEntite",
+            "tooltip": "référence à l'entité qui à envoyé la toile",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Entite"
+            }
+        },
+        {
+            "name": "ejectable",
+            "label": "ejectable",
+            "tooltip": "indique si l'entité peut être ejecter quand il est prisonnier dans une toile",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

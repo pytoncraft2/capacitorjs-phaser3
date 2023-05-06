@@ -5,6 +5,7 @@
 
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import Entite from "../Entite";
 /* END-USER-IMPORTS */
 
 export default interface ToileMouvante {
@@ -31,6 +32,8 @@ export default class ToileMouvante extends Phaser.GameObjects.Ellipse {
 	}
 
 	public aUneRef: boolean = false;
+	public refEntite!: Entite;
+	public ejectable: boolean = false;
 
 	/* START-USER-CODE */
 	couleurDeplacable() {

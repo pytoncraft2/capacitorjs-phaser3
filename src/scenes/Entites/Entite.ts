@@ -75,7 +75,6 @@ export default class Entite extends Phaser.GameObjects.Container {
 	public nombreEnchainementBlocage: number = 0;
 	public maxEnchainementPossible: number = 7;
 	public refToile!: ToileMouvante | null;
-	public ejectable: boolean = false;
 
 	/* START-USER-CODE */
 	public Aptitudes: Touches = { ...Aptitudes }
@@ -117,12 +116,14 @@ export default class Entite extends Phaser.GameObjects.Container {
 			toile.setScale(0.50, 0.50)
 			this.refToile = toile
 			toile.aUneRef = true;
+			console.log(toile);
+
 		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
 			toile.destroy()
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 			if (this.refToile) {
-				const agrandissementScale = this.refToile.scaleX + 0.10;
+				const agrandissementScale = this.refToile.scaleX + 0.30;
 				this.refToile?.setScale(agrandissementScale);
 			}
 		}
@@ -130,6 +131,10 @@ export default class Entite extends Phaser.GameObjects.Container {
 		if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
 			toile.destroy()
 			this.refToile?.couleurDeplacable();
+			if (this.refToile)
+			{
+				this.refToile.ejectable = true;
+			}
 		}
 		// this.diminutionTailleToile()
 		// console.log(toile);
@@ -146,7 +151,8 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.nombreEnchainementBlocage -=  1;
 		this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
 		if (this.refToile) {
-			const diminutionScale = this.refToile.scaleX - 0.10;
+			const diminutionScale = this.refToile.scaleX - 0.30;
+			this.refToile.ejectable = false;
 			this.refToile?.couleurBasic();
 			this.refToile?.setScale(diminutionScale);
 		}

@@ -169,16 +169,6 @@
                 "id": "object-var",
                 "expressionType": "ToileMouvante | null"
             }
-        },
-        {
-            "name": "ejectable",
-            "label": "ejectable",
-            "tooltip": "indique si l'entité peut être ejecter quand il est prisonnier dans une toile",
-            "defValue": false,
-            "customDefinition": false,
-            "type": {
-                "id": "boolean"
-            }
         }
     ]
 }
