@@ -125,7 +125,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		entite.enchainementBlocage(1, toile)
 		
 		// entite.vsToile(toile)
-		console.log("TOUCHE", toile, "VS", entite);
+		// console.log("TOUCHE", toile, "VS", entite);
 	}
 
 	/* END-USER-CODE */

@@ -108,6 +108,12 @@ export default class Entite extends Phaser.GameObjects.Container {
 			this.body.moves = false;
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
+
+			toile.body.enable = false;
+			const { centerX, centerY } = this.image_entite.getBounds();
+			toile.setPosition(centerX, centerY)
+			toile.body.moves = false;
+			toile.setScale(0.50, 0.50)
 		} else if (this.nombreEnchainementBlocage < this.maxEnchainementPossible) {
 			this.nombreEnchainementBlocage += 1;
 			this.texte_compteur_blocage.text = `${this.nombreEnchainementBlocage}/${this.maxEnchainementPossible}`
@@ -115,7 +121,10 @@ export default class Entite extends Phaser.GameObjects.Container {
 			this.image_entite.setTintFill(0x008000);
 		}
 		// this.diminutionTailleToile()
-		toile.destroy();
+		// console.log(toile);
+		
+		// toile.destroy()
+		// toile.setPosition();
 	}
 
 	augmenteNombreEnchainementBlocage() {

@@ -17,9 +17,8 @@ export default class ToileMouvante extends Phaser.GameObjects.Ellipse {
 	constructor(scene: Phaser.Scene, x?: number, y?: number, width?: number, height?: number) {
 		super(scene, x ?? 0, y ?? 0, width ?? 128, height ?? 128);
 
-		this.scaleX = 1.0165166880602345;
-		this.scaleY = 0.1988851912714334;
-		this.alpha = 0.3;
+		this.scaleX = 0.8042695872537553;
+		this.scaleY = 0.18602173204849204;
 		scene.physics.add.existing(this, false);
 		this.body.bounce.x = 1;
 		this.body.collideWorldBounds = true;

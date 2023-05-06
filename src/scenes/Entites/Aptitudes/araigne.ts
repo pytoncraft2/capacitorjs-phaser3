@@ -122,18 +122,8 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
   entite.tempsCumule += dt
     const { left, right } = entite.body.blocked;
 
-    // console.log(entite.nombreEnchainementBlocage);
-    
-    
-    if (left) {
-      entite.body.setVelocityX(entite.velociteX)
-      entite.image_entite.setFlipX(false)
-      return
-    } else if (right) {
-      entite.body.setVelocityX(-entite.velociteX)
-      entite.image_entite.setFlipX(true)
-      return
-    }
+    if (left) entite.actionToucheDroite()
+    else if (right) entite.actionToucheGauche()
 
 
   if (entite.tempsCumule < entite.tempsEntreActions) { return }
@@ -142,7 +132,6 @@ export function __modeAuto(entite: Entite, input: any, aptitudes: any) {
     {
       entite.diminueNombreEnchainementBlocage()
     }
-    // console.log("C L'HEURE!");
     entite.tempsCumule = 0
   }
 }
