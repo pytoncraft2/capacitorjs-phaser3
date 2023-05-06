@@ -31,9 +31,13 @@ export function __toucheBas(entite: Entite, aptitudes: any) {
   deplacementBas(entite)
 }
 
-export function __toucheEspace(entite: Entite) {
+export function __toucheEspace(entite: Entite, touche: any) {
+  console.log("ESPACE!", touche.espace);
+  
   if (!entite.body.moves) return;
-  const { centerX, centerY } = entite.image_entite.getBounds();
+
+if (touche.espace) {
+   const { centerX, centerY } = entite.image_entite.getBounds();
   const toile = entite.scene.physics.add.existing(new ToileMouvante(entite.scene, centerX, centerY));
   toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
 
@@ -42,6 +46,10 @@ export function __toucheEspace(entite: Entite) {
   entite.scene.time.delayedCall(500, () => {
     // (entite as any).scene.groupe_projectile_toiles.remove(toile, true)
   }, undefined, entite.scene);
+ 
+} else {
+
+}
 }
 
 

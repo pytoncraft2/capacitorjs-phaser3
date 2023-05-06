@@ -84,15 +84,15 @@ export default class Entite extends Phaser.GameObjects.Container {
 		this.body.setSize(this.image_entite.frame.width, this.image_entite.height)
 	}
 
-	actionToucheEspace() { this.verifEtExecutionTouche("toucheEspace") }
+	actionToucheEspace(appuie?: boolean) { this.verifEtExecutionTouche("toucheEspace", appuie) }
 	actionToucheGauche() { this.verifEtExecutionTouche("toucheGauche") }
 	actionToucheDroite() { this.verifEtExecutionTouche("toucheDroite") }
 	actionToucheHaut() { this.verifEtExecutionTouche("toucheHaut") }
 	actionToucheBas() { this.verifEtExecutionTouche("toucheBas") }
 	aucuneTouche() { this.verifEtExecutionTouche("aucuneTouche") }
 
-	verifEtExecutionTouche(touche: string) {
-		return this.Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {})
+	verifEtExecutionTouche(touche: string, appuie?: boolean) {
+		return this.Aptitudes[this.image_entite.texture.key]?.[touche]?.(this, {espace: appuie})
 	}
 
 	preUpdate() {
@@ -124,12 +124,12 @@ export default class Entite extends Phaser.GameObjects.Container {
 				this.refToile?.setScale(agrandissementScale);
 			}
 		} else if (this.nombreEnchainementBlocage == this.maxEnchainementPossible) {
+			toile.destroy()
 			this.image_entite.setTintFill(0x008000);
 		}
 		// this.diminutionTailleToile()
 		// console.log(toile);
 
-		// toile.destroy()
 		// toile.setPosition();
 	}
 

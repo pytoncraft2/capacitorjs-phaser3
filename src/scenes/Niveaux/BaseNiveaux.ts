@@ -77,7 +77,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		if (this.toucheJustePresse(this.toucheEspace)) {
 			// touche espace ou touche d'attaque
-			this.entiteControllable.actionToucheEspace()
+			this.entiteControllable.actionToucheEspace(true)
+		}
+
+		if (this.toucheJusteReleve(this.toucheEspace)) {
+			// touche espace ou touche d'attaque
+			this.entiteControllable.actionToucheEspace(false)
 		}
 
 		if (this.isMobile) {
@@ -116,6 +121,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	private toucheJustePresse(touche: Phaser.Input.Keyboard.Key) {
 		return Phaser.Input.Keyboard.JustDown(touche)
+	}
+
+	private toucheJusteReleve(touche: Phaser.Input.Keyboard.Key) {
+		return Phaser.Input.Keyboard.JustUp(touche)
 	}
 
 	overlapAction(rectangleZoneDetection: any, ennemie: Phaser.Physics.Arcade.Sprite) {
