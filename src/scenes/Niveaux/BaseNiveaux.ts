@@ -174,29 +174,16 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const entite = adversaire.refToile?.refEntite;
 		
 		if (adversaire.refToile) {
-		adversaire.refToile.body.setVelocity(entite?.image_entite.flipX ? -900 : 900, -500);
-			// console.log(adversaire.refToile?.refEntite);
+			adversaire.refToile.body.setVelocity(entite?.image_entite.flipX ? -900 : 900, -500);
 			adversaire.refToile.body.enable = true;
-			// adversaire.refToile.body.setVelocity(-500, -1800);
 			//@ts-ignore
 			adversaire.scene.groupe_projectile_boule_toile.add(adversaire.refToile)
 			//@ts-ignore
 			adversaire.scene.groupe_projectile_toiles.remove(adversaire.refToile)
 		}
 		adversaire.scene.time.delayedCall(3300, () => {
-
-			// this.groupe_arraigne.remove(obj2, true)
-			console.log("DESTRUCTION");
 			//@ts-ignore
 			adversaire.scene.groupe_projectile_boule_toile.remove(adversaire.refToile, true)
-			
-
-			// obj2.active && obj2.destroy(true);
-			// obj1.parentContainer.killedEnnemy += 1;
-			// if (obj1.parentContainer.killedEnnemy == this.liste_fonds_ecran[score.niveau].nombreEnnemieAVaincre) {
-				// score.niveauSuivant();
-				// obj1.parentContainer.killedEnnemy = 0;
-			// }
 		})
 	}
 
